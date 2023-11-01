@@ -6,12 +6,13 @@ import java.awt.event.ActionListener;
 import javax.swing.JPanel;
 import vista.Menu;
 import vista.Nomina;
+import vista.registroClientes;
 
 public class menuController implements ActionListener{
 
     private Menu vista; 
     Nomina panelNomina = new Nomina();
-    
+    registroClientes panelClientes = new registroClientes();
 
     
     public menuController(Menu vista){
@@ -29,7 +30,7 @@ public class menuController implements ActionListener{
     
     public void iniciar(){
         vista.setLocationRelativeTo(null);
-        vista.setTitle("SNCIF");
+        vista.setTitle("Sistema Mirna Perez");
         vista.setIconImage(vista.getIconImage());
     }
     public void cambiarPanel(JPanel content,JPanel jp) {
@@ -62,6 +63,7 @@ public class menuController implements ActionListener{
         if(e.getSource() == vista.btnInventario){
         }
         if(e.getSource() == vista.btnClientes){
+            cambiarPanel(vista.content, panelClientes);
         }
         if(e.getSource() == vista.btnCaja){
         }
