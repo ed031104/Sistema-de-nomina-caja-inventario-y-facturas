@@ -4,19 +4,19 @@ package modelo;
 
 public class Empleado {
     
-    private int NºINNS;//Numero INNS
-    private String Nombres;//Nombre del empleado
-    private String Apellidos;
-    private String Direccion;
-    private String Cedula;//cedula
-    private String Sexo;
-    private String Cargo;//Cargo
-    private String Correo;
-    private int Telefono;
-    private Double Salario;//Salario mensual
+    int NºINNS;//Numero INNS
+    String Nombres;//Nombre del empleado
+    String Apellidos;
+    String Direccion;
+    String Cedula;//cedula
+    String Sexo;
+    String Cargo;//Cargo
+    String Correo;
+    int Telefono;
+    double Salario;//Salario mensual
     //private byte Foto;
 
-    public Empleado(int NºINNS, String Nombres, String Apellidos, String Direccion, String Cedula, String Sexo, String Cargo, String Correo, int Telefono, Double Salario/*, byte Foto*/) {
+    public Empleado(int NºINNS, String Nombres, String Apellidos, String Direccion, String Cedula, String Sexo, String Cargo, String Correo, int Telefono, double Salario/*, byte Foto*/) {
         this.NºINNS = NºINNS;
         this.Nombres = Nombres;
         this.Apellidos = Apellidos;
@@ -102,19 +102,11 @@ public class Empleado {
         this.Telefono = Telefono;
     }
 
-    public Double getSalario() {
+    public double getSalario() {
         return Salario;
     }
 
-    public void setSalario(Double Salario) {
+    public void setSalario(double Salario) {
         this.Salario = Salario;
     }
-
-//    public byte getFoto() {
-//        return Foto;
-//    }
-//
-//    public void setFoto(byte Foto) {
-//        this.Foto = Foto;
-//    }
 }
