@@ -87,13 +87,13 @@ public class Menu extends javax.swing.JFrame {
         bgNomina.setLayout(bgNominaLayout);
         bgNominaLayout.setHorizontalGroup(
             bgNominaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(btnNomina, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+            .addComponent(btnNomina, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         bgNominaLayout.setVerticalGroup(
             bgNominaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(bgNominaLayout.createSequentialGroup()
-                .addComponent(btnNomina, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(btnNomina)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         bgAsientoContable.setBackground(new java.awt.Color(51, 51, 51));
@@ -126,13 +126,13 @@ public class Menu extends javax.swing.JFrame {
         bgAsientoContable.setLayout(bgAsientoContableLayout);
         bgAsientoContableLayout.setHorizontalGroup(
             bgAsientoContableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(btnAsientoContable, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+            .addComponent(btnAsientoContable, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         bgAsientoContableLayout.setVerticalGroup(
             bgAsientoContableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(bgAsientoContableLayout.createSequentialGroup()
-                .addComponent(btnAsientoContable, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(btnAsientoContable)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         bgInventario.setBackground(new java.awt.Color(51, 51, 51));
@@ -165,13 +165,13 @@ public class Menu extends javax.swing.JFrame {
         bgInventario.setLayout(bgInventarioLayout);
         bgInventarioLayout.setHorizontalGroup(
             bgInventarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(btnInventario, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+            .addComponent(btnInventario, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         bgInventarioLayout.setVerticalGroup(
             bgInventarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(bgInventarioLayout.createSequentialGroup()
-                .addComponent(btnInventario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(btnInventario)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         bgClientes.setBackground(new java.awt.Color(51, 51, 51));
@@ -204,13 +204,13 @@ public class Menu extends javax.swing.JFrame {
         bgClientes.setLayout(bgClientesLayout);
         bgClientesLayout.setHorizontalGroup(
             bgClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(btnClientes, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+            .addComponent(btnClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         bgClientesLayout.setVerticalGroup(
             bgClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(bgClientesLayout.createSequentialGroup()
-                .addComponent(btnClientes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(btnClientes)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         bgCaja.setBackground(new java.awt.Color(51, 51, 51));
@@ -243,13 +243,13 @@ public class Menu extends javax.swing.JFrame {
         bgCaja.setLayout(bgCajaLayout);
         bgCajaLayout.setHorizontalGroup(
             bgCajaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(btnCaja, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+            .addComponent(btnCaja, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         bgCajaLayout.setVerticalGroup(
             bgCajaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(bgCajaLayout.createSequentialGroup()
-                .addComponent(btnCaja, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(btnCaja)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout menuLayout = new javax.swing.GroupLayout(menu);
@@ -417,35 +417,35 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_btnNominaMouseExited
 
     private void btnAsientoContableMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAsientoContableMouseEntered
-        // TODO add your handling code here:
+        bgAsientoContable.setBackground(new Color(75,75,75));
     }//GEN-LAST:event_btnAsientoContableMouseEntered
 
     private void btnAsientoContableMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAsientoContableMouseExited
-        // TODO add your handling code here:
+        bgAsientoContable.setBackground(new Color(51,51,51));                                          
     }//GEN-LAST:event_btnAsientoContableMouseExited
 
     private void btnInventarioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnInventarioMouseEntered
-        // TODO add your handling code here:
+        bgInventario.setBackground(new Color(75,75,75));
     }//GEN-LAST:event_btnInventarioMouseEntered
 
     private void btnInventarioMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnInventarioMouseExited
-        // TODO add your handling code here:
+        bgInventario.setBackground(new Color(51,51,51));                                          
     }//GEN-LAST:event_btnInventarioMouseExited
 
     private void btnClientesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnClientesMouseEntered
-        // TODO add your handling code here:
+        bgClientes.setBackground(new Color(75,75,75));
     }//GEN-LAST:event_btnClientesMouseEntered
 
     private void btnClientesMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnClientesMouseExited
-        // TODO add your handling code here:
+        bgClientes.setBackground(new Color(51,51,51));                                          
     }//GEN-LAST:event_btnClientesMouseExited
 
     private void btnCajaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCajaMouseEntered
-        // TODO add your handling code here:
+        bgCaja.setBackground(new Color(75,75,75));
     }//GEN-LAST:event_btnCajaMouseEntered
 
     private void btnCajaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCajaMouseExited
-        // TODO add your handling code here:
+        bgCaja.setBackground(new Color(51,51,51));                                          
     }//GEN-LAST:event_btnCajaMouseExited
 
     
