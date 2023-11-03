@@ -254,9 +254,12 @@ public class Nomina extends javax.swing.JPanel {
                 .addContainerGap())
         );
 
-        jpanelEsquinasRedondas3.setBackground(new java.awt.Color(242, 242, 242));
+        jpanelEsquinasRedondas3.setBackground(new java.awt.Color(32, 136, 203));
 
         jScrollPane3.setBorder(null);
+        jScrollPane3.setFocusable(false);
+        jScrollPane3.setOpaque(false);
+        jScrollPane3.setRequestFocusEnabled(false);
 
         tablaNomina.setBackground(new java.awt.Color(255, 255, 255));
         tablaNomina.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N

@@ -35,6 +35,10 @@ public class Menu extends javax.swing.JFrame {
         btnClientes = new javax.swing.JButton();
         bgCaja = new Estilos_panel.jpanelEsquinasRedondas();
         btnCaja = new javax.swing.JButton();
+        bgRegistroNomina = new Estilos_panel.jpanelEsquinasRedondas();
+        btnRegistroNomina = new javax.swing.JButton();
+        bgEmpleados = new Estilos_panel.jpanelEsquinasRedondas();
+        btnEmpleados = new javax.swing.JButton();
         content = new Estilos_panel.jpanelEsquinasRedondas();
         header = new Estilos_panel.jpanelEsquinasRedondas();
         brnMenu = new javax.swing.JButton();
@@ -178,8 +182,8 @@ public class Menu extends javax.swing.JFrame {
 
         btnClientes.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
         btnClientes.setForeground(new java.awt.Color(255, 255, 255));
-        btnClientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons8-cliente-30.png"))); // NOI18N
-        btnClientes.setToolTipText("Cliente");
+        btnClientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons8-añadir-usuario-masculino-30.png"))); // NOI18N
+        btnClientes.setToolTipText("Clientes");
         btnClientes.setBorder(null);
         btnClientes.setBorderPainted(false);
         btnClientes.setContentAreaFilled(false);
@@ -252,6 +256,85 @@ public class Menu extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        bgRegistroNomina.setBackground(new java.awt.Color(51, 51, 51));
+        bgRegistroNomina.setToolTipText("");
+
+        btnRegistroNomina.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
+        btnRegistroNomina.setForeground(new java.awt.Color(255, 255, 255));
+        btnRegistroNomina.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons8-agregar-propiedad-30.png"))); // NOI18N
+        btnRegistroNomina.setToolTipText("Registro de nomina");
+        btnRegistroNomina.setBorder(null);
+        btnRegistroNomina.setBorderPainted(false);
+        btnRegistroNomina.setContentAreaFilled(false);
+        btnRegistroNomina.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnRegistroNomina.setDefaultCapable(false);
+        btnRegistroNomina.setFocusPainted(false);
+        btnRegistroNomina.setFocusable(false);
+        btnRegistroNomina.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnRegistroNomina.setIconTextGap(0);
+        btnRegistroNomina.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        btnRegistroNomina.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnRegistroNomina.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnRegistroNominaMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnRegistroNominaMouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout bgRegistroNominaLayout = new javax.swing.GroupLayout(bgRegistroNomina);
+        bgRegistroNomina.setLayout(bgRegistroNominaLayout);
+        bgRegistroNominaLayout.setHorizontalGroup(
+            bgRegistroNominaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(btnRegistroNomina, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        bgRegistroNominaLayout.setVerticalGroup(
+            bgRegistroNominaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(bgRegistroNominaLayout.createSequentialGroup()
+                .addComponent(btnRegistroNomina)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        bgEmpleados.setBackground(new java.awt.Color(51, 51, 51));
+
+        btnEmpleados.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
+        btnEmpleados.setForeground(new java.awt.Color(255, 255, 255));
+        btnEmpleados.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons8-abogado-30.png"))); // NOI18N
+        btnEmpleados.setToolTipText("Empleados");
+        btnEmpleados.setBorder(null);
+        btnEmpleados.setBorderPainted(false);
+        btnEmpleados.setContentAreaFilled(false);
+        btnEmpleados.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnEmpleados.setDefaultCapable(false);
+        btnEmpleados.setFocusPainted(false);
+        btnEmpleados.setFocusable(false);
+        btnEmpleados.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnEmpleados.setIconTextGap(0);
+        btnEmpleados.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        btnEmpleados.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnEmpleados.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnEmpleadosMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnEmpleadosMouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout bgEmpleadosLayout = new javax.swing.GroupLayout(bgEmpleados);
+        bgEmpleados.setLayout(bgEmpleadosLayout);
+        bgEmpleadosLayout.setHorizontalGroup(
+            bgEmpleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(btnEmpleados, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        bgEmpleadosLayout.setVerticalGroup(
+            bgEmpleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(bgEmpleadosLayout.createSequentialGroup()
+                .addComponent(btnEmpleados)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout menuLayout = new javax.swing.GroupLayout(menu);
         menu.setLayout(menuLayout);
         menuLayout.setHorizontalGroup(
@@ -262,11 +345,14 @@ public class Menu extends javax.swing.JFrame {
                     .addComponent(bgNomina, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(bgAsientoContable, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(bgInventario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(bgClientes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(bgClientes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bgEmpleados, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(bgCaja, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(bgCaja, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bgRegistroNomina, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
         menuLayout.setVerticalGroup(
@@ -280,8 +366,12 @@ public class Menu extends javax.swing.JFrame {
                 .addComponent(bgInventario, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(20, 20, 20)
                 .addComponent(bgClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20)
+                .addComponent(bgEmpleados, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(bgCaja, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(bgRegistroNomina, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(256, 256, 256))
         );
 
@@ -448,6 +538,22 @@ public class Menu extends javax.swing.JFrame {
         bgCaja.setBackground(new Color(51,51,51));                                          
     }//GEN-LAST:event_btnCajaMouseExited
 
+    private void btnRegistroNominaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRegistroNominaMouseEntered
+        bgRegistroNomina.setBackground(new Color(75,75,75));
+    }//GEN-LAST:event_btnRegistroNominaMouseEntered
+
+    private void btnRegistroNominaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRegistroNominaMouseExited
+        bgRegistroNomina.setBackground(new Color(51,51,51));                                          
+    }//GEN-LAST:event_btnRegistroNominaMouseExited
+
+    private void btnEmpleadosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEmpleadosMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnEmpleadosMouseEntered
+
+    private void btnEmpleadosMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEmpleadosMouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnEmpleadosMouseExited
+
     
     public static void main(String[] args) throws IOException, ParseException {
         Menu vista = new Menu();
@@ -467,14 +573,18 @@ public class Menu extends javax.swing.JFrame {
     public Estilos_panel.jpanelEsquinasRedondas bgAsientoContable;
     public Estilos_panel.jpanelEsquinasRedondas bgCaja;
     public Estilos_panel.jpanelEsquinasRedondas bgClientes;
+    public Estilos_panel.jpanelEsquinasRedondas bgEmpleados;
     public Estilos_panel.jpanelEsquinasRedondas bgInventario;
     public Estilos_panel.jpanelEsquinasRedondas bgNomina;
+    public Estilos_panel.jpanelEsquinasRedondas bgRegistroNomina;
     public javax.swing.JButton brnMenu;
     public javax.swing.JButton btnAsientoContable;
     public javax.swing.JButton btnCaja;
     public javax.swing.JButton btnClientes;
+    public javax.swing.JButton btnEmpleados;
     public javax.swing.JButton btnInventario;
     public javax.swing.JButton btnNomina;
+    public javax.swing.JButton btnRegistroNomina;
     public Estilos_panel.jpanelEsquinasRedondas content;
     private Estilos_panel.jpanelEsquinasRedondas header;
     private Estilos_panel.jpanelEsquinasRedondas menu;
