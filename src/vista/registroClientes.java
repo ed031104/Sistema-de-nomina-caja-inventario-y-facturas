@@ -5,6 +5,8 @@
  */
 package vista;
 
+import modelo.Clientes;
+
 /**
  *
  * @author edwin
@@ -48,7 +50,7 @@ public class registroClientes extends javax.swing.JPanel {
         telefono = new javax.swing.JTextField();
         jpanelEsquinasRedondas3 = new Estilos_panel.jpanelEsquinasRedondas();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jList2 = new javax.swing.JList<>();
+        ListaClientes = new javax.swing.JList<>();
 
         setOpaque(false);
         setPreferredSize(new java.awt.Dimension(470, 470));
@@ -141,7 +143,7 @@ public class registroClientes extends javax.swing.JPanel {
                                 .addComponent(correo)
                                 .addContainerGap())
                             .addGroup(jpanelEsquinasRedondas2Layout.createSequentialGroup()
-                                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 202, Short.MAX_VALUE)
+                                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGap(268, 268, 268))
                             .addGroup(jpanelEsquinasRedondas2Layout.createSequentialGroup()
                                 .addGroup(jpanelEsquinasRedondas2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -233,14 +235,9 @@ public class registroClientes extends javax.swing.JPanel {
         jScrollPane1.setFocusable(false);
         jScrollPane1.setRequestFocusEnabled(false);
 
-        jList2.setBackground(new java.awt.Color(32, 136, 203));
-        jList2.setForeground(new java.awt.Color(255, 255, 255));
-        jList2.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        jScrollPane1.setViewportView(jList2);
+        ListaClientes.setBackground(new java.awt.Color(32, 136, 203));
+        ListaClientes.setForeground(new java.awt.Color(255, 255, 255));
+        jScrollPane1.setViewportView(ListaClientes);
 
         javax.swing.GroupLayout jpanelEsquinasRedondas3Layout = new javax.swing.GroupLayout(jpanelEsquinasRedondas3);
         jpanelEsquinasRedondas3.setLayout(jpanelEsquinasRedondas3Layout);
@@ -284,18 +281,19 @@ public class registroClientes extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jpanelEsquinasRedondas1, javax.swing.GroupLayout.DEFAULT_SIZE, 644, Short.MAX_VALUE)
+            .addComponent(jpanelEsquinasRedondas1, javax.swing.GroupLayout.DEFAULT_SIZE, 487, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(0, 0, 0)
-                .addComponent(jpanelEsquinasRedondas1, javax.swing.GroupLayout.DEFAULT_SIZE, 562, Short.MAX_VALUE))
+                .addComponent(jpanelEsquinasRedondas1, javax.swing.GroupLayout.DEFAULT_SIZE, 470, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JList<Clientes> ListaClientes;
     public javax.swing.JButton agregar;
     public javax.swing.JTextField apellidos;
     public javax.swing.JTextField cedula;
@@ -310,7 +308,6 @@ public class registroClientes extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JList<String> jList2;
     private javax.swing.JScrollPane jScrollPane1;
     private Estilos_panel.jpanelEsquinasRedondas jpanelEsquinasRedondas1;
     private Estilos_panel.jpanelEsquinasRedondas jpanelEsquinasRedondas2;

@@ -39,6 +39,8 @@ public class Menu extends javax.swing.JFrame {
         btnRegistroNomina = new javax.swing.JButton();
         bgEmpleados = new Estilos_panel.jpanelEsquinasRedondas();
         btnEmpleados = new javax.swing.JButton();
+        bgFactura = new Estilos_panel.jpanelEsquinasRedondas();
+        btnFactura = new javax.swing.JButton();
         content = new Estilos_panel.jpanelEsquinasRedondas();
         header = new Estilos_panel.jpanelEsquinasRedondas();
         brnMenu = new javax.swing.JButton();
@@ -335,6 +337,46 @@ public class Menu extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        bgFactura.setBackground(new java.awt.Color(51, 51, 51));
+        bgFactura.setToolTipText("");
+
+        btnFactura.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
+        btnFactura.setForeground(new java.awt.Color(255, 255, 255));
+        btnFactura.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons8-recibo-aprobado-30 (1).png"))); // NOI18N
+        btnFactura.setToolTipText("Factura");
+        btnFactura.setBorder(null);
+        btnFactura.setBorderPainted(false);
+        btnFactura.setContentAreaFilled(false);
+        btnFactura.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnFactura.setDefaultCapable(false);
+        btnFactura.setFocusPainted(false);
+        btnFactura.setFocusable(false);
+        btnFactura.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnFactura.setIconTextGap(0);
+        btnFactura.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        btnFactura.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnFactura.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnFacturaMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnFacturaMouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout bgFacturaLayout = new javax.swing.GroupLayout(bgFactura);
+        bgFactura.setLayout(bgFacturaLayout);
+        bgFacturaLayout.setHorizontalGroup(
+            bgFacturaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(btnFactura, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        bgFacturaLayout.setVerticalGroup(
+            bgFacturaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(bgFacturaLayout.createSequentialGroup()
+                .addComponent(btnFactura)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout menuLayout = new javax.swing.GroupLayout(menu);
         menu.setLayout(menuLayout);
         menuLayout.setHorizontalGroup(
@@ -352,7 +394,8 @@ public class Menu extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(bgCaja, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(bgRegistroNomina, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(bgRegistroNomina, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bgFactura, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
         menuLayout.setVerticalGroup(
@@ -372,6 +415,8 @@ public class Menu extends javax.swing.JFrame {
                 .addComponent(bgCaja, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(bgRegistroNomina, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(bgFactura, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(256, 256, 256))
         );
 
@@ -547,12 +592,20 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_btnRegistroNominaMouseExited
 
     private void btnEmpleadosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEmpleadosMouseEntered
-        // TODO add your handling code here:
+        bgEmpleados.setBackground(new Color(75,75,75));
     }//GEN-LAST:event_btnEmpleadosMouseEntered
 
     private void btnEmpleadosMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEmpleadosMouseExited
-        // TODO add your handling code here:
+        bgEmpleados.setBackground(new Color(51,51,51));                                          
     }//GEN-LAST:event_btnEmpleadosMouseExited
+
+    private void btnFacturaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnFacturaMouseEntered
+        bgFactura.setBackground(new Color(75,75,75));
+    }//GEN-LAST:event_btnFacturaMouseEntered
+
+    private void btnFacturaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnFacturaMouseExited
+        bgFactura.setBackground(new Color(51,51,51));                                          
+    }//GEN-LAST:event_btnFacturaMouseExited
 
     
     public static void main(String[] args) throws IOException, ParseException {
@@ -574,6 +627,7 @@ public class Menu extends javax.swing.JFrame {
     public Estilos_panel.jpanelEsquinasRedondas bgCaja;
     public Estilos_panel.jpanelEsquinasRedondas bgClientes;
     public Estilos_panel.jpanelEsquinasRedondas bgEmpleados;
+    public Estilos_panel.jpanelEsquinasRedondas bgFactura;
     public Estilos_panel.jpanelEsquinasRedondas bgInventario;
     public Estilos_panel.jpanelEsquinasRedondas bgNomina;
     public Estilos_panel.jpanelEsquinasRedondas bgRegistroNomina;
@@ -582,6 +636,7 @@ public class Menu extends javax.swing.JFrame {
     public javax.swing.JButton btnCaja;
     public javax.swing.JButton btnClientes;
     public javax.swing.JButton btnEmpleados;
+    public javax.swing.JButton btnFactura;
     public javax.swing.JButton btnInventario;
     public javax.swing.JButton btnNomina;
     public javax.swing.JButton btnRegistroNomina;

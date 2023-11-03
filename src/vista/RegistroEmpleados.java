@@ -5,6 +5,8 @@
  */
 package vista;
 
+import modelo.Empleado;
+
 /**
  *
  * @author edwin
@@ -27,7 +29,6 @@ public class RegistroEmpleados extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane2 = new javax.swing.JScrollPane();
         jpanelEsquinasRedondas1 = new Estilos_panel.jpanelEsquinasRedondas();
         jpanelEsquinasRedondas2 = new Estilos_panel.jpanelEsquinasRedondas();
         jLabel1 = new javax.swing.JLabel();
@@ -55,13 +56,10 @@ public class RegistroEmpleados extends javax.swing.JPanel {
         telefono = new javax.swing.JTextField();
         jpanelEsquinasRedondas3 = new Estilos_panel.jpanelEsquinasRedondas();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jList2 = new javax.swing.JList<>();
+        ListaEmpleados = new javax.swing.JList<>();
 
         setOpaque(false);
         setPreferredSize(new java.awt.Dimension(470, 470));
-
-        jScrollPane2.setBorder(null);
-        jScrollPane2.setPreferredSize(new java.awt.Dimension(470, 470));
 
         jpanelEsquinasRedondas1.setBackground(new java.awt.Color(255, 255, 255));
         jpanelEsquinasRedondas1.setPreferredSize(new java.awt.Dimension(719, 587));
@@ -204,42 +202,42 @@ public class RegistroEmpleados extends javax.swing.JPanel {
                         .addComponent(jLabel4)
                         .addGap(16, 16, 16)
                         .addGroup(jpanelEsquinasRedondas2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(salario)
                             .addGroup(jpanelEsquinasRedondas2Layout.createSequentialGroup()
                                 .addGroup(jpanelEsquinasRedondas2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(salario)
-                                    .addGroup(jpanelEsquinasRedondas2Layout.createSequentialGroup()
-                                        .addGroup(jpanelEsquinasRedondas2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 156, Short.MAX_VALUE)
-                                            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                        .addGap(114, 114, 114))
-                                    .addComponent(cargo))
-                                .addGap(18, 18, 18)
-                                .addGroup(jpanelEsquinasRedondas2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jpanelEsquinasRedondas2Layout.createSequentialGroup()
-                                        .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addGap(124, 124, 124))
-                                    .addGroup(jpanelEsquinasRedondas2Layout.createSequentialGroup()
-                                        .addComponent(numeroINNS)
-                                        .addContainerGap())
-                                    .addGroup(jpanelEsquinasRedondas2Layout.createSequentialGroup()
-                                        .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, 162, Short.MAX_VALUE)
-                                        .addGap(124, 124, 124))
-                                    .addGroup(jpanelEsquinasRedondas2Layout.createSequentialGroup()
-                                        .addComponent(telefono)
-                                        .addContainerGap())))
+                                    .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
+                                    .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(114, 114, 114))
+                            .addComponent(cargo)
+                            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jpanelEsquinasRedondas2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jpanelEsquinasRedondas2Layout.createSequentialGroup()
-                                .addGroup(jpanelEsquinasRedondas2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(agregar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(sexo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addContainerGap())))))
+                                .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(124, 124, 124))
+                            .addGroup(jpanelEsquinasRedondas2Layout.createSequentialGroup()
+                                .addComponent(numeroINNS)
+                                .addContainerGap())
+                            .addGroup(jpanelEsquinasRedondas2Layout.createSequentialGroup()
+                                .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)
+                                .addGap(124, 124, 124))
+                            .addGroup(jpanelEsquinasRedondas2Layout.createSequentialGroup()
+                                .addComponent(telefono)
+                                .addContainerGap())))
+                    .addGroup(jpanelEsquinasRedondas2Layout.createSequentialGroup()
+                        .addComponent(agregar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap())))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpanelEsquinasRedondas2Layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(sexo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jpanelEsquinasRedondas2Layout.setVerticalGroup(
             jpanelEsquinasRedondas2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpanelEsquinasRedondas2Layout.createSequentialGroup()
-                .addGap(37, 37, 37)
+                .addGap(16, 16, 16)
                 .addComponent(jLabel1)
-                .addGap(30, 30, 30)
+                .addGap(18, 18, 18)
                 .addGroup(jpanelEsquinasRedondas2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(jLabel5))
@@ -279,14 +277,14 @@ public class RegistroEmpleados extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jpanelEsquinasRedondas2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(cargo, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(telefono, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel10)))
+                            .addComponent(telefono, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel10)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(sexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, Short.MAX_VALUE)
+                .addGap(24, 24, 24)
                 .addComponent(agregar, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(21, 21, 21))
+                .addContainerGap(16, Short.MAX_VALUE))
         );
 
         jpanelEsquinasRedondas3.setBackground(new java.awt.Color(32, 136, 203));
@@ -295,14 +293,9 @@ public class RegistroEmpleados extends javax.swing.JPanel {
         jScrollPane1.setFocusable(false);
         jScrollPane1.setRequestFocusEnabled(false);
 
-        jList2.setBackground(new java.awt.Color(32, 136, 203));
-        jList2.setForeground(new java.awt.Color(255, 255, 255));
-        jList2.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        jScrollPane1.setViewportView(jList2);
+        ListaEmpleados.setBackground(new java.awt.Color(32, 136, 203));
+        ListaEmpleados.setForeground(new java.awt.Color(255, 255, 255));
+        jScrollPane1.setViewportView(ListaEmpleados);
 
         javax.swing.GroupLayout jpanelEsquinasRedondas3Layout = new javax.swing.GroupLayout(jpanelEsquinasRedondas3);
         jpanelEsquinasRedondas3.setLayout(jpanelEsquinasRedondas3Layout);
@@ -334,30 +327,29 @@ public class RegistroEmpleados extends javax.swing.JPanel {
         );
         jpanelEsquinasRedondas1Layout.setVerticalGroup(
             jpanelEsquinasRedondas1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpanelEsquinasRedondas1Layout.createSequentialGroup()
+            .addGroup(jpanelEsquinasRedondas1Layout.createSequentialGroup()
                 .addGap(19, 19, 19)
-                .addGroup(jpanelEsquinasRedondas1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(jpanelEsquinasRedondas1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(jpanelEsquinasRedondas3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jpanelEsquinasRedondas2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(18, 18, 18))
+                    .addComponent(jpanelEsquinasRedondas2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
-
-        jScrollPane2.setViewportView(jpanelEsquinasRedondas1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 761, Short.MAX_VALUE)
+            .addComponent(jpanelEsquinasRedondas1, javax.swing.GroupLayout.DEFAULT_SIZE, 758, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 538, Short.MAX_VALUE)
+            .addComponent(jpanelEsquinasRedondas1, javax.swing.GroupLayout.DEFAULT_SIZE, 567, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JList<Empleado> ListaEmpleados;
     public javax.swing.JButton agregar;
     public javax.swing.JTextField apellidos;
     public javax.swing.JTextField cargo;
@@ -376,15 +368,13 @@ public class RegistroEmpleados extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JList<String> jList2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
     private Estilos_panel.jpanelEsquinasRedondas jpanelEsquinasRedondas1;
     private Estilos_panel.jpanelEsquinasRedondas jpanelEsquinasRedondas2;
     private Estilos_panel.jpanelEsquinasRedondas jpanelEsquinasRedondas3;
     public javax.swing.JTextField nombres;
-    private javax.swing.JTextField numeroINNS;
-    private javax.swing.JTextField salario;
+    public javax.swing.JTextField numeroINNS;
+    public javax.swing.JTextField salario;
     private javax.swing.JComboBox<String> sexo;
     public javax.swing.JTextField telefono;
     // End of variables declaration//GEN-END:variables

@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JPanel;
 import vista.AsientoContable;
 import vista.Caja;
+import vista.Factura;
 import vista.Inventario;
 import vista.Menu;
 import vista.Nomina;
@@ -24,6 +25,7 @@ public class menuController implements ActionListener{
     RegistroNomina panelRegistroNomina= new RegistroNomina();
     Inventario panelInventario = new Inventario();
     AsientoContable panelAsientoContable = new AsientoContable();
+    Factura panelFactura = new Factura();
     
     public menuController(Menu vista){
     this.vista = vista;
@@ -35,6 +37,8 @@ public class menuController implements ActionListener{
     this.vista.brnMenu.addActionListener(this);
     this.vista.Opcmenu1.addActionListener(this);
     this.vista.btnRegistroNomina.addActionListener(this);
+    this.vista.btnEmpleados.addActionListener(this);
+    this.vista.btnFactura.addActionListener(this);
       
     
     }
@@ -88,11 +92,17 @@ public class menuController implements ActionListener{
         if(e.getSource() == vista.btnClientes){
             cambiarPanel(vista.content, panelClientes);
         }
+        if(e.getSource() == vista.btnEmpleados){
+            cambiarPanel(vista.content, panelempleados);
+        }
         if(e.getSource() == vista.btnCaja){
            cambiarPanel(vista.content, panelCaja);
         }
         if(e.getSource() == vista.btnRegistroNomina){
             cambiarPanel(vista.content, panelRegistroNomina);
+        }
+        if(e.getSource() == vista.btnFactura){
+            cambiarPanel(vista.content, panelFactura);
         }
     }
     
