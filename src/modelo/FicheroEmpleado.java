@@ -69,10 +69,7 @@ public class FicheroEmpleado {
             String telefono = datos[9];
             //String foto = datos[10];
           
-            
-            
             Empleado factura = new Empleado(nºinns, nombres, apellidos, direccion, cedula, sexo, cargo, correo, nºinns, salario);
-            
             listaEmpleado.add(factura);
         }
     }

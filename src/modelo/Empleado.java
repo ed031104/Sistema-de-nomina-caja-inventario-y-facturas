@@ -2,7 +2,7 @@ package modelo;
 
 /*@author edwin*/
 
-public class Empleado {
+public class Empleado extends Persona{
     
     int NºINNS;//Numero INNS
     String Nombres;//Nombre del empleado

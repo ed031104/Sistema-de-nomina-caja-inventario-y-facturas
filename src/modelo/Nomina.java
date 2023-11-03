@@ -2,7 +2,7 @@
 package modelo;
 
 public class Nomina {
-    
+
     Empleado empleado;
 
     private double Horas; //Horas laborales
