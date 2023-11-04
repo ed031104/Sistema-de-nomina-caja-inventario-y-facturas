@@ -3,13 +3,17 @@ package controlador;
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
+import java.text.ParseException;
 import javax.swing.JPanel;
+import modelo.FicheroEmpleado;
+import modelo.FicheroNomina;
 import vista.AsientoContable;
 import vista.Caja;
 import vista.Factura;
 import vista.Inventario;
 import vista.Menu;
-import vista.Nomina;
+import vista.datosNominas;
 import vista.RegistroEmpleados;
 import vista.RegistroNomina;
 import vista.registroClientes;
@@ -18,11 +22,18 @@ public class menuController implements ActionListener{
 
     private Menu vista; 
     
-    Nomina panelNomina = new Nomina();
+    datosNominas panelNomina = new datosNominas();
+    FicheroNomina ficheroNomina  = new FicheroNomina();
     registroClientes panelClientes = new registroClientes();
+    
     RegistroEmpleados panelempleados = new RegistroEmpleados();
+    FicheroEmpleado ficheroEmpelado = new FicheroEmpleado();
+    
+    
     Caja panelCaja = new Caja();
+    
     RegistroNomina panelRegistroNomina= new RegistroNomina();
+    
     Inventario panelInventario = new Inventario();
     AsientoContable panelAsientoContable = new AsientoContable();
     Factura panelFactura = new Factura();
@@ -43,12 +54,13 @@ public class menuController implements ActionListener{
     
     }
     
-    public void iniciar(){
+    public void iniciar() throws IOException, ParseException{
         vista.setLocationRelativeTo(null);
         vista.setTitle("Sistema Mirna Perez");
         vista.setIconImage(vista.getIconImage());
         
-         ControladorRegitroEmpleado ControladorRegitroEmpleado = new ControladorRegitroEmpleado();
+         ControladorRegitroEmpleado ControladorRegitroEmpleado = new ControladorRegitroEmpleado(panelempleados, ficheroEmpelado);
+         ControladorRegistroNomina controladorRegistroNomina = new ControladorRegistroNomina(ControladorRegitroEmpleado, panelRegistroNomina, ficheroNomina);
          ControladorNomina ControladorNomina = new ControladorNomina(ControladorRegitroEmpleado);
          ControladorAsientoContable ControladorAsientoContable = new ControladorAsientoContable(ControladorNomina);
          

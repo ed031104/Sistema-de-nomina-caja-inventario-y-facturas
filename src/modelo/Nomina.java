@@ -4,35 +4,35 @@ package modelo;
 public class Nomina {
 
     private Empleado empleado;
-    private Double Horas; //Horas laborales 
-    private Double ValorH;//Valor de la hora laboral
-    private Double PagoH;//Pago por horas laborales
+    private double Horas; //Horas laborales 
+    private double ValorH;//Valor de la hora laboral
+    private double PagoH;//Pago por horas laborales
     //Bonos
-    private Double HorasE; // Horas extras
-    private Double PagoE; //Pago por horas extras
+    private double HorasE; // Horas extras
+    private double PagoE; //Pago por horas extras
     private int Antiguedad; //Antiguedad
-    private Double PagoA; //Pago por antiguedad
+    private double PagoA; //Pago por antiguedad
     //Otras bonificaciones
-    private Double Incentivo; 
-    private Double Comicion;
+    private double Incentivo; 
+    private double Comicion;
     
-    private Double salarioB; //Salario bruto
-    private Double NetoR; //Salario neto a recibir
-    private Double SalarioA; //Salario anual
+    private double salarioB; //Salario bruto
+    private double NetoR; //Salario neto a recibir
+    private double SalarioA; //Salario anual
     //Otras deducciones
-    private Double INNS; //INNS
-    private Double IR; //IR
-    private Double OtrasD; //Otras deducciones
+    private double INNS; //INNS
+    private double IR; //IR
+    private double OtrasD; //Otras deducciones
     //Otros
-    private Double INNSP; //INNS Patronal
-    private Double Inatec; //Inatec
+    private double INNSP; //INNS Patronal
+    private double Inatec; //Inatec
     //Prestaciones sociales
-    private Double Aguinaldo; //Aguinaldo
-    private Double Vacaciones; //Vacaciones
+    private double Aguinaldo; //Aguinaldo
+    private double Vacaciones; //Vacaciones
 
-    public Nomina(Double Horas, Double ValorH, Double PagoH, Double HorasE, Double PagoE, int Antiguedad, 
-            Double PagoA, Double Incentivo, Double Comicion, Double salarioB, Double NetoR, Double SalarioA, 
-            Double INNS, Double IR, Double OtrasD, Double INNSP, Double Inatec, Double Aguinaldo, Double Vacaciones, Empleado empleado) {
+    public Nomina(double Horas, double ValorH, double PagoH, double HorasE, double PagoE, int Antiguedad, 
+            double PagoA, double Incentivo, double Comicion, double salarioB, double NetoR, double SalarioA, 
+            double INNS, double IR, double OtrasD, double INNSP, double Inatec, double Aguinaldo, double Vacaciones, Empleado empleado) {
         this.Horas = Horas;
         this.ValorH = ValorH;
         this.PagoH = PagoH;
@@ -55,44 +55,51 @@ public class Nomina {
         this.empleado = empleado;
     }
 
+    public Empleado getEmpleado() {
+        return empleado;
+    }
 
-    public Double getHoras() {
+    public void setEmpleado(Empleado empleado) {
+        this.empleado = empleado;
+    }
+
+    public double getHoras() {
         return Horas;
     }
 
-    public void setHoras(Double Horas) {
+    public void setHoras(double Horas) {
         this.Horas = Horas;
     }
 
-    public Double getValorH() {
+    public double getValorH() {
         return ValorH;
     }
 
-    public void setValorH(Double ValorH) {
+    public void setValorH(double ValorH) {
         this.ValorH = ValorH;
     }
 
-    public Double getPagoH() {
+    public double getPagoH() {
         return PagoH;
     }
 
-    public void setPagoH(Double PagoH) {
+    public void setPagoH(double PagoH) {
         this.PagoH = PagoH;
     }
 
-    public Double getHorasE() {
+    public double getHorasE() {
         return HorasE;
     }
 
-    public void setHorasE(Double HorasE) {
+    public void setHorasE(double HorasE) {
         this.HorasE = HorasE;
     }
 
-    public Double getPagoE() {
+    public double getPagoE() {
         return PagoE;
     }
 
-    public void setPagoE(Double PagoE) {
+    public void setPagoE(double PagoE) {
         this.PagoE = PagoE;
     }
 
@@ -104,118 +111,111 @@ public class Nomina {
         this.Antiguedad = Antiguedad;
     }
 
-    public Double getPagoA() {
+    public double getPagoA() {
         return PagoA;
     }
 
-    public void setPagoA(Double PagoA) {
+    public void setPagoA(double PagoA) {
         this.PagoA = PagoA;
     }
 
-    public Double getIncentivo() {
+    public double getIncentivo() {
         return Incentivo;
     }
 
-    public void setIncentivo(Double Incentivo) {
+    public void setIncentivo(double Incentivo) {
         this.Incentivo = Incentivo;
     }
 
-    public Double getComicion() {
+    public double getComicion() {
         return Comicion;
     }
 
-    public void setComicion(Double Comicion) {
+    public void setComicion(double Comicion) {
         this.Comicion = Comicion;
     }
 
-    public Double getSalarioB() {
+    public double getSalarioB() {
         return salarioB;
     }
 
-    public void setSalarioB(Double salarioB) {
+    public void setSalarioB(double salarioB) {
         this.salarioB = salarioB;
     }
 
-    public Double getNetoR() {
+    public double getNetoR() {
         return NetoR;
     }
 
-    public void setNetoR(Double NetoR) {
+    public void setNetoR(double NetoR) {
         this.NetoR = NetoR;
     }
 
-    public Double getSalarioA() {
+    public double getSalarioA() {
         return SalarioA;
     }
 
-    public void setSalarioA(Double SalarioA) {
+    public void setSalarioA(double SalarioA) {
         this.SalarioA = SalarioA;
     }
 
-    public Double getINNS() {
+    public double getINNS() {
         return INNS;
     }
 
-    public void setINNS(Double INNS) {
+    public void setINNS(double INNS) {
         this.INNS = INNS;
     }
 
-    public Double getIR() {
+    public double getIR() {
         return IR;
     }
 
-    public void setIR(Double IR) {
+    public void setIR(double IR) {
         this.IR = IR;
     }
 
-    public Double getOtrasD() {
+    public double getOtrasD() {
         return OtrasD;
     }
 
-    public void setOtrasD(Double OtrasD) {
+    public void setOtrasD(double OtrasD) {
         this.OtrasD = OtrasD;
     }
 
-    public Double getINNSP() {
+    public double getINNSP() {
         return INNSP;
     }
 
-    public void setINNSP(Double INNSP) {
+    public void setINNSP(double INNSP) {
         this.INNSP = INNSP;
     }
 
-    public Double getInatec() {
+    public double getInatec() {
         return Inatec;
     }
 
-    public void setInatec(Double Inatec) {
+    public void setInatec(double Inatec) {
         this.Inatec = Inatec;
     }
 
-    public Double getAguinaldo() {
+    public double getAguinaldo() {
         return Aguinaldo;
     }
 
-    public void setAguinaldo(Double Aguinaldo) {
+    public void setAguinaldo(double Aguinaldo) {
         this.Aguinaldo = Aguinaldo;
     }
 
-    public Double getVacaciones() {
+    public double getVacaciones() {
         return Vacaciones;
     }
 
-    public void setVacaciones(Double Vacaciones) {
+    public void setVacaciones(double Vacaciones) {
         this.Vacaciones = Vacaciones;
     }
 
-    public Empleado getEmpleado() {
-        return empleado;
-    }
 
-    public void setEmpleado(Empleado empleado) {
-        this.empleado = empleado;
-    }
-    
     
     
     //calculos de nómina

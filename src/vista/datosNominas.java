@@ -9,9 +9,9 @@ import javax.swing.JTable;
 import javax.swing.SwingConstants;
 import javax.swing.table.DefaultTableCellRenderer;
 
-public class Nomina extends javax.swing.JPanel {
+public class datosNominas extends javax.swing.JPanel {
 
-    public Nomina() {
+    public datosNominas() {
         initComponents();
         
         

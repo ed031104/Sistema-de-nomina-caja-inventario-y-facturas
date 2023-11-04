@@ -22,14 +22,14 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jpanelEsquinasRedondas1" alignment="0" pref="718" max="32767" attributes="0"/>
+          <Component id="jpanelEsquinasRedondas1" alignment="0" pref="938" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
               <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
-              <Component id="jpanelEsquinasRedondas1" pref="532" max="32767" attributes="0"/>
+              <Component id="jpanelEsquinasRedondas1" pref="734" max="32767" attributes="0"/>
               <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -99,17 +99,17 @@
                                           <Group type="102" attributes="0">
                                               <Group type="103" groupAlignment="0" attributes="0">
                                                   <Component id="jcbEmpleados" max="32767" attributes="0"/>
-                                                  <Component id="jLabel2" pref="143" max="32767" attributes="0"/>
+                                                  <Component id="jLabel2" pref="217" max="32767" attributes="0"/>
                                               </Group>
                                               <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="0" attributes="0">
                                                   <Component id="spfHorasLaboradas" max="32767" attributes="0"/>
-                                                  <Component id="jLabel11" pref="177" max="32767" attributes="0"/>
+                                                  <Component id="jLabel11" pref="250" max="32767" attributes="0"/>
                                               </Group>
                                               <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="0" attributes="0">
                                                   <Component id="spfAñosAntiguedad" max="32767" attributes="0"/>
-                                                  <Component id="jLabel12" pref="199" max="32767" attributes="0"/>
+                                                  <Component id="jLabel12" pref="272" max="32767" attributes="0"/>
                                               </Group>
                                           </Group>
                                           <Group type="102" attributes="0">
@@ -161,7 +161,7 @@
                       </Group>
                       <EmptySpace min="-2" pref="171" max="-2" attributes="0"/>
                       <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="21" max="32767" attributes="0"/>
+                      <EmptySpace pref="223" max="32767" attributes="0"/>
                       <Component id="agregar" min="-2" pref="31" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                   </Group>
@@ -229,6 +229,9 @@
               </AuxValues>
             </Component>
             <Component class="com.toedter.components.JSpinField" name="spfHorasLaboradas">
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel11">
               <Properties>
