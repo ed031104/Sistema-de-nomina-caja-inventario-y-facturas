@@ -33,7 +33,7 @@ public class FicheroEmpleado {
             Rg.print(registro.getCedula()+",");
             Rg.print(registro.getSexo()+",");
             Rg.print(registro.getCorreo()+",");
-            Rg.print(registro.getTelefono()+",");
+            Rg.print(registro.getTelefono()+"\n");
             
             //Rg.print(registro.getFoto()+"\n");
             Rg.close();

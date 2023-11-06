@@ -8,9 +8,9 @@ import java.text.ParseException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import modelo.Empleado;
+import modelo.FicheroEmpleado;
 import modelo.FicheroNomina;
 import modelo.Nomina;
-import vista.RegistroEmpleados;
 import vista.RegistroNomina;
 
 public class ControladorRegistroNomina implements ActionListener{
@@ -18,20 +18,21 @@ public class ControladorRegistroNomina implements ActionListener{
     ControladorRegitroEmpleado ctnEmpleado;
     RegistroNomina vista;
     FicheroNomina fichero;
+    FicheroEmpleado ficheroEmpleado = new FicheroEmpleado();
     
-    public ControladorRegistroNomina(ControladorRegitroEmpleado ctnEmpleado, RegistroNomina vista, FicheroNomina fichero) throws IOException, ParseException{
-    this.ctnEmpleado = ctnEmpleado;
+    public ControladorRegistroNomina( RegistroNomina vista, FicheroNomina fichero, ControladorNomina controladorNomina) throws IOException, ParseException{
     this.vista = vista;
     this.vista.agregar.addActionListener(this);
     this.fichero = fichero;
-    vista.jcbEmpleados.setModel(ctnEmpleado.fichero.llenarComboBox());
-   // vista.ListaRegistroNomina.setModel(fichero.llenarJlist());
+     vista.jcbEmpleados.setModel(ficheroEmpleado.llenarComboBox());
+     vista.ListaRegistroNomina.setModel(fichero.llenarJlist());
     }
+
     
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == vista.agregar){
-            
+            try {
             double horas = vista.spfHorasLaboradas.getValue();
             int añosAntiguedad = vista.spfAñosAntiguedad.getValue();
             double incentivo = Double.parseDouble(vista.txtIncentivo.getText());
@@ -42,7 +43,6 @@ public class ControladorRegistroNomina implements ActionListener{
             
             fichero.Ingresarficheroregistros(nomina);
             
-            try {
                 vista.ListaRegistroNomina.setModel(fichero.llenarJlist());
             } catch (IOException ex) {
                 Logger.getLogger(ControladorRegistroNomina.class.getName()).log(Level.SEVERE, null, ex);

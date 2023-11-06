@@ -27,8 +27,6 @@ public class Menu extends javax.swing.JFrame {
         menu = new Estilos_panel.jpanelEsquinasRedondas();
         bgNomina = new Estilos_panel.jpanelEsquinasRedondas();
         btnNomina = new javax.swing.JButton();
-        bgAsientoContable = new Estilos_panel.jpanelEsquinasRedondas();
-        btnAsientoContable = new javax.swing.JButton();
         bgInventario = new Estilos_panel.jpanelEsquinasRedondas();
         btnInventario = new javax.swing.JButton();
         bgClientes = new Estilos_panel.jpanelEsquinasRedondas();
@@ -99,45 +97,6 @@ public class Menu extends javax.swing.JFrame {
             bgNominaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(bgNominaLayout.createSequentialGroup()
                 .addComponent(btnNomina)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        bgAsientoContable.setBackground(new java.awt.Color(51, 51, 51));
-
-        btnAsientoContable.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
-        btnAsientoContable.setForeground(new java.awt.Color(255, 255, 255));
-        btnAsientoContable.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons8-formulario-30.png"))); // NOI18N
-        btnAsientoContable.setToolTipText("Asiento Contable");
-        btnAsientoContable.setBorder(null);
-        btnAsientoContable.setBorderPainted(false);
-        btnAsientoContable.setContentAreaFilled(false);
-        btnAsientoContable.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnAsientoContable.setDefaultCapable(false);
-        btnAsientoContable.setFocusPainted(false);
-        btnAsientoContable.setFocusable(false);
-        btnAsientoContable.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnAsientoContable.setIconTextGap(0);
-        btnAsientoContable.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        btnAsientoContable.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        btnAsientoContable.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btnAsientoContableMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btnAsientoContableMouseExited(evt);
-            }
-        });
-
-        javax.swing.GroupLayout bgAsientoContableLayout = new javax.swing.GroupLayout(bgAsientoContable);
-        bgAsientoContable.setLayout(bgAsientoContableLayout);
-        bgAsientoContableLayout.setHorizontalGroup(
-            bgAsientoContableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(btnAsientoContable, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
-        bgAsientoContableLayout.setVerticalGroup(
-            bgAsientoContableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(bgAsientoContableLayout.createSequentialGroup()
-                .addComponent(btnAsientoContable)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -383,16 +342,14 @@ public class Menu extends javax.swing.JFrame {
             menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(menuLayout.createSequentialGroup()
                 .addGap(9, 9, 9)
-                .addGroup(menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(bgNomina, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(bgAsientoContable, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(bgInventario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(bgClientes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(bgEmpleados, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(bgNomina, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(bgInventario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bgClientes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bgEmpleados, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(bgCaja, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(bgRegistroNomina, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(bgFactura, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -403,9 +360,7 @@ public class Menu extends javax.swing.JFrame {
             .addGroup(menuLayout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addComponent(bgNomina, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20)
-                .addComponent(bgAsientoContable, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20)
+                .addGap(18, 18, 18)
                 .addComponent(bgInventario, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(20, 20, 20)
                 .addComponent(bgClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -417,7 +372,7 @@ public class Menu extends javax.swing.JFrame {
                 .addComponent(bgRegistroNomina, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(bgFactura, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(256, 256, 256))
+                .addContainerGap())
         );
 
         content.setBackground(new java.awt.Color(255, 255, 255));
@@ -551,14 +506,6 @@ public class Menu extends javax.swing.JFrame {
         bgNomina.setBackground(new Color(51,51,51));                                          
     }//GEN-LAST:event_btnNominaMouseExited
 
-    private void btnAsientoContableMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAsientoContableMouseEntered
-        bgAsientoContable.setBackground(new Color(75,75,75));
-    }//GEN-LAST:event_btnAsientoContableMouseEntered
-
-    private void btnAsientoContableMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAsientoContableMouseExited
-        bgAsientoContable.setBackground(new Color(51,51,51));                                          
-    }//GEN-LAST:event_btnAsientoContableMouseExited
-
     private void btnInventarioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnInventarioMouseEntered
         bgInventario.setBackground(new Color(75,75,75));
     }//GEN-LAST:event_btnInventarioMouseEntered
@@ -623,7 +570,6 @@ public class Menu extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JMenuItem Opcmenu1;
     private Estilos_panel.jpanelEsquinasRedondas background;
-    public Estilos_panel.jpanelEsquinasRedondas bgAsientoContable;
     public Estilos_panel.jpanelEsquinasRedondas bgCaja;
     public Estilos_panel.jpanelEsquinasRedondas bgClientes;
     public Estilos_panel.jpanelEsquinasRedondas bgEmpleados;
@@ -632,7 +578,6 @@ public class Menu extends javax.swing.JFrame {
     public Estilos_panel.jpanelEsquinasRedondas bgNomina;
     public Estilos_panel.jpanelEsquinasRedondas bgRegistroNomina;
     public javax.swing.JButton brnMenu;
-    public javax.swing.JButton btnAsientoContable;
     public javax.swing.JButton btnCaja;
     public javax.swing.JButton btnClientes;
     public javax.swing.JButton btnEmpleados;

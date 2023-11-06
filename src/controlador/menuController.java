@@ -8,7 +8,6 @@ import java.text.ParseException;
 import javax.swing.JPanel;
 import modelo.FicheroEmpleado;
 import modelo.FicheroNomina;
-import vista.AsientoContable;
 import vista.Caja;
 import vista.Factura;
 import vista.Inventario;
@@ -24,24 +23,22 @@ public class menuController implements ActionListener{
     
     datosNominas panelNomina = new datosNominas();
     FicheroNomina ficheroNomina  = new FicheroNomina();
-    registroClientes panelClientes = new registroClientes();
+    
+    RegistroNomina panelRegistroNomina= new RegistroNomina();
     
     RegistroEmpleados panelempleados = new RegistroEmpleados();
     FicheroEmpleado ficheroEmpelado = new FicheroEmpleado();
     
-    
+    registroClientes panelClientes = new registroClientes();
     Caja panelCaja = new Caja();
     
-    RegistroNomina panelRegistroNomina= new RegistroNomina();
     
     Inventario panelInventario = new Inventario();
-    AsientoContable panelAsientoContable = new AsientoContable();
     Factura panelFactura = new Factura();
     
     public menuController(Menu vista){
     this.vista = vista;
     this.vista.btnNomina.addActionListener(this);
-    this.vista.btnAsientoContable.addActionListener(this);
     this.vista.btnInventario.addActionListener(this);
     this.vista.btnClientes.addActionListener(this);
     this.vista.btnCaja.addActionListener(this);
@@ -59,10 +56,9 @@ public class menuController implements ActionListener{
         vista.setTitle("Sistema Mirna Perez");
         vista.setIconImage(vista.getIconImage());
         
-         ControladorRegitroEmpleado ControladorRegitroEmpleado = new ControladorRegitroEmpleado(panelempleados, ficheroEmpelado);
-         ControladorRegistroNomina controladorRegistroNomina = new ControladorRegistroNomina(ControladorRegitroEmpleado, panelRegistroNomina, ficheroNomina);
-         ControladorNomina ControladorNomina = new ControladorNomina(ControladorRegitroEmpleado);
-         ControladorAsientoContable ControladorAsientoContable = new ControladorAsientoContable(ControladorNomina);
+         ControladorNomina ControladorNomina = new ControladorNomina(panelNomina, ficheroNomina);
+         ControladorRegistroNomina controladorRegistroNomina = new ControladorRegistroNomina(panelRegistroNomina, ficheroNomina, ControladorNomina);
+         ControladorRegitroEmpleado ControladorRegitroEmpleado = new ControladorRegitroEmpleado(panelempleados, ficheroEmpelado, controladorRegistroNomina );
          
          ControladorRegistroCliente ControladorRegistroCliente = new ControladorRegistroCliente();
          ControladorInventario ControladorInventario = new ControladorInventario();
@@ -94,9 +90,6 @@ public class menuController implements ActionListener{
         }
         if(e.getSource() == vista.btnNomina){
             cambiarPanel(vista.content, panelNomina);
-        }
-        if(e.getSource() == vista.btnAsientoContable){
-         cambiarPanel(vista.content, panelAsientoContable);   
         }
         if(e.getSource() == vista.btnInventario){
             cambiarPanel(vista.content, panelInventario);

@@ -15,10 +15,12 @@ public class ControladorRegitroEmpleado implements ActionListener{
 
     RegistroEmpleados vista; 
     FicheroEmpleado fichero;
+    ControladorRegistroNomina ctnNomina;
     
-    public ControladorRegitroEmpleado(RegistroEmpleados vista, FicheroEmpleado fichero) throws IOException, ParseException{
+    public ControladorRegitroEmpleado(RegistroEmpleados vista, FicheroEmpleado fichero, ControladorRegistroNomina ctnNomina) throws IOException, ParseException{
         this.vista = vista;
         this.fichero = fichero;
+        this.ctnNomina = ctnNomina;
         vista.agregar.addActionListener(this);
         vista.ListaEmpleados.setModel(fichero.llenarJlist());
     }
@@ -30,7 +32,7 @@ public class ControladorRegitroEmpleado implements ActionListener{
             
             try {
                 int INNS = Integer.parseInt(vista.numeroINNS.getText());
-                String cargo = vista.cargo.getText();
+                String cargo = (String) vista.cargo.getSelectedItem();
                 double salario = Double.parseDouble(vista.salario.getText());
                 
                 String nombres = vista.nombres.getText();
@@ -46,6 +48,9 @@ public class ControladorRegitroEmpleado implements ActionListener{
                 fichero.Ingresarficheroregistros(empleado);
                 
                 vista.ListaEmpleados.setModel(fichero.llenarJlist());
+                
+                ctnNomina.vista.jcbEmpleados.setModel(fichero.llenarComboBox());
+            
             } catch (IOException ex) {
                 Logger.getLogger(ControladorRegitroEmpleado.class.getName()).log(Level.SEVERE, null, ex);
             } catch (ParseException ex) {

@@ -51,9 +51,9 @@ public class RegistroEmpleados extends javax.swing.JPanel {
         jLabel10 = new javax.swing.JLabel();
         sexo = new javax.swing.JComboBox<>();
         jLabel12 = new javax.swing.JLabel();
-        cargo = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
         telefono = new javax.swing.JTextField();
+        cargo = new javax.swing.JComboBox<>();
         jpanelEsquinasRedondas3 = new Estilos_panel.jpanelEsquinasRedondas();
         jScrollPane1 = new javax.swing.JScrollPane();
         ListaEmpleados = new javax.swing.JList<>();
@@ -146,10 +146,6 @@ public class RegistroEmpleados extends javax.swing.JPanel {
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("Cargo");
 
-        cargo.setBackground(new java.awt.Color(255, 255, 255));
-        cargo.setForeground(new java.awt.Color(0, 0, 0));
-        cargo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-
         jLabel13.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
         jLabel13.setText("Teléfono");
@@ -157,6 +153,9 @@ public class RegistroEmpleados extends javax.swing.JPanel {
         telefono.setBackground(new java.awt.Color(255, 255, 255));
         telefono.setForeground(new java.awt.Color(0, 0, 0));
         telefono.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+
+        cargo.setEditable(true);
+        cargo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Analista de inventarios", "Puesto de operador", "Ingeniero civil", "Ingeniero de Sistemas", "Ingeniero Industrial", "Ingeniero Agrícola", "Ingeniero Eléctrico", "Auxuliar Contable", "Auxuliar caja", "Auxuliar Ventas", "Auxuliar Administración", "Marketing", "Gerente", "Supervisor", "Repartidor de entregas" }));
 
         javax.swing.GroupLayout jpanelEsquinasRedondas2Layout = new javax.swing.GroupLayout(jpanelEsquinasRedondas2);
         jpanelEsquinasRedondas2.setLayout(jpanelEsquinasRedondas2Layout);
@@ -205,11 +204,11 @@ public class RegistroEmpleados extends javax.swing.JPanel {
                             .addComponent(salario)
                             .addGroup(jpanelEsquinasRedondas2Layout.createSequentialGroup()
                                 .addGroup(jpanelEsquinasRedondas2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 211, Short.MAX_VALUE)
+                                    .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE)
                                     .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGap(114, 114, 114))
-                            .addComponent(cargo)
-                            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(cargo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(18, 18, 18)
                         .addGroup(jpanelEsquinasRedondas2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jpanelEsquinasRedondas2Layout.createSequentialGroup()
@@ -219,7 +218,7 @@ public class RegistroEmpleados extends javax.swing.JPanel {
                                 .addComponent(numeroINNS)
                                 .addContainerGap())
                             .addGroup(jpanelEsquinasRedondas2Layout.createSequentialGroup()
-                                .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE)
+                                .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, 144, Short.MAX_VALUE)
                                 .addGap(124, 124, 124))
                             .addGroup(jpanelEsquinasRedondas2Layout.createSequentialGroup()
                                 .addComponent(telefono)
@@ -275,8 +274,10 @@ public class RegistroEmpleados extends javax.swing.JPanel {
                             .addComponent(jLabel12)
                             .addComponent(jLabel13))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jpanelEsquinasRedondas2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(cargo, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jpanelEsquinasRedondas2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jpanelEsquinasRedondas2Layout.createSequentialGroup()
+                                .addGap(1, 1, 1)
+                                .addComponent(cargo, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(telefono, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel10)
@@ -332,18 +333,18 @@ public class RegistroEmpleados extends javax.swing.JPanel {
                 .addGroup(jpanelEsquinasRedondas1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(jpanelEsquinasRedondas3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jpanelEsquinasRedondas2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jpanelEsquinasRedondas1, javax.swing.GroupLayout.DEFAULT_SIZE, 861, Short.MAX_VALUE)
+            .addComponent(jpanelEsquinasRedondas1, javax.swing.GroupLayout.DEFAULT_SIZE, 710, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jpanelEsquinasRedondas1, javax.swing.GroupLayout.DEFAULT_SIZE, 545, Short.MAX_VALUE)
+            .addComponent(jpanelEsquinasRedondas1, javax.swing.GroupLayout.DEFAULT_SIZE, 564, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -352,7 +353,7 @@ public class RegistroEmpleados extends javax.swing.JPanel {
     public javax.swing.JList<Empleado> ListaEmpleados;
     public javax.swing.JButton agregar;
     public javax.swing.JTextField apellidos;
-    public javax.swing.JTextField cargo;
+    public javax.swing.JComboBox<String> cargo;
     public javax.swing.JTextField cedula;
     public javax.swing.JTextField correo;
     public javax.swing.JTextField direccion;

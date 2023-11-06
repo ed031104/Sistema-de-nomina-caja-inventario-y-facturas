@@ -215,7 +215,12 @@ public class Nomina {
         this.Vacaciones = Vacaciones;
     }
 
+    @Override
+    public String toString() {
+        return getEmpleado().getNombres();
+    }
 
+    
     
     
     //calculos de nómina

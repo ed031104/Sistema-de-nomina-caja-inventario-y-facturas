@@ -265,32 +265,33 @@ public class datosNominas extends javax.swing.JPanel {
         tablaNomina.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         tablaNomina.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"1", "Fernando", "Ing", "12000", "2", "1250", "2", "456456", "345345", "345", "345345", "345345", "354345", "345345", "34535"},
-                {"2", "Juan", "Contador", "8000", "3", "1234", "3", "456456", "34535", "345345", "345354", "34535", "34545", "3454", "34535"},
-                {"3", "Pedro", "Gerente", "50000", "4", "234", "6", "456", "3453534", "34535", "345345", "34535", "345345", "345345", "345345"},
-                {"4", "Iasaías", "Caja", "10000", "5", "5345", "8", "456", "345345", "345345", "345354", "34535", "35435", "345345", "345345"},
-                {"5", "Michael", "Limpieza", "2000", "7", "3453", "7", "456", "345345", "345345", "34535", "34535", "345354", "34535", null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "NO INSS", "NOMBRE", "CARGO", "SUELDO MENSUAL", "HORAS EXTRAS", "PAGO DE HORAS EXTRAS", "AÑOS ANTIGUEDAD", "PAGO POR ANTIGUEDAD", "BONO", "SALARIO BRUTO", "INSS LABORAL", "IR", "PRESTAMOS", "TOTAL DEDUCIONES", "NETO RECIBIR"
+                "NO INSS", "NOMBRE", "CARGO", "SUELDO MENSUAL", "HORAS EXTRAS", "PAGO DE HORAS EXTRAS", "AÑOS ANTIGUEDAD", "PAGO POR ANTIGUEDAD", "BONO", "SALARIO BRUTO", "INSS LABORAL", "IR", "PRESTAMOS", "TOTAL DEDUCIONES", "NETO RECIBIR", "INSS PATRONAL", "INATEC", "AGUINALDO", "VACACIONES"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false, false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, true, true, true, true
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -312,8 +313,7 @@ public class datosNominas extends javax.swing.JPanel {
             tablaNomina.getColumnModel().getColumn(0).setMaxWidth(80);
             tablaNomina.getColumnModel().getColumn(1).setMinWidth(250);
             tablaNomina.getColumnModel().getColumn(1).setMaxWidth(250);
-            tablaNomina.getColumnModel().getColumn(2).setMinWidth(250);
-            tablaNomina.getColumnModel().getColumn(2).setMaxWidth(250);
+            tablaNomina.getColumnModel().getColumn(2).setResizable(false);
             tablaNomina.getColumnModel().getColumn(3).setMinWidth(250);
             tablaNomina.getColumnModel().getColumn(3).setMaxWidth(250);
             tablaNomina.getColumnModel().getColumn(4).setMinWidth(250);
@@ -338,6 +338,10 @@ public class datosNominas extends javax.swing.JPanel {
             tablaNomina.getColumnModel().getColumn(13).setMaxWidth(250);
             tablaNomina.getColumnModel().getColumn(14).setMinWidth(250);
             tablaNomina.getColumnModel().getColumn(14).setMaxWidth(250);
+            tablaNomina.getColumnModel().getColumn(15).setMinWidth(250);
+            tablaNomina.getColumnModel().getColumn(16).setMinWidth(250);
+            tablaNomina.getColumnModel().getColumn(17).setMinWidth(250);
+            tablaNomina.getColumnModel().getColumn(18).setMinWidth(250);
         }
 
         jpanelEsquinasRedondas4.setBackground(new java.awt.Color(32, 136, 203));

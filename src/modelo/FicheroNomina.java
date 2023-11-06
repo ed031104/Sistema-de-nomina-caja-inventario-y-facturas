@@ -10,15 +10,18 @@ import java.text.ParseException;
 import java.util.ArrayList;
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 
 public class FicheroNomina {
     
     public void Ingresarficheroregistros(Nomina nomina){
         
         nomina.valorHoras();
-        nomina.pagoHoras();
         nomina.HorasExtras();
+        nomina.pagoHoras();
         nomina.pagoExtras();
+        
         nomina.pagoantiguedad();
         nomina.salariobruto();
         nomina.inss();
@@ -48,6 +51,8 @@ public class FicheroNomina {
             
             pw.print(nomina.getHoras()+",");
             pw.print(nomina.getValorH()+",");
+            pw.print(nomina.getPagoH()+",");
+            pw.print(nomina.getHorasE()+",");
             pw.print(nomina.getPagoE()+",");
             pw.print(nomina.getAntiguedad()+",");
             pw.print(nomina.getPagoA()+",");
@@ -62,7 +67,7 @@ public class FicheroNomina {
             pw.print(nomina.getINNSP()+",");
             pw.print(nomina.getInatec()+",");
             pw.print(nomina.getAguinaldo()+",");
-            pw.print(nomina.getVacaciones()+",");
+            pw.print(nomina.getVacaciones()+"\n");
             
             
             pw.close();
@@ -71,9 +76,7 @@ public class FicheroNomina {
         }
     }
 
-
-
- public ArrayList<Nomina> extraerDatosNominaFicheros() throws IOException{
+    public ArrayList<Nomina> extraerDatosNominaFicheros() throws IOException{
         
     ArrayList<Nomina> listanomina = new ArrayList<>();
     
@@ -131,7 +134,7 @@ public class FicheroNomina {
     return listanomina;
     }
    
-  public DefaultListModel<Nomina> llenarJlist() throws IOException, ParseException{
+    public DefaultListModel<Nomina> llenarJlist() throws IOException, ParseException{
     
         DefaultListModel<Nomina> flm = new DefaultListModel<>();
         
@@ -142,5 +145,40 @@ public class FicheroNomina {
         return flm;
     }
  
- 
+    public DefaultTableModel llenarTabla() throws IOException{
+        DefaultTableModel dtm = new DefaultTableModel();
+        
+        dtm.addColumn("NO INSS");
+        dtm.addColumn("NOMBRE");
+        dtm.addColumn("CARGO");
+        dtm.addColumn("SUELDO MENSUAL");
+        dtm.addColumn("HORAS EXTRAS");
+        dtm.addColumn("PAGO HORAS EXTRAS");
+        dtm.addColumn("AÑOS ANTIGUEDAD");
+        dtm.addColumn("PAGO POR ANTIGUEDAD");
+        dtm.addColumn("BONO");
+        dtm.addColumn("SALARIO BRUTO");
+        dtm.addColumn("INSS LABORAL");
+        dtm.addColumn("IR");
+        dtm.addColumn("TOTAL DEDUCCIONES");
+        dtm.addColumn("NETO RECIBIR");
+        dtm.addColumn("INSS PATRONAL");
+        dtm.addColumn("INATEC");
+        dtm.addColumn("AGUINALDO");
+        dtm.addColumn("VACACIONES");
+        
+        
+        
+        ArrayList<Nomina> nominas = extraerDatosNominaFicheros();
+        
+        if(nominas != null){
+        for(Nomina nomina : nominas){
+            Object[] fila = {nomina.getEmpleado().getNºINNS(), nomina.getEmpleado().getNombres(), nomina.getEmpleado().getCargo(), nomina.getEmpleado().getSalario(),
+            nomina.getHorasE(), nomina.getPagoE(), nomina.getAntiguedad(), nomina.getPagoA(), nomina.getIncentivo(), nomina.getComicion(), nomina.getSalarioB(),
+            nomina.getINNS(), nomina.getIR(), nomina.getOtrasD(), nomina.getNetoR(), nomina.getINNSP(), nomina.getInatec(), nomina.getAguinaldo(), nomina.getVacaciones()};
+            dtm.addRow(fila);
+            }
+        }
+        return dtm;
+    }
 }
