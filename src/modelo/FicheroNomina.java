@@ -1,5 +1,7 @@
 package modelo;
 
+import java.awt.Color;
+import java.awt.Component;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
@@ -11,25 +13,28 @@ import java.util.ArrayList;
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
+import javax.swing.SwingConstants;
+import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 
 public class FicheroNomina {
     
     public void Ingresarficheroregistros(Nomina nomina){
         
-        nomina.valorHoras();
-        nomina.HorasExtras();
-        nomina.pagoHoras();
-        nomina.pagoExtras();
-        
-        nomina.pagoantiguedad();
-        nomina.salariobruto();
-        nomina.inss();
-        nomina.calculoir();
-        nomina.totaldeducciones();
-        nomina.salarioneto();
-        nomina.inssp();
-        nomina.inatec();
+        nomina.valorHoras(nomina);
+        nomina.HorasExtras(nomina);
+        nomina.pagoHoras(nomina);
+        nomina.pagoExtras(nomina);
+        nomina.pagoantiguedad(nomina);
+        nomina.salariobruto(nomina);
+        nomina.inss(nomina);
+        nomina.calculoir(nomina);
+        nomina.totaldeducciones(nomina);
+        nomina.salarioneto(nomina);
+        nomina.inssp(nomina);
+        nomina.inatec(nomina);
+        nomina.calculoVacaciones(nomina);
+        nomina.aguinaldo(nomina);
         
         FileWriter fw = null;
         try{
@@ -68,9 +73,8 @@ public class FicheroNomina {
             pw.print(nomina.getInatec()+",");
             pw.print(nomina.getAguinaldo()+",");
             pw.print(nomina.getVacaciones()+"\n");
-            
-            
             pw.close();
+            
         }catch(Exception e){
             JOptionPane.showInternalMessageDialog(null, e);
         }
@@ -124,7 +128,8 @@ public class FicheroNomina {
             
             Empleado empleados = new Empleado(nºinns, cargo, salario, nombres, apellidos, direccion, cedula, sexo, correo, telefono);
             
-            Nomina nomina = new Nomina(horas, valorH, pagoH, horasE, pagoH, antiguedad, pagoH, dincentivo, comicion, salario, Inatec, salario, Inss, Ir, otrasD, Inss, Inatec, Aguinaldo, vacaciones, empleados);
+            Nomina nomina = new Nomina(horas, valorH, pagoH, horasE, pagoExtra, antiguedad, pagoAntiguedad, dincentivo, comicion, salarioBruto,
+                    netoRecibir, salarioAnual, Inss, Ir, otrasD, InssPatronal, Inatec, Aguinaldo, vacaciones, empleados);
             
             listanomina.add(nomina);
         }
@@ -145,18 +150,20 @@ public class FicheroNomina {
         return flm;
     }
  
-    public DefaultTableModel llenarTabla() throws IOException{
+    public void llenarTabla(JTable tablaNomina) throws IOException{
         DefaultTableModel dtm = new DefaultTableModel();
         
         dtm.addColumn("NO INSS");
         dtm.addColumn("NOMBRE");
         dtm.addColumn("CARGO");
         dtm.addColumn("SUELDO MENSUAL");
+        dtm.addColumn("HORAS TRABAJADAS");
         dtm.addColumn("HORAS EXTRAS");
         dtm.addColumn("PAGO HORAS EXTRAS");
         dtm.addColumn("AÑOS ANTIGUEDAD");
         dtm.addColumn("PAGO POR ANTIGUEDAD");
-        dtm.addColumn("BONO");
+        dtm.addColumn("INCENTIVO");
+        dtm.addColumn("COMISION");
         dtm.addColumn("SALARIO BRUTO");
         dtm.addColumn("INSS LABORAL");
         dtm.addColumn("IR");
@@ -167,18 +174,52 @@ public class FicheroNomina {
         dtm.addColumn("AGUINALDO");
         dtm.addColumn("VACACIONES");
         
-        
-        
         ArrayList<Nomina> nominas = extraerDatosNominaFicheros();
         
         if(nominas != null){
         for(Nomina nomina : nominas){
-            Object[] fila = {nomina.getEmpleado().getNºINNS(), nomina.getEmpleado().getNombres(), nomina.getEmpleado().getCargo(), nomina.getEmpleado().getSalario(),
-            nomina.getHorasE(), nomina.getPagoE(), nomina.getAntiguedad(), nomina.getPagoA(), nomina.getIncentivo(), nomina.getComicion(), nomina.getSalarioB(),
-            nomina.getINNS(), nomina.getIR(), nomina.getOtrasD(), nomina.getNetoR(), nomina.getINNSP(), nomina.getInatec(), nomina.getAguinaldo(), nomina.getVacaciones()};
+            Object[] fila = {nomina.getEmpleado().getNºINNS(), nomina.getEmpleado().getNombres(), nomina.getEmpleado().getCargo(), 
+            nomina.getEmpleado().getSalario(),nomina.getHoras(),nomina.getHorasE(), nomina.getPagoE(), nomina.getAntiguedad(),
+            nomina.getPagoA(), nomina.getIncentivo(), nomina.getComicion(), nomina.getSalarioB(),nomina.getINNS(), nomina.getIR(),
+            nomina.getOtrasD(), nomina.getNetoR(), nomina.getINNSP(), nomina.getInatec(), nomina.getAguinaldo(), nomina.getVacaciones()};
             dtm.addRow(fila);
             }
         }
-        return dtm;
+        
+        tablaNomina.setModel(dtm);
+        
+        tablaNomina.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+        cambiarTamañoColumnasTabla(tablaNomina, 270);
+        
+        //cambia el color a columnas de la Tabla Nomina
+        applyColorToColumn(tablaNomina, 3, Color.green);
+        applyColorToColumn(tablaNomina, 5, Color.green);
+        applyColorToColumn(tablaNomina, 7, Color.green);
+        applyColorToColumn(tablaNomina, 8, Color.green);
+        applyColorToColumn(tablaNomina, 9, Color.green);
+        applyColorToColumn(tablaNomina, 10, Color.red);
+        applyColorToColumn(tablaNomina, 11, Color.red);
+        applyColorToColumn(tablaNomina, 12, Color.red);
+        applyColorToColumn(tablaNomina, 13, Color.gray);
+        
     }
+    
+     private static void applyColorToColumn(JTable table, int columnIndex, Color color) {
+        table.getColumnModel().getColumn(columnIndex).setCellRenderer(new DefaultTableCellRenderer() {
+            @Override
+            public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
+                Component rendererComponent = super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
+                rendererComponent.setForeground(color); // Cambiar el color del texto
+                setHorizontalAlignment(SwingConstants.CENTER); // Centrar el texto
+                return rendererComponent;
+            }
+        });    
+    }
+    private void cambiarTamañoColumnasTabla(JTable table, int tamañoColumna){
+    int anchoColumna = tamañoColumna;
+        for (int i = 0; i < table.getColumnCount(); i++) {
+            table.getColumnModel().getColumn(i).setPreferredWidth(anchoColumna);
+        }
+    }
+    
 }

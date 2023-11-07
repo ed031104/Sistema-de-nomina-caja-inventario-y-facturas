@@ -2,10 +2,7 @@
 package vista;
 
 import java.awt.Color;
-import java.awt.Component;
 import java.awt.Font;
-import javafx.scene.AccessibleAttribute;
-import javax.swing.JTable;
 import javax.swing.SwingConstants;
 import javax.swing.table.DefaultTableCellRenderer;
 
@@ -13,8 +10,6 @@ public class datosNominas extends javax.swing.JPanel {
 
     public datosNominas() {
         initComponents();
-        
-        
         
         tablaNomina.getTableHeader().setFont(new Font("Segoe UI Semibold", Font.BOLD, 14));
         tablaNomina.getTableHeader().setOpaque(false);
@@ -28,18 +23,6 @@ public class datosNominas extends javax.swing.JPanel {
         centerRenderer.setHorizontalAlignment(SwingConstants.CENTER);
         tablaNomina.setDefaultRenderer(Object.class, centerRenderer);
         
-    
-    // Aplicar color a filas específicas
-        applyColorToColumn(tablaNomina, 3, Color.green);
-        applyColorToColumn(tablaNomina, 5, Color.green);
-        applyColorToColumn(tablaNomina, 7, Color.green);
-        applyColorToColumn(tablaNomina, 8, Color.green);
-        applyColorToColumn(tablaNomina, 9, Color.green);
-        applyColorToColumn(tablaNomina, 10, Color.red);
-        applyColorToColumn(tablaNomina, 11, Color.red);
-        applyColorToColumn(tablaNomina, 12, Color.red);
-        applyColorToColumn(tablaNomina, 13, Color.gray);
-        applyColorToColumn(tablaNomina, 14, Color.green);
     }
 
     @SuppressWarnings("unchecked")
@@ -457,17 +440,6 @@ public class datosNominas extends javax.swing.JPanel {
     public javax.swing.JLabel lblSalarioMensual;
     public javax.swing.JTable tablaNomina;
     // End of variables declaration//GEN-END:variables
-
-    // Método para aplicar color a una columna específica
-    private static void applyColorToColumn(JTable table, int columnIndex, Color color) {
-        table.getColumnModel().getColumn(columnIndex).setCellRenderer(new DefaultTableCellRenderer() {
-            @Override
-            public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
-                Component rendererComponent = super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
-                rendererComponent.setForeground(color); // Cambiar el color del texto
-                setHorizontalAlignment(SwingConstants.CENTER); // Centrar el texto
-                return rendererComponent;
-            }
-        });    
-    }
+ 
+    
 }

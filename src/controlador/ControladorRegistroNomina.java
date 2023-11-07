@@ -14,8 +14,8 @@ import modelo.Nomina;
 import vista.RegistroNomina;
 
 public class ControladorRegistroNomina implements ActionListener{
-
-    ControladorRegitroEmpleado ctnEmpleado;
+    
+    ControladorNomina controladorNomina;
     RegistroNomina vista;
     FicheroNomina fichero;
     FicheroEmpleado ficheroEmpleado = new FicheroEmpleado();
@@ -24,6 +24,7 @@ public class ControladorRegistroNomina implements ActionListener{
     this.vista = vista;
     this.vista.agregar.addActionListener(this);
     this.fichero = fichero;
+    this.controladorNomina = controladorNomina;
      vista.jcbEmpleados.setModel(ficheroEmpleado.llenarComboBox());
      vista.ListaRegistroNomina.setModel(fichero.llenarJlist());
     }
@@ -42,11 +43,10 @@ public class ControladorRegistroNomina implements ActionListener{
             Nomina nomina = new Nomina(horas, 0, 0, 0 , 0, añosAntiguedad, 0, incentivo, comision, 0, 0 , 0, 0 , 0, 0, 0, 0, 0, 0, empleado);
             
             fichero.Ingresarficheroregistros(nomina);
-            
+                
                 vista.ListaRegistroNomina.setModel(fichero.llenarJlist());
-            } catch (IOException ex) {
-                Logger.getLogger(ControladorRegistroNomina.class.getName()).log(Level.SEVERE, null, ex);
-            } catch (ParseException ex) {
+                fichero.llenarTabla(controladorNomina.vista.tablaNomina);
+            } catch (IOException | ParseException ex) {
                 Logger.getLogger(ControladorRegistroNomina.class.getName()).log(Level.SEVERE, null, ex);
             }
         }

@@ -17,7 +17,7 @@ import vista.RegistroEmpleados;
 import vista.RegistroNomina;
 import vista.registroClientes;
 
-public class menuController implements ActionListener{
+public class menuController implements ActionListener, Runnable{
 
     private Menu vista; 
     
@@ -52,14 +52,7 @@ public class menuController implements ActionListener{
     }
     
     public void iniciar() throws IOException, ParseException{
-        vista.setLocationRelativeTo(null);
-        vista.setTitle("Sistema Mirna Perez");
-        vista.setIconImage(vista.getIconImage());
-        
-         ControladorNomina ControladorNomina = new ControladorNomina(panelNomina, ficheroNomina);
-         ControladorRegistroNomina controladorRegistroNomina = new ControladorRegistroNomina(panelRegistroNomina, ficheroNomina, ControladorNomina);
-         ControladorRegitroEmpleado ControladorRegitroEmpleado = new ControladorRegitroEmpleado(panelempleados, ficheroEmpelado, controladorRegistroNomina );
-         
+       
          ControladorRegistroCliente ControladorRegistroCliente = new ControladorRegistroCliente();
          ControladorInventario ControladorInventario = new ControladorInventario();
          ControladorCaja ControladorCaja = new ControladorCaja(ControladorRegistroCliente, ControladorInventario);
@@ -79,6 +72,9 @@ public class menuController implements ActionListener{
     content.revalidate(); // notifica al contenedor Content que su diseño ha cambiado y necesita ser validado.
     content.repaint(); // repinta el contenedor Content para que se muestren los cambios realizados.
      }
+    
+    
+
     
     @Override
     public void actionPerformed(ActionEvent e){
@@ -110,5 +106,19 @@ public class menuController implements ActionListener{
             cambiarPanel(vista.content, panelFactura);
         }
     }
-    
+
+    @Override
+    public void run() {
+    vista.setLocationRelativeTo(null);
+        vista.setTitle("Sistema Mirna Perez");
+        vista.setIconImage(vista.getIconImage());
+        try {
+          
+         ControladorNomina ControladorNomina = new ControladorNomina(panelNomina, ficheroNomina);
+         ControladorRegistroNomina controladorRegistroNomina = new ControladorRegistroNomina(panelRegistroNomina, ficheroNomina, ControladorNomina);
+         ControladorRegitroEmpleado ControladorRegitroEmpleado = new ControladorRegitroEmpleado(panelempleados, ficheroEmpelado, controladorRegistroNomina );
+           
+        } catch (Exception e) {
+        }
+    }
 }

@@ -1,6 +1,8 @@
 
 package modelo;
 
+import java.text.DecimalFormat;
+
 public class Nomina {
 
     private Empleado empleado;
@@ -29,7 +31,7 @@ public class Nomina {
     //Prestaciones sociales
     private double Aguinaldo; //Aguinaldo
     private double Vacaciones; //Vacaciones
-
+    
     public Nomina(double Horas, double ValorH, double PagoH, double HorasE, double PagoE, int Antiguedad, 
             double PagoA, double Incentivo, double Comicion, double salarioB, double NetoR, double SalarioA, 
             double INNS, double IR, double OtrasD, double INNSP, double Inatec, double Aguinaldo, double Vacaciones, Empleado empleado) {
@@ -224,36 +226,27 @@ public class Nomina {
     
     
     //calculos de nómina
-    public void HorasExtras(){
+    public void HorasExtras(Nomina empleado){
         
         Double horase = 0.0;
-        Double horas = getHoras();
+        Double horas = empleado.getHoras();
         
         if(horas > 48){
         
             horase = horas - 48;
         }
-    setHorasE(horase);
+    empleado.setHorasE(horase);
     }
     
-    public void pagoExtras(){
-        
-        double pagoe = 0;
-        double horase = getHorasE();
-        double valorh = getValorH();
-        
-        if(horase >= 1){
-            
-            pagoe = (valorh * horase)*2;
-        
-        }
-    setPagoE(pagoe);
+    public void pagoExtras(Nomina empleado){
+       double factor= 240; 
+    empleado.setPagoE(Math.round((empleado.empleado.getSalario() / factor) * 2* empleado.getHorasE()));
     }
     
-    public void pagoantiguedad(){
+    public void pagoantiguedad(Nomina empleado){
     double pagoantiguedad= 0;
-    int añosantiguedad = getAntiguedad();
-    double sueldo = getEmpleado().getSalario(); 
+    int añosantiguedad = empleado.getAntiguedad();
+    double sueldo = empleado.getEmpleado().getSalario(); 
             
         if (añosantiguedad == 1) {
         pagoantiguedad = sueldo * 0.03;
@@ -297,20 +290,22 @@ public class Nomina {
         pagoantiguedad = sueldo * 0.20;
      }
        
-        setPagoA(pagoantiguedad);
+        empleado.setPagoA(Math.round(pagoantiguedad));
     }
     
-    public void calculoir(){
+    public void calculoir(Nomina empleado){
     
-   double baseImponible = getSalarioB() - getINNS();
+   double baseImponible = empleado.getSalarioB() - empleado.getINNS();
    double sueldoAnual = baseImponible*12;
-   setSalarioA(sueldoAnual);
-    tarifaProgresivaIr();
+   
+   empleado.setSalarioA(sueldoAnual);
+    
+    tarifaProgresivaIr(empleado);
     }
     
-    public void tarifaProgresivaIr(){
+    public void tarifaProgresivaIr(Nomina empleado){
     
-    double sueldoAnual = getSalarioA();
+    double sueldoAnual = empleado.getSalarioA();
     double deducible = 0;
     double porcentaje = 0;
     double impuestoBase=0;
@@ -353,51 +348,68 @@ public class Nomina {
         salarioMenosDeducible= sueldoAnual-deducible;
        IrAnual= (salarioMenosDeducible * porcentaje) + impuestoBase;
        IrMensual = IrAnual/12;
+        }
+    empleado.setIR(Math.round(IrMensual));
     }
     
-    setIR(IrMensual);
+    public void valorHoras(Nomina empleado){
+    double horas = (empleado.getEmpleado().getSalario()/4.3)/48;
+    empleado.setValorH(horas);
     }
     
-    public void valorHoras(){
-    double horas = (getEmpleado().getSalario()/4.333)/48;
-    setValorH(horas);
-    }
-    
-    public void pagoHoras(){
-        double factor = getValorH();
-        double pagohoras = (getHoras()*factor);
-        setPagoH(pagohoras);
+    public void pagoHoras(Nomina empleado){
+        double factor = empleado.getValorH();
+        double pagohoras = (empleado.getHoras() * factor);
+        empleado.setPagoH(pagohoras);
     }
 
-    public void salariobruto(){
-        double salariobruto = getIncentivo() + getPagoA() + getPagoE()+ getComicion();
-        setSalarioB(salariobruto);
+    public void salariobruto(Nomina empleado){
+        double salariobruto = empleado.getIncentivo() + empleado.empleado.getSalario()+ empleado.getPagoE()+ empleado.getComicion()+ empleado.getPagoA();
+        empleado.setSalarioB(salariobruto);
     }
     
-    public void totaldeducciones(){
-    double total = getINNS() + getIR();
-        setOtrasD(total);
+    public void totaldeducciones(Nomina empleado){
+    double total = empleado.getINNS() + empleado.getIR();
+        empleado.setOtrasD(total);
     }
     
-    public void salarioneto ( ){
-        double calculo = getSalarioB() - getOtrasD();
-        setNetoR(calculo);
+    public void salarioneto (Nomina empleado){
+        double calculo = empleado.getSalarioB() - empleado.getOtrasD();
+        empleado.setNetoR(calculo);
     }
     
-    public void inss (){
-        double inss = getSalarioB() * 0.07;
-        setINNS(inss);
+    public void inss (Nomina empleado){
+        double inss = empleado.getSalarioB() * 0.07;
+        empleado.setINNS(Math.round(inss));
     }
     
-    public void inssp (){
-    double innsp = getEmpleado().getSalario() * 0.23;
-    setINNSP(innsp);
+    public void inssp (Nomina empleado){
+    double innsp = empleado.getSalarioB() * 0.23;
+    empleado.setINNSP(innsp);
     
     }
     
-    public void inatec(){
-        double inatec = getEmpleado().getSalario() *0.02;
-        setInatec(inatec);
+    public void inatec(Nomina empleado){
+        double inatec = empleado.getSalarioB() *0.02;
+        empleado.setInatec(inatec);
     }
 
+    public void calculoVacaciones(Nomina empleado){
+   //se crea la constante factor
+   double factor= 0.083333;
+   //se crea la varible local vacaciones multiplica el salario mensual por el factor
+   double vacaciones = empleado.empleado.getSalario() * factor;
+   //se registra el calculo en el atributo calculoVacaiones de la clase empelado
+   empleado.setVacaciones(vacaciones);
+    }
+    
+    public void aguinaldo(Nomina empleado){
+    //se crea la constante factor
+   double factor= 0.083333;
+   //se crea la varible local treceavoMes multiplica el salario mensual por el factor
+   double treceavoMes = empleado.empleado.getSalario()* factor;
+   //se registra el calculo en el atributo TreceavoMes de la clase empelado
+   empleado.setAguinaldo(treceavoMes); 
+}
+    
 }

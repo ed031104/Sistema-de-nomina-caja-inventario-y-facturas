@@ -1,4 +1,1 @@
-12025,Gerente,12000.0,edwin,davila,villa sol,001-031104.1010W,Hombre,edwin@gmail.com,89569717
-12354,Gerente,12000.0,Bryan,Robles,Tipitapa,001-20105-1010W,36 tipos de gei,Bryan@gmail.com,89569717
-12354,Gerente,12000.0,Bryan,Robles,Tipitapa,001-20105-1010W,36 tipos de gei,Bryan@gmail.com,89569717
-12450,Gerente,12000.0,Fernando,Sierra,Villa sol,001-031104-1010W,Hombre,Edwin@gmail.com,89569717
+123654,Ingeniero de Sistemas,20000.0,edwin,davila,villa sol,12-1025-50,Hombre,edwin@gmail.com,89569717
