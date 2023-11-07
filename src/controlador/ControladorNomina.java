@@ -1,4 +1,3 @@
-
 package controlador;
 
 import java.awt.Color;
@@ -10,7 +9,6 @@ import javax.swing.JTable;
 import javax.swing.SwingConstants;
 import javax.swing.table.DefaultTableCellRenderer;
 import modelo.FicheroNomina;
-import modelo.Nomina;
 import vista.datosNominas;
 
 public class ControladorNomina implements ActionListener{

@@ -11,6 +11,8 @@ import java.util.ArrayList;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
+import javax.swing.ListModel;
+import javax.swing.table.DefaultTableModel;
         
 public class FicheroCliente {
 
@@ -72,6 +74,31 @@ public class FicheroCliente {
     // Devuelve la lista de clientes
     return listaClienteses;
     }
+    
+    public ListModel mostrarDatosTabla() throws IOException {
+        ArrayList<Clientes> cliente = extraerClienteFicheros();
+
+        if (cliente == null) {
+            // Manejar el caso en el que la lista de clientes sea nula (por ejemplo, lanzar una excepción).
+            throw new RuntimeException("No se pudieron extraer los datos de clientes.");
+        }
+
+        DefaultTableModel modeloTabla = new DefaultTableModel();
+        modeloTabla.addColumn("Nombre");
+        modeloTabla.addColumn("Apellido");
+        modeloTabla.addColumn("Direccion");
+        modeloTabla.addColumn("Cedula");
+        modeloTabla.addColumn("Sexo");
+        modeloTabla.addColumn("Telefono");
+
+        // Agregar datos al modelo de tabla
+        for (Clientes clientes : cliente) {
+            Object[] fila = {clientes.getNombres(), clientes.getApellidos(), clientes.getDireccion(), clientes.getCedula()
+            , clientes.getSexo(), clientes.getTelefono()};
+            modeloTabla.addRow(fila);
+            }
+            return modeloTabla; 
+        }
     
     public DefaultComboBoxModel llenarComboBox() throws IOException  {
         
