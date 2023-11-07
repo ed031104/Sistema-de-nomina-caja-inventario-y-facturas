@@ -22,17 +22,17 @@ public class Inventario extends javax.swing.JPanel {
     public Inventario() {
         initComponents();
         
-          tablaNomina.getTableHeader().setFont(new Font("Segoe UI Semibold", Font.BOLD, 14));
-        tablaNomina.getTableHeader().setOpaque(false);
-        tablaNomina.getTableHeader().setBackground(new Color(32, 136, 203));
-        tablaNomina.getTableHeader().setForeground(new Color(255,255,255));
-        tablaNomina.setRowHeight(50);
+          tablaInventario.getTableHeader().setFont(new Font("Segoe UI Semibold", Font.BOLD, 14));
+        tablaInventario.getTableHeader().setOpaque(false);
+        tablaInventario.getTableHeader().setBackground(new Color(32, 136, 203));
+        tablaInventario.getTableHeader().setForeground(new Color(255,255,255));
+        tablaInventario.setRowHeight(50);
 
         
     // Configurar el renderizador para centrar el texto en toda la tabla
         DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
         centerRenderer.setHorizontalAlignment(SwingConstants.CENTER);
-        tablaNomina.setDefaultRenderer(Object.class, centerRenderer);
+        tablaInventario.setDefaultRenderer(Object.class, centerRenderer);
       
     }
 
@@ -49,17 +49,17 @@ public class Inventario extends javax.swing.JPanel {
         jpanelEsquinasRedondas2 = new Estilos_panel.jpanelEsquinasRedondas();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        tablaNomina = new javax.swing.JTable();
+        tablaInventario = new javax.swing.JTable();
         jpanelEsquinasRedondas3 = new Estilos_panel.jpanelEsquinasRedondas();
-        jTextField3 = new javax.swing.JTextField();
+        ID = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        Precio = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        Categorias = new javax.swing.JComboBox<>();
         jLabel6 = new javax.swing.JLabel();
         jSpinField1 = new com.toedter.components.JSpinField();
-        jTextField1 = new javax.swing.JTextField();
+        Nombre = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
 
@@ -91,9 +91,8 @@ public class Inventario extends javax.swing.JPanel {
 
         jScrollPane3.setBorder(null);
 
-        tablaNomina.setBackground(new java.awt.Color(255, 255, 255));
-        tablaNomina.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
-        tablaNomina.setModel(new javax.swing.table.DefaultTableModel(
+        tablaInventario.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        tablaInventario.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"1", "Fernando", "Ing", "12000", "2", null},
                 {"2", "Juan", "Contador", "8000", "3", null},
@@ -127,38 +126,34 @@ public class Inventario extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        tablaNomina.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
-        tablaNomina.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
-        tablaNomina.setFocusable(false);
-        tablaNomina.setGridColor(new java.awt.Color(204, 204, 204));
-        tablaNomina.setRequestFocusEnabled(false);
-        tablaNomina.setRowHeight(30);
-        tablaNomina.setSelectionBackground(new java.awt.Color(204, 255, 204));
-        tablaNomina.setShowVerticalLines(false);
-        tablaNomina.getTableHeader().setReorderingAllowed(false);
-        jScrollPane3.setViewportView(tablaNomina);
-        if (tablaNomina.getColumnModel().getColumnCount() > 0) {
-            tablaNomina.getColumnModel().getColumn(0).setMinWidth(350);
-            tablaNomina.getColumnModel().getColumn(1).setMinWidth(350);
-            tablaNomina.getColumnModel().getColumn(2).setMinWidth(350);
-            tablaNomina.getColumnModel().getColumn(3).setMinWidth(350);
-            tablaNomina.getColumnModel().getColumn(4).setMinWidth(350);
-            tablaNomina.getColumnModel().getColumn(5).setMinWidth(250);
+        tablaInventario.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
+        tablaInventario.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
+        tablaInventario.setFocusable(false);
+        tablaInventario.setGridColor(new java.awt.Color(204, 204, 204));
+        tablaInventario.setRequestFocusEnabled(false);
+        tablaInventario.setRowHeight(30);
+        tablaInventario.setSelectionBackground(new java.awt.Color(204, 255, 204));
+        tablaInventario.setShowVerticalLines(false);
+        tablaInventario.getTableHeader().setReorderingAllowed(false);
+        jScrollPane3.setViewportView(tablaInventario);
+        if (tablaInventario.getColumnModel().getColumnCount() > 0) {
+            tablaInventario.getColumnModel().getColumn(0).setMinWidth(350);
+            tablaInventario.getColumnModel().getColumn(1).setMinWidth(350);
+            tablaInventario.getColumnModel().getColumn(2).setMinWidth(350);
+            tablaInventario.getColumnModel().getColumn(3).setMinWidth(350);
+            tablaInventario.getColumnModel().getColumn(4).setMinWidth(350);
+            tablaInventario.getColumnModel().getColumn(5).setMinWidth(250);
         }
 
         jpanelEsquinasRedondas3.setBackground(new java.awt.Color(32, 136, 203));
 
-        jTextField3.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField3.setText("jTextField3");
-        jTextField3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        ID.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("ID:");
 
-        jTextField2.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField2.setText("jTextField2");
-        jTextField2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        Precio.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
@@ -168,15 +163,11 @@ public class Inventario extends javax.swing.JPanel {
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Categoria:");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
         jLabel6.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Cantidad:");
 
-        jTextField1.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField1.setText("jTextField1");
-        jTextField1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        Nombre.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -191,10 +182,10 @@ public class Inventario extends javax.swing.JPanel {
                 .addGroup(jpanelEsquinasRedondas3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jpanelEsquinasRedondas3Layout.createSequentialGroup()
                         .addGroup(jpanelEsquinasRedondas3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jComboBox1, 0, 105, Short.MAX_VALUE)
+                            .addComponent(Categorias, 0, 105, Short.MAX_VALUE)
                             .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jTextField1))
+                            .addComponent(Nombre))
                         .addGroup(jpanelEsquinasRedondas3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpanelEsquinasRedondas3Layout.createSequentialGroup()
                                 .addGap(18, 18, Short.MAX_VALUE)
@@ -205,8 +196,8 @@ public class Inventario extends javax.swing.JPanel {
                                 .addGap(18, 18, 18)
                                 .addGroup(jpanelEsquinasRedondas3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 107, Short.MAX_VALUE)))))
-                    .addComponent(jTextField3)
+                                    .addComponent(Precio, javax.swing.GroupLayout.DEFAULT_SIZE, 107, Short.MAX_VALUE)))))
+                    .addComponent(ID)
                     .addGroup(jpanelEsquinasRedondas3Layout.createSequentialGroup()
                         .addGap(6, 6, 6)
                         .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
@@ -220,7 +211,7 @@ public class Inventario extends javax.swing.JPanel {
                     .addGroup(jpanelEsquinasRedondas3Layout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(Nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jpanelEsquinasRedondas3Layout.createSequentialGroup()
                         .addComponent(jLabel6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -230,15 +221,15 @@ public class Inventario extends javax.swing.JPanel {
                     .addGroup(jpanelEsquinasRedondas3Layout.createSequentialGroup()
                         .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(Categorias, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jpanelEsquinasRedondas3Layout.createSequentialGroup()
                         .addComponent(jLabel4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(Precio, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(12, 12, 12)
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(ID, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(76, 76, 76))
         );
 
@@ -294,8 +285,11 @@ public class Inventario extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public static javax.swing.JComboBox<String> Categorias;
+    public static javax.swing.JTextField ID;
+    public static javax.swing.JTextField Nombre;
+    public static javax.swing.JTextField Precio;
     private javax.swing.JButton jButton1;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -304,12 +298,9 @@ public class Inventario extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane3;
     private com.toedter.components.JSpinField jSpinField1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
     private Estilos_panel.jpanelEsquinasRedondas jpanelEsquinasRedondas1;
     private Estilos_panel.jpanelEsquinasRedondas jpanelEsquinasRedondas2;
     private Estilos_panel.jpanelEsquinasRedondas jpanelEsquinasRedondas3;
-    public javax.swing.JTable tablaNomina;
+    public javax.swing.JTable tablaInventario;
     // End of variables declaration//GEN-END:variables
 }

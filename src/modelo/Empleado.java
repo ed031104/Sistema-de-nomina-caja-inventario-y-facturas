@@ -16,7 +16,10 @@ public class Empleado extends Persona{
     double Salario;//Salario mensual
     //private byte Foto;
 
-    public Empleado(int NºINNS, String Nombres, String Apellidos, String Direccion, String Cedula, String Sexo, String Cargo, String Correo, int Telefono, double Salario/*, byte Foto*/) {
+    public Empleado(int NºINNS, String Nombres, String Apellidos, String Direccion, 
+            String Cedula, String Sexo, String Cargo, String Correo, int Telefono, 
+            double Salario/*, byte Foto*/) {
+        
         this.NºINNS = NºINNS;
         this.Nombres = Nombres;
         this.Apellidos = Apellidos;

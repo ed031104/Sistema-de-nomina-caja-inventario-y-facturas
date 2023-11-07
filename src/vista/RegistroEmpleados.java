@@ -55,7 +55,7 @@ public class RegistroEmpleados extends javax.swing.JPanel {
         telefono = new javax.swing.JTextField();
         jpanelEsquinasRedondas3 = new Estilos_panel.jpanelEsquinasRedondas();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jList2 = new javax.swing.JList<>();
+        tablaEmpleados = new javax.swing.JList<>();
 
         setOpaque(false);
         setPreferredSize(new java.awt.Dimension(470, 470));
@@ -77,20 +77,14 @@ public class RegistroEmpleados extends javax.swing.JPanel {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Nombre:");
 
-        nombres.setBackground(new java.awt.Color(255, 255, 255));
-        nombres.setForeground(new java.awt.Color(0, 0, 0));
         nombres.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Correo:");
 
-        correo.setBackground(new java.awt.Color(255, 255, 255));
-        correo.setForeground(new java.awt.Color(0, 0, 0));
         correo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
 
-        apellidos.setBackground(new java.awt.Color(255, 255, 255));
-        apellidos.setForeground(new java.awt.Color(0, 0, 0));
         apellidos.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
@@ -101,32 +95,24 @@ public class RegistroEmpleados extends javax.swing.JPanel {
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Direccion:");
 
-        direccion.setBackground(new java.awt.Color(255, 255, 255));
-        direccion.setForeground(new java.awt.Color(0, 0, 0));
         direccion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
 
         jLabel7.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Cédula de identidad:");
 
-        cedula.setBackground(new java.awt.Color(255, 255, 255));
-        cedula.setForeground(new java.awt.Color(0, 0, 0));
         cedula.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
 
         jLabel8.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Salario:");
 
-        salario.setBackground(new java.awt.Color(255, 255, 255));
-        salario.setForeground(new java.awt.Color(0, 0, 0));
         salario.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
 
         jLabel9.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("N° INNS");
 
-        numeroINNS.setBackground(new java.awt.Color(255, 255, 255));
-        numeroINNS.setForeground(new java.awt.Color(0, 0, 0));
         numeroINNS.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
 
         agregar.setBackground(new java.awt.Color(255, 255, 255));
@@ -141,23 +127,18 @@ public class RegistroEmpleados extends javax.swing.JPanel {
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Sexo:");
 
-        sexo.setBackground(new java.awt.Color(255, 255, 255));
         sexo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Hombre", "Mujer", "36 tipos de gei" }));
 
         jLabel12.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("Cargo");
 
-        cargo.setBackground(new java.awt.Color(255, 255, 255));
-        cargo.setForeground(new java.awt.Color(0, 0, 0));
         cargo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
 
         jLabel13.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
         jLabel13.setText("Teléfono");
 
-        telefono.setBackground(new java.awt.Color(255, 255, 255));
-        telefono.setForeground(new java.awt.Color(0, 0, 0));
         telefono.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
 
         javax.swing.GroupLayout jpanelEsquinasRedondas2Layout = new javax.swing.GroupLayout(jpanelEsquinasRedondas2);
@@ -209,7 +190,7 @@ public class RegistroEmpleados extends javax.swing.JPanel {
                                     .addComponent(salario)
                                     .addGroup(jpanelEsquinasRedondas2Layout.createSequentialGroup()
                                         .addGroup(jpanelEsquinasRedondas2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 156, Short.MAX_VALUE)
+                                            .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 208, Short.MAX_VALUE)
                                             .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                             .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                         .addGap(114, 114, 114))
@@ -223,7 +204,7 @@ public class RegistroEmpleados extends javax.swing.JPanel {
                                         .addComponent(numeroINNS)
                                         .addContainerGap())
                                     .addGroup(jpanelEsquinasRedondas2Layout.createSequentialGroup()
-                                        .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, 162, Short.MAX_VALUE)
+                                        .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, 211, Short.MAX_VALUE)
                                         .addGap(124, 124, 124))
                                     .addGroup(jpanelEsquinasRedondas2Layout.createSequentialGroup()
                                         .addComponent(telefono)
@@ -295,14 +276,14 @@ public class RegistroEmpleados extends javax.swing.JPanel {
         jScrollPane1.setFocusable(false);
         jScrollPane1.setRequestFocusEnabled(false);
 
-        jList2.setBackground(new java.awt.Color(32, 136, 203));
-        jList2.setForeground(new java.awt.Color(255, 255, 255));
-        jList2.setModel(new javax.swing.AbstractListModel<String>() {
+        tablaEmpleados.setBackground(new java.awt.Color(32, 136, 203));
+        tablaEmpleados.setForeground(new java.awt.Color(255, 255, 255));
+        tablaEmpleados.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane1.setViewportView(jList2);
+        jScrollPane1.setViewportView(tablaEmpleados);
 
         javax.swing.GroupLayout jpanelEsquinasRedondas3Layout = new javax.swing.GroupLayout(jpanelEsquinasRedondas3);
         jpanelEsquinasRedondas3.setLayout(jpanelEsquinasRedondas3Layout);
@@ -348,11 +329,11 @@ public class RegistroEmpleados extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 761, Short.MAX_VALUE)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 886, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 538, Short.MAX_VALUE)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 579, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -376,16 +357,16 @@ public class RegistroEmpleados extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JList<String> jList2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private Estilos_panel.jpanelEsquinasRedondas jpanelEsquinasRedondas1;
     private Estilos_panel.jpanelEsquinasRedondas jpanelEsquinasRedondas2;
     private Estilos_panel.jpanelEsquinasRedondas jpanelEsquinasRedondas3;
     public javax.swing.JTextField nombres;
-    private javax.swing.JTextField numeroINNS;
-    private javax.swing.JTextField salario;
-    private javax.swing.JComboBox<String> sexo;
+    public javax.swing.JTextField numeroINNS;
+    public javax.swing.JTextField salario;
+    public static javax.swing.JComboBox<String> sexo;
+    public static javax.swing.JList<String> tablaEmpleados;
     public javax.swing.JTextField telefono;
     // End of variables declaration//GEN-END:variables
 }

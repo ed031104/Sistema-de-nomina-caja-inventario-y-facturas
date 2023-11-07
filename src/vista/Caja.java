@@ -149,7 +149,6 @@ public class Caja extends javax.swing.JPanel {
 
         jScrollPane3.setBorder(null);
 
-        tablaProductos.setBackground(new java.awt.Color(255, 255, 255));
         tablaProductos.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         tablaProductos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
