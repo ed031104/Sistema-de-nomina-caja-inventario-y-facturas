@@ -14,14 +14,12 @@ import javax.swing.JOptionPane;
         
 public class FicheroCliente {
 
-    public FicheroCliente(){
-    }
     
     public void Ingresarficheroregistros(Clientes cliente){
         FileWriter fw = null;
         
         try{
-            fw = new FileWriter("clientes.txt",true);
+            fw = new FileWriter("clientes.txt" , true);
             BufferedWriter bw = new BufferedWriter(fw);
             PrintWriter Rg = new PrintWriter (bw);
             //Datos personales
@@ -32,7 +30,7 @@ public class FicheroCliente {
             Rg.print(cliente.getSexo()+",");
             Rg.print(cliente.getCorreo()+",");
             Rg.print(cliente.getTelefono()+"\n");
-            //Rg.print(registro.getFoto()+"\n");
+            
             Rg.close();
             
         }catch(Exception e){
@@ -60,8 +58,7 @@ public class FicheroCliente {
             String sexo = datos[4];
             String correo = datos[5];
             int telefono= Integer.parseInt(datos[6]);
-            
-            //String foto = datos[10];
+        
           
             
             Clientes cliente = new Clientes(nombre, apellido, direccion, cedula, sexo, correo, telefono);

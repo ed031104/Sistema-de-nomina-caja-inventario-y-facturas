@@ -313,7 +313,7 @@ public class registroClientes extends javax.swing.JPanel {
     private Estilos_panel.jpanelEsquinasRedondas jpanelEsquinasRedondas2;
     private Estilos_panel.jpanelEsquinasRedondas jpanelEsquinasRedondas3;
     public javax.swing.JTextField nombres;
-    private javax.swing.JComboBox<String> sexo;
+    public javax.swing.JComboBox<String> sexo;
     public javax.swing.JTextField telefono;
     // End of variables declaration//GEN-END:variables
 }

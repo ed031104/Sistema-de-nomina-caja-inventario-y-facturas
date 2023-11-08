@@ -215,7 +215,7 @@ public class FicheroNomina {
             }
         });    
     }
-    private void cambiarTamañoColumnasTabla(JTable table, int tamañoColumna){
+     private void cambiarTamañoColumnasTabla(JTable table, int tamañoColumna){
     int anchoColumna = tamañoColumna;
         for (int i = 0; i < table.getColumnCount(); i++) {
             table.getColumnModel().getColumn(i).setPreferredWidth(anchoColumna);

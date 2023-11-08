@@ -2,7 +2,7 @@
 package modelo;
 
 public class Producto {
-
+ 
     private String nombre, categoria, estado;
     private double precio;
     private int cantidad, id;
@@ -72,6 +72,14 @@ public class Producto {
         return getNombre();
     }
     
-    
+    public void estadoProducto(Producto producto){
+        String estado;
+        if(producto.getCantidad() > 0){
+            estado = "Disponible";    
+        }else{
+            estado = "Agotado"; 
+        }
+        producto.setEstado(estado);
+    }
     
 }

@@ -1,1 +1,0 @@
-123654,Ingeniero de Sistemas,20000.0,edwin,davila,villa sol,12-1025-50,Hombre,edwin@gmail.com,89569717

@@ -30,6 +30,7 @@ public class Caja extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollBar1 = new javax.swing.JScrollBar();
         jpanelEsquinasRedondas1 = new Estilos_panel.jpanelEsquinasRedondas();
         jpanelEsquinasRedondas2 = new Estilos_panel.jpanelEsquinasRedondas();
         jLabel1 = new javax.swing.JLabel();
@@ -41,7 +42,6 @@ public class Caja extends javax.swing.JPanel {
         listaProductos = new javax.swing.JList<>();
         lblSubTotal = new javax.swing.JLabel();
         lblTotal = new javax.swing.JLabel();
-        imgProducto = new javax.swing.JLabel();
         jcbClientes = new javax.swing.JComboBox<>();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
@@ -97,10 +97,6 @@ public class Caja extends javax.swing.JPanel {
 
         lblTotal.setText("0.00C$");
 
-        imgProducto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        imgProducto.setText("IMAGEN");
-        imgProducto.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-
         javax.swing.GroupLayout jpanelEsquinasRedondas3Layout = new javax.swing.GroupLayout(jpanelEsquinasRedondas3);
         jpanelEsquinasRedondas3.setLayout(jpanelEsquinasRedondas3Layout);
         jpanelEsquinasRedondas3Layout.setHorizontalGroup(
@@ -117,8 +113,7 @@ public class Caja extends javax.swing.JPanel {
                         .addGroup(jpanelEsquinasRedondas3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblSubTotal, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(lblTotal, javax.swing.GroupLayout.Alignment.TRAILING)))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addComponent(imgProducto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addContainerGap(18, Short.MAX_VALUE))
         );
         jpanelEsquinasRedondas3Layout.setVerticalGroup(
@@ -127,10 +122,8 @@ public class Caja extends javax.swing.JPanel {
                 .addContainerGap()
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 157, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(imgProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(31, 31, 31)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 289, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addGroup(jpanelEsquinasRedondas3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(lblSubTotal))
@@ -148,6 +141,8 @@ public class Caja extends javax.swing.JPanel {
         txtEfectivo.setText("C$");
 
         jScrollPane3.setBorder(null);
+        jScrollPane3.setFocusable(false);
+        jScrollPane3.setInheritsPopupMenu(true);
 
         tablaProductos.setBackground(new java.awt.Color(255, 255, 255));
         tablaProductos.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
@@ -229,15 +224,18 @@ public class Caja extends javax.swing.JPanel {
                         .addGroup(jpanelEsquinasRedondas1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel8)
                             .addComponent(jcbClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(44, 44, 44)
                         .addGroup(jpanelEsquinasRedondas1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel9)
-                            .addComponent(txtEfectivo, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jpanelEsquinasRedondas1Layout.createSequentialGroup()
+                                .addGap(44, 44, 44)
+                                .addComponent(jLabel9))
+                            .addGroup(jpanelEsquinasRedondas1Layout.createSequentialGroup()
+                                .addGap(35, 35, 35)
+                                .addComponent(txtEfectivo, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnAgregarProducto)
                         .addGap(18, 18, 18)
                         .addComponent(btnCompra))
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 528, Short.MAX_VALUE))
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 711, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addComponent(jpanelEsquinasRedondas3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -284,13 +282,13 @@ public class Caja extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnAgregarProducto;
     public javax.swing.JButton btnCompra;
-    public javax.swing.JLabel imgProducto;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JScrollBar jScrollBar1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
     public javax.swing.JComboBox<Clientes> jcbClientes;

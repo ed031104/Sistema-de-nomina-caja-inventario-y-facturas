@@ -71,12 +71,22 @@ public class RegistroNomina extends javax.swing.JPanel {
         jLabel5.setText("Incentivo");
 
         txtIncentivo.setText("C$");
+        txtIncentivo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtIncentivoMouseClicked(evt);
+            }
+        });
 
         jLabel6.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
         jLabel6.setForeground(java.awt.Color.white);
         jLabel6.setText("Comisión");
 
         txtComision.setText("C$");
+        txtComision.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtComisionMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jpanelEsquinasRedondas2Layout = new javax.swing.GroupLayout(jpanelEsquinasRedondas2);
         jpanelEsquinasRedondas2.setLayout(jpanelEsquinasRedondas2Layout);
@@ -142,7 +152,7 @@ public class RegistroNomina extends javax.swing.JPanel {
                     .addComponent(txtComision, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(171, 171, 171)
                 .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 150, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(agregar, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(21, 21, 21))
         );
@@ -199,16 +209,24 @@ public class RegistroNomina extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jpanelEsquinasRedondas1, javax.swing.GroupLayout.DEFAULT_SIZE, 929, Short.MAX_VALUE)
+            .addComponent(jpanelEsquinasRedondas1, javax.swing.GroupLayout.DEFAULT_SIZE, 555, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(0, 0, 0)
-                .addComponent(jpanelEsquinasRedondas1, javax.swing.GroupLayout.DEFAULT_SIZE, 661, Short.MAX_VALUE)
+                .addComponent(jpanelEsquinasRedondas1, javax.swing.GroupLayout.DEFAULT_SIZE, 517, Short.MAX_VALUE)
                 .addGap(0, 0, 0))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void txtIncentivoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtIncentivoMouseClicked
+        txtIncentivo.setText("");
+    }//GEN-LAST:event_txtIncentivoMouseClicked
+
+    private void txtComisionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtComisionMouseClicked
+        txtComision.setText("");
+    }//GEN-LAST:event_txtComisionMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

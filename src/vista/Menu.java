@@ -561,7 +561,6 @@ public class Menu extends javax.swing.JFrame {
         //Abre el frame principal "Menu" y se inicializa sun controlador 
         menuController contorladorMenu = new menuController(vista);
         contorladorMenu.iniciar();
-        contorladorMenu.run();
         vista.setVisible(true);
         
     }

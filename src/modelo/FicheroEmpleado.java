@@ -10,7 +10,9 @@ import java.text.ParseException;
 import java.util.ArrayList;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListModel;
-import javax.swing.JOptionPane;        
+import javax.swing.JOptionPane;  
+
+
 public class FicheroEmpleado {
 
     public FicheroEmpleado(){

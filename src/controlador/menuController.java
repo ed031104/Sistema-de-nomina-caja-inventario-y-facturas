@@ -6,8 +6,10 @@ import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.text.ParseException;
 import javax.swing.JPanel;
+import modelo.FicheroCliente;
 import modelo.FicheroEmpleado;
 import modelo.FicheroNomina;
+import modelo.FicheroProducto;
 import vista.Caja;
 import vista.Factura;
 import vista.Inventario;
@@ -17,24 +19,27 @@ import vista.RegistroEmpleados;
 import vista.RegistroNomina;
 import vista.registroClientes;
 
-public class menuController implements ActionListener, Runnable{
+public class menuController implements ActionListener{
 
     private Menu vista; 
     
     datosNominas panelNomina = new datosNominas();
     FicheroNomina ficheroNomina  = new FicheroNomina();
-    
     RegistroNomina panelRegistroNomina= new RegistroNomina();
-    
     RegistroEmpleados panelempleados = new RegistroEmpleados();
     FicheroEmpleado ficheroEmpelado = new FicheroEmpleado();
     
-    registroClientes panelClientes = new registroClientes();
+    FicheroProducto ficheroProducto = new FicheroProducto();
     Caja panelCaja = new Caja();
     
     
-    Inventario panelInventario = new Inventario();
     Factura panelFactura = new Factura();
+    
+    Inventario panelInventario = new Inventario();
+    
+    registroClientes panelClientes = new registroClientes();
+    FicheroCliente ficheroCliente = new FicheroCliente();
+    
     
     public menuController(Menu vista){
     this.vista = vista;
@@ -52,13 +57,17 @@ public class menuController implements ActionListener, Runnable{
     }
     
     public void iniciar() throws IOException, ParseException{
-       
-         ControladorRegistroCliente ControladorRegistroCliente = new ControladorRegistroCliente();
-         ControladorInventario ControladorInventario = new ControladorInventario();
-         ControladorCaja ControladorCaja = new ControladorCaja(ControladorRegistroCliente, ControladorInventario);
-         ControladorRecibo ControladorRecibo = new ControladorRecibo(ControladorCaja);
-        
+         ControladorNomina ControladorNomina = new ControladorNomina(panelNomina, ficheroNomina);
+         ControladorRegistroNomina controladorRegistroNomina = new ControladorRegistroNomina(panelRegistroNomina, ficheroNomina, ControladorNomina);
+         ControladorRegitroEmpleado ControladorRegitroEmpleado = new ControladorRegitroEmpleado(panelempleados, ficheroEmpelado, controladorRegistroNomina );
+           
+         ControladorRecibo ControladorRecibo = new ControladorRecibo(panelFactura);
+         ControladorCaja ControladorCaja = new ControladorCaja(panelCaja, ControladorRecibo);
+         ControladorRegistroCliente ControladorRegistroCliente = new ControladorRegistroCliente(panelClientes, ficheroCliente, ControladorCaja);
+         ControladorInventario ControladorInventario = new ControladorInventario(panelInventario, ficheroProducto, ControladorCaja);
     }
+    
+    
     public void cambiarPanel(JPanel content,JPanel jp) {
     jp.setVisible(true); // hace visible al panel
     jp.setSize(684, 300); // da el tamaño del panel
@@ -72,9 +81,6 @@ public class menuController implements ActionListener, Runnable{
     content.revalidate(); // notifica al contenedor Content que su diseño ha cambiado y necesita ser validado.
     content.repaint(); // repinta el contenedor Content para que se muestren los cambios realizados.
      }
-    
-    
-
     
     @Override
     public void actionPerformed(ActionEvent e){
@@ -107,18 +113,4 @@ public class menuController implements ActionListener, Runnable{
         }
     }
 
-    @Override
-    public void run() {
-    vista.setLocationRelativeTo(null);
-        vista.setTitle("Sistema Mirna Perez");
-        vista.setIconImage(vista.getIconImage());
-        try {
-          
-         ControladorNomina ControladorNomina = new ControladorNomina(panelNomina, ficheroNomina);
-         ControladorRegistroNomina controladorRegistroNomina = new ControladorRegistroNomina(panelRegistroNomina, ficheroNomina, ControladorNomina);
-         ControladorRegitroEmpleado ControladorRegitroEmpleado = new ControladorRegitroEmpleado(panelempleados, ficheroEmpelado, controladorRegistroNomina );
-           
-        } catch (Exception e) {
-        }
-    }
 }

@@ -152,6 +152,11 @@ public class Inventario extends javax.swing.JPanel {
         txtPrecio.setForeground(new java.awt.Color(0, 0, 0));
         txtPrecio.setText("C$");
         txtPrecio.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        txtPrecio.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtPrecioMouseClicked(evt);
+            }
+        });
 
         jLabel4.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
@@ -284,6 +289,10 @@ public class Inventario extends javax.swing.JPanel {
             .addComponent(jpanelEsquinasRedondas1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void txtPrecioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtPrecioMouseClicked
+        txtPrecio.setText("");
+    }//GEN-LAST:event_txtPrecioMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

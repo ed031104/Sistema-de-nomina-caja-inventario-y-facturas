@@ -3,10 +3,14 @@ package controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import vista.Factura;
 
 public class ControladorRecibo implements ActionListener{
+    
+    Factura panelFactura;
 
-    ControladorRecibo(ControladorCaja ControladorCaja) {
+    ControladorRecibo(Factura panelFactura) {
+        this.panelFactura = panelFactura;
     }
 
     @Override
