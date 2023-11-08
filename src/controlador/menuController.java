@@ -3,51 +3,56 @@ package controlador;
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
+import java.text.ParseException;
 import javax.swing.JPanel;
-import vista.AsientoContable;
+import modelo.FicheroEmpleado;
+import modelo.FicheroNomina;
 import vista.Caja;
+import vista.Factura;
 import vista.Inventario;
 import vista.Menu;
-import vista.Nomina;
+import vista.datosNominas;
 import vista.RegistroEmpleados;
 import vista.RegistroNomina;
 import vista.registroClientes;
 
-public class menuController implements ActionListener{
+public class menuController implements ActionListener, Runnable{
 
     private Menu vista; 
     
-    Nomina panelNomina = new Nomina();
-    registroClientes panelClientes = new registroClientes();
-    RegistroEmpleados panelempleados = new RegistroEmpleados();
-    Caja panelCaja = new Caja();
+    datosNominas panelNomina = new datosNominas();
+    FicheroNomina ficheroNomina  = new FicheroNomina();
+    
     RegistroNomina panelRegistroNomina= new RegistroNomina();
+    
+    RegistroEmpleados panelempleados = new RegistroEmpleados();
+    FicheroEmpleado ficheroEmpelado = new FicheroEmpleado();
+    
+    registroClientes panelClientes = new registroClientes();
+    Caja panelCaja = new Caja();
+    
+    
     Inventario panelInventario = new Inventario();
-    AsientoContable panelAsientoContable = new AsientoContable();
+    Factura panelFactura = new Factura();
     
     public menuController(Menu vista){
     this.vista = vista;
     this.vista.btnNomina.addActionListener(this);
-    this.vista.btnAsientoContable.addActionListener(this);
     this.vista.btnInventario.addActionListener(this);
     this.vista.btnClientes.addActionListener(this);
     this.vista.btnCaja.addActionListener(this);
     this.vista.brnMenu.addActionListener(this);
     this.vista.Opcmenu1.addActionListener(this);
     this.vista.btnRegistroNomina.addActionListener(this);
+    this.vista.btnEmpleados.addActionListener(this);
+    this.vista.btnFactura.addActionListener(this);
       
     
     }
     
-    public void iniciar(){
-        vista.setLocationRelativeTo(null);
-        vista.setTitle("Sistema Mirna Perez");
-        vista.setIconImage(vista.getIconImage());
-        
-         ControladorRegitroEmpleado ControladorRegitroEmpleado = new ControladorRegitroEmpleado();
-         ControladorNomina ControladorNomina = new ControladorNomina(ControladorRegitroEmpleado);
-         ControladorAsientoContable ControladorAsientoContable = new ControladorAsientoContable(ControladorNomina);
-         
+    public void iniciar() throws IOException, ParseException{
+       
          ControladorRegistroCliente ControladorRegistroCliente = new ControladorRegistroCliente();
          ControladorInventario ControladorInventario = new ControladorInventario();
          ControladorCaja ControladorCaja = new ControladorCaja(ControladorRegistroCliente, ControladorInventario);
@@ -68,6 +73,9 @@ public class menuController implements ActionListener{
     content.repaint(); // repinta el contenedor Content para que se muestren los cambios realizados.
      }
     
+    
+
+    
     @Override
     public void actionPerformed(ActionEvent e){
         if(e.getSource() == vista.brnMenu){
@@ -79,14 +87,14 @@ public class menuController implements ActionListener{
         if(e.getSource() == vista.btnNomina){
             cambiarPanel(vista.content, panelNomina);
         }
-        if(e.getSource() == vista.btnAsientoContable){
-         cambiarPanel(vista.content, panelAsientoContable);   
-        }
         if(e.getSource() == vista.btnInventario){
             cambiarPanel(vista.content, panelInventario);
         }
         if(e.getSource() == vista.btnClientes){
             cambiarPanel(vista.content, panelClientes);
+        }
+        if(e.getSource() == vista.btnEmpleados){
+            cambiarPanel(vista.content, panelempleados);
         }
         if(e.getSource() == vista.btnCaja){
            cambiarPanel(vista.content, panelCaja);
@@ -94,6 +102,23 @@ public class menuController implements ActionListener{
         if(e.getSource() == vista.btnRegistroNomina){
             cambiarPanel(vista.content, panelRegistroNomina);
         }
+        if(e.getSource() == vista.btnFactura){
+            cambiarPanel(vista.content, panelFactura);
+        }
     }
-    
+
+    @Override
+    public void run() {
+    vista.setLocationRelativeTo(null);
+        vista.setTitle("Sistema Mirna Perez");
+        vista.setIconImage(vista.getIconImage());
+        try {
+          
+         ControladorNomina ControladorNomina = new ControladorNomina(panelNomina, ficheroNomina);
+         ControladorRegistroNomina controladorRegistroNomina = new ControladorRegistroNomina(panelRegistroNomina, ficheroNomina, ControladorNomina);
+         ControladorRegitroEmpleado ControladorRegitroEmpleado = new ControladorRegitroEmpleado(panelempleados, ficheroEmpelado, controladorRegistroNomina );
+           
+        } catch (Exception e) {
+        }
+    }
 }

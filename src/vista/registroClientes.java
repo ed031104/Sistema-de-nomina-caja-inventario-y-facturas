@@ -5,6 +5,8 @@
  */
 package vista;
 
+import modelo.Clientes;
+
 /**
  *
  * @author edwin
@@ -48,7 +50,7 @@ public class registroClientes extends javax.swing.JPanel {
         telefono = new javax.swing.JTextField();
         jpanelEsquinasRedondas3 = new Estilos_panel.jpanelEsquinasRedondas();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tablaClientes = new javax.swing.JList<>();
+        ListaClientes = new javax.swing.JList<>();
 
         setOpaque(false);
         setPreferredSize(new java.awt.Dimension(470, 470));
@@ -67,14 +69,20 @@ public class registroClientes extends javax.swing.JPanel {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Nombre:");
 
+        nombres.setBackground(new java.awt.Color(255, 255, 255));
+        nombres.setForeground(new java.awt.Color(0, 0, 0));
         nombres.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Correo:");
 
+        correo.setBackground(new java.awt.Color(255, 255, 255));
+        correo.setForeground(new java.awt.Color(0, 0, 0));
         correo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
 
+        apellidos.setBackground(new java.awt.Color(255, 255, 255));
+        apellidos.setForeground(new java.awt.Color(0, 0, 0));
         apellidos.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
@@ -85,12 +93,16 @@ public class registroClientes extends javax.swing.JPanel {
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Direccion:");
 
+        direccion.setBackground(new java.awt.Color(255, 255, 255));
+        direccion.setForeground(new java.awt.Color(0, 0, 0));
         direccion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
 
         jLabel7.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Cédula de identidad:");
 
+        cedula.setBackground(new java.awt.Color(255, 255, 255));
+        cedula.setForeground(new java.awt.Color(0, 0, 0));
         cedula.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
 
         agregar.setBackground(new java.awt.Color(255, 255, 255));
@@ -105,12 +117,15 @@ public class registroClientes extends javax.swing.JPanel {
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Sexo:");
 
+        sexo.setBackground(new java.awt.Color(255, 255, 255));
         sexo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Hombre", "Mujer", "36 tipos de gei" }));
 
         jLabel13.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
         jLabel13.setText("Teléfono");
 
+        telefono.setBackground(new java.awt.Color(255, 255, 255));
+        telefono.setForeground(new java.awt.Color(0, 0, 0));
         telefono.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
 
         javax.swing.GroupLayout jpanelEsquinasRedondas2Layout = new javax.swing.GroupLayout(jpanelEsquinasRedondas2);
@@ -128,7 +143,7 @@ public class registroClientes extends javax.swing.JPanel {
                                 .addComponent(correo)
                                 .addContainerGap())
                             .addGroup(jpanelEsquinasRedondas2Layout.createSequentialGroup()
-                                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 121, Short.MAX_VALUE)
+                                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGap(268, 268, 268))
                             .addGroup(jpanelEsquinasRedondas2Layout.createSequentialGroup()
                                 .addGroup(jpanelEsquinasRedondas2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -209,7 +224,7 @@ public class registroClientes extends javax.swing.JPanel {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(sexo, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(telefono, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 157, Short.MAX_VALUE)
                 .addComponent(agregar, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(21, 21, 21))
         );
@@ -220,14 +235,9 @@ public class registroClientes extends javax.swing.JPanel {
         jScrollPane1.setFocusable(false);
         jScrollPane1.setRequestFocusEnabled(false);
 
-        tablaClientes.setBackground(new java.awt.Color(32, 136, 203));
-        tablaClientes.setForeground(new java.awt.Color(255, 255, 255));
-        tablaClientes.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        jScrollPane1.setViewportView(tablaClientes);
+        ListaClientes.setBackground(new java.awt.Color(32, 136, 203));
+        ListaClientes.setForeground(new java.awt.Color(255, 255, 255));
+        jScrollPane1.setViewportView(ListaClientes);
 
         javax.swing.GroupLayout jpanelEsquinasRedondas3Layout = new javax.swing.GroupLayout(jpanelEsquinasRedondas3);
         jpanelEsquinasRedondas3.setLayout(jpanelEsquinasRedondas3Layout);
@@ -242,7 +252,7 @@ public class registroClientes extends javax.swing.JPanel {
             jpanelEsquinasRedondas3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpanelEsquinasRedondas3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 348, Short.MAX_VALUE)
+                .addComponent(jScrollPane1)
                 .addGap(14, 14, 14))
         );
 
@@ -271,18 +281,19 @@ public class registroClientes extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jpanelEsquinasRedondas1, javax.swing.GroupLayout.DEFAULT_SIZE, 583, Short.MAX_VALUE)
+            .addComponent(jpanelEsquinasRedondas1, javax.swing.GroupLayout.DEFAULT_SIZE, 487, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(0, 0, 0)
-                .addComponent(jpanelEsquinasRedondas1, javax.swing.GroupLayout.DEFAULT_SIZE, 410, Short.MAX_VALUE))
+                .addComponent(jpanelEsquinasRedondas1, javax.swing.GroupLayout.DEFAULT_SIZE, 470, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JList<Clientes> ListaClientes;
     public javax.swing.JButton agregar;
     public javax.swing.JTextField apellidos;
     public javax.swing.JTextField cedula;
@@ -302,8 +313,7 @@ public class registroClientes extends javax.swing.JPanel {
     private Estilos_panel.jpanelEsquinasRedondas jpanelEsquinasRedondas2;
     private Estilos_panel.jpanelEsquinasRedondas jpanelEsquinasRedondas3;
     public javax.swing.JTextField nombres;
-    public static javax.swing.JComboBox<String> sexo;
-    public static javax.swing.JList<String> tablaClientes;
+    private javax.swing.JComboBox<String> sexo;
     public javax.swing.JTextField telefono;
     // End of variables declaration//GEN-END:variables
 }

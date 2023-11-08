@@ -4,54 +4,59 @@ package controlador;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
-import javax.swing.ListModel;
+import java.text.ParseException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import modelo.Empleado;
 import modelo.FicheroEmpleado;
 import vista.RegistroEmpleados;
 
 public class ControladorRegitroEmpleado implements ActionListener{
 
-    RegistroEmpleados vista;
+    RegistroEmpleados vista; 
     FicheroEmpleado fichero;
+    ControladorRegistroNomina ctnNomina;
     
-    ControladorRegistroNomina controladornomina;
-    
-    public ControladorRegitroEmpleado(){}
-            
-    public ControladorRegitroEmpleado(RegistroEmpleados vista, FicheroEmpleado fichero,ControladorRegistroNomina controlador2) throws IOException{
+    public ControladorRegitroEmpleado(RegistroEmpleados vista, FicheroEmpleado fichero, ControladorRegistroNomina ctnNomina) throws IOException, ParseException{
         this.vista = vista;
         this.fichero = fichero;
-        this.vista.agregar.addActionListener(this);
-        
-        vista.tablaEmpleados.setModel((ListModel<String>) fichero.mostrarDatosTabla());
-        
-        this.controladornomina = controlador2;
-    
+        this.ctnNomina = ctnNomina;
+        vista.agregar.addActionListener(this);
+        vista.ListaEmpleados.setModel(fichero.llenarJlist());
     }
-            
+    
     @Override
     public void actionPerformed(ActionEvent e) {
-         if (e.getSource() == vista.agregar){
+
+        if(e.getSource() == vista.agregar){
             
-            //se registra un nuevo cliente
-            Empleado cliente = new Empleado(Integer.parseInt(vista.numeroINNS.getText()),
-            vista.nombres.getText(),vista.apellidos.getText(), vista.direccion.getText(), 
-            vista.cedula.getText(), (String) vista.sexo.getSelectedItem(),vista.correo.getText(), 
-            vista.cargo.getText(),Integer.parseInt(vista.telefono.getText()), 
-            Double.parseDouble(vista.salario.getText()));
-            
-            //se agrega al fichero
-            fichero.Ingresarficheroregistros(cliente);
-           
             try {
-                //se muetra el cliente en el Jtable
-                vista.tablaEmpleados.setModel(fichero.mostrarDatosTabla());
-                controladornomina.vista.Cliente.setModel(fichero.llenarComboBox());
-            } catch (IOException ex) {
-            }
+                int INNS = Integer.parseInt(vista.numeroINNS.getText());
+                String cargo = (String) vista.cargo.getSelectedItem();
+                double salario = Double.parseDouble(vista.salario.getText());
+                
+                String nombres = vista.nombres.getText();
+                String apellidos = vista.apellidos.getText();
+                String direccion = vista.direccion.getText();
+                String cedula = vista.cedula.getText();
+                String sexo = (String) vista.sexo.getSelectedItem();
+                String correo = vista.correo.getText();
+                int telefono = Integer.parseInt(vista.telefono.getText());
+                
+                Empleado empleado = new Empleado(INNS, cargo, salario, nombres, apellidos, direccion, cedula, sexo, correo, telefono);
+                
+                fichero.Ingresarficheroregistros(empleado);
+                
+                vista.ListaEmpleados.setModel(fichero.llenarJlist());
+                
+                ctnNomina.vista.jcbEmpleados.setModel(fichero.llenarComboBox());
             
+            } catch (IOException ex) {
+                Logger.getLogger(ControladorRegitroEmpleado.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (ParseException ex) {
+                Logger.getLogger(ControladorRegitroEmpleado.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
-        
-    
     }
+    
 }

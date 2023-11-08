@@ -1,11 +1,12 @@
 
 package modelo;
 
+import java.text.DecimalFormat;
+
 public class Nomina {
 
-    Empleado empleado;
-
-    private double Horas; //Horas laborales
+    private Empleado empleado;
+    private double Horas; //Horas laborales 
     private double ValorH;//Valor de la hora laboral
     private double PagoH;//Pago por horas laborales
     //Bonos
@@ -23,16 +24,17 @@ public class Nomina {
     //Otras deducciones
     private double INNS; //INNS
     private double IR; //IR
-    private double OtrasD; //Otras deducciones  
+    private double OtrasD; //Otras deducciones
     //Otros
     private double INNSP; //INNS Patronal
     private double Inatec; //Inatec
     //Prestaciones sociales
     private double Aguinaldo; //Aguinaldo
     private double Vacaciones; //Vacaciones
-
-    public Nomina(Empleado empleado, double Horas, double ValorH, double PagoH, double HorasE, double PagoE, int Antiguedad, double PagoA, double Incentivo, double Comicion, double salarioB, double NetoR, double SalarioA, double INNS, double IR, double OtrasD, double INNSP, double Inatec, double Aguinaldo, double Vacaciones) {
-        this.empleado = empleado;
+    
+    public Nomina(double Horas, double ValorH, double PagoH, double HorasE, double PagoE, int Antiguedad, 
+            double PagoA, double Incentivo, double Comicion, double salarioB, double NetoR, double SalarioA, 
+            double INNS, double IR, double OtrasD, double INNSP, double Inatec, double Aguinaldo, double Vacaciones, Empleado empleado) {
         this.Horas = Horas;
         this.ValorH = ValorH;
         this.PagoH = PagoH;
@@ -52,6 +54,7 @@ public class Nomina {
         this.Inatec = Inatec;
         this.Aguinaldo = Aguinaldo;
         this.Vacaciones = Vacaciones;
+        this.empleado = empleado;
     }
 
     public Empleado getEmpleado() {
@@ -213,110 +216,96 @@ public class Nomina {
     public void setVacaciones(double Vacaciones) {
         this.Vacaciones = Vacaciones;
     }
+
+    @Override
+    public String toString() {
+        return getEmpleado().getNombres();
+    }
+
     
-    public void HorasExtras(){
+    
+    
+    //calculos de nómina
+    public void HorasExtras(Nomina empleado){
         
         Double horase = 0.0;
-        Double horas = getHoras();
+        Double horas = empleado.getHoras();
         
         if(horas > 48){
         
             horase = horas - 48;
         }
-    setHorasE(horase);
+    empleado.setHorasE(horase);
     }
     
-    
-    public void pagoExtras(){
-        
-        double pagoe = 0;
-        double horase = getHorasE();
-        double valorh = getValorH();
-        
-        if(horase >= 1){
-            
-            pagoe = (valorh * horase)*2;
-        
-        }
-    setPagoE(pagoe);
+    public void pagoExtras(Nomina empleado){
+       double factor= 240; 
+    empleado.setPagoE(Math.round((empleado.empleado.getSalario() / factor) * 2* empleado.getHorasE()));
     }
-    public void pagoantiguedad(Empleado empleado){
+    
+    public void pagoantiguedad(Nomina empleado){
     double pagoantiguedad= 0;
-    int añosantiguedad = getAntiguedad();
-    double sueldo = empleado.getSalario(); 
+    int añosantiguedad = empleado.getAntiguedad();
+    double sueldo = empleado.getEmpleado().getSalario(); 
             
-        if(añosantiguedad == 1){
-            pagoantiguedad = sueldo * 0.03;
-        }
-        if (añosantiguedad == 2) {
-            pagoantiguedad = sueldo * 0.05;
-        }   
-        if (añosantiguedad == 3) {
-            pagoantiguedad = sueldo * 0.07;
-        }   
-        if (añosantiguedad == 4) {
-            pagoantiguedad = sueldo * 0.09;
-        }       
-        if(añosantiguedad == 5){
-            pagoantiguedad = sueldo * 0.1;
-        }
-        if (añosantiguedad == 6){
-            pagoantiguedad = sueldo * 0.11;
-        }
-        if(añosantiguedad == 7){
-            pagoantiguedad = sueldo * 0.12;
-        }    
-        if(añosantiguedad == 8){
-            pagoantiguedad = sueldo * 0.13;
-        }      
-        if (añosantiguedad == 9) {
-            pagoantiguedad = sueldo * 0.14;
-        }       
-        if(añosantiguedad == 10){
-            pagoantiguedad = sueldo * 0.15;
-        }       
-        if(añosantiguedad == 11){
-            pagoantiguedad = sueldo * 0.155;
-        }                               
-        if(añosantiguedad==12){
-            pagoantiguedad = sueldo * 0.16;
-        }   
-        if( añosantiguedad ==13){
-            pagoantiguedad = sueldo * 0.165;
-        }   
-        if(añosantiguedad == 14){
-            pagoantiguedad = sueldo * 0.17;
-        }       
-        if (añosantiguedad == 15){
-            pagoantiguedad = sueldo * 0.175;
-        }       
-        if(añosantiguedad ==16){
-            pagoantiguedad = sueldo * 0.18;
-        }       
-        if(añosantiguedad==17){
-            pagoantiguedad = sueldo * 0.185;
-        }   
-        if(añosantiguedad == 18){
-            pagoantiguedad = sueldo * 0.19;
-        }       
-        if(añosantiguedad == 19){
-            pagoantiguedad = sueldo * 0.195;
-        }   
-        if(añosantiguedad >=20){
-            pagoantiguedad = sueldo * 0.20;
-        }
-       setPagoA(pagoantiguedad);
+        if (añosantiguedad == 1) {
+        pagoantiguedad = sueldo * 0.03;
+        } else if (añosantiguedad == 2) {
+        pagoantiguedad = sueldo * 0.05;
+        } else if (añosantiguedad == 3) {
+        pagoantiguedad = sueldo * 0.07;
+        } else if (añosantiguedad == 4) {
+        pagoantiguedad = sueldo * 0.09;
+        } else if (añosantiguedad == 5) {
+        pagoantiguedad = sueldo * 0.1;
+        } else if (añosantiguedad == 6) {
+        pagoantiguedad = sueldo * 0.11;
+        } else if (añosantiguedad == 7) {
+        pagoantiguedad = sueldo * 0.12;
+        } else if (añosantiguedad == 8) {
+        pagoantiguedad = sueldo * 0.13;
+        } else if (añosantiguedad == 9) {
+        pagoantiguedad = sueldo * 0.14;
+        } else if (añosantiguedad == 10) {
+        pagoantiguedad = sueldo * 0.15;
+        } else if (añosantiguedad == 11) {
+        pagoantiguedad = sueldo * 0.155;
+        } else if (añosantiguedad == 12) {
+        pagoantiguedad = sueldo * 0.16;
+        } else if (añosantiguedad == 13) {
+        pagoantiguedad = sueldo * 0.165;
+        } else if (añosantiguedad == 14) {
+        pagoantiguedad = sueldo * 0.17;
+        } else if (añosantiguedad == 15) {
+        pagoantiguedad = sueldo * 0.175;
+        } else if (añosantiguedad == 16) {
+        pagoantiguedad = sueldo * 0.18;
+        } else if (añosantiguedad == 17) {
+        pagoantiguedad = sueldo * 0.185;
+        } else if (añosantiguedad == 18) {
+        pagoantiguedad = sueldo * 0.19;
+        } else if (añosantiguedad == 19) {
+        pagoantiguedad = sueldo * 0.195;
+        } else if (añosantiguedad >= 20) {
+        pagoantiguedad = sueldo * 0.20;
+     }
+       
+        empleado.setPagoA(Math.round(pagoantiguedad));
     }
-    public void calculoir(Empleado empleado){
     
-   double baseImponible = getSalarioB() - getINNS();
+    public void calculoir(Nomina empleado){
+    
+   double baseImponible = empleado.getSalarioB() - empleado.getINNS();
    double sueldoAnual = baseImponible*12;
-   setSalarioA(sueldoAnual);
+   
+   empleado.setSalarioA(sueldoAnual);
+    
     tarifaProgresivaIr(empleado);
     }
-    public void tarifaProgresivaIr(){
     
-    double sueldoAnual = getSalarioA();
+    public void tarifaProgresivaIr(Nomina empleado){
+    
+    double sueldoAnual = empleado.getSalarioA();
     double deducible = 0;
     double porcentaje = 0;
     double impuestoBase=0;
@@ -359,47 +348,68 @@ public class Nomina {
         salarioMenosDeducible= sueldoAnual-deducible;
        IrAnual= (salarioMenosDeducible * porcentaje) + impuestoBase;
        IrMensual = IrAnual/12;
+        }
+    empleado.setIR(Math.round(IrMensual));
     }
     
-    setIR(IrMensual);
-    }
-    public void valorHoras(Empleado empleado){
-    double horas = (empleado.getSalario()/4.333)/48;
-    setValorH(horas);
+    public void valorHoras(Nomina empleado){
+    double horas = (empleado.getEmpleado().getSalario()/4.3)/48;
+    empleado.setValorH(horas);
     }
     
-    public void pagoHoras(){
-        double factor = getValorH();
-        double pagohoras = (getHoras()*factor);
-        setPagoH(pagohoras);
+    public void pagoHoras(Nomina empleado){
+        double factor = empleado.getValorH();
+        double pagohoras = (empleado.getHoras() * factor);
+        empleado.setPagoH(pagohoras);
     }
 
-    public void salariobruto(){
-        double salariobruto = getIncentivo() + getPagoA() + getPagoE()+ getComicion();
-        setSalarioB(salariobruto);
+    public void salariobruto(Nomina empleado){
+        double salariobruto = empleado.getIncentivo() + empleado.empleado.getSalario()+ empleado.getPagoE()+ empleado.getComicion()+ empleado.getPagoA();
+        empleado.setSalarioB(salariobruto);
     }
-    public void totaldeducciones(){
-    double total = getINNS() + getIR();
-        setOtrasD(total);
+    
+    public void totaldeducciones(Nomina empleado){
+    double total = empleado.getINNS() + empleado.getIR();
+        empleado.setOtrasD(total);
     }
-    public void salarioneto ( ){
-        double calculo = getSalarioB() - getOtrasD();
-        setNetoR(calculo);
+    
+    public void salarioneto (Nomina empleado){
+        double calculo = empleado.getSalarioB() - empleado.getOtrasD();
+        empleado.setNetoR(calculo);
     }
-    public void inss (){
-        double inss = getSalarioB() * 0.07;
-        setINNS(inss);
+    
+    public void inss (Nomina empleado){
+        double inss = empleado.getSalarioB() * 0.07;
+        empleado.setINNS(Math.round(inss));
     }
-    public void inssp (Empleado empleado ){
-    double innsp = empleado.getSalario() * 0.23;
-    setINNSP(innsp);
+    
+    public void inssp (Nomina empleado){
+    double innsp = empleado.getSalarioB() * 0.23;
+    empleado.setINNSP(innsp);
     
     }
-    public void inatec(Empleado empleado){
-        double inatec = empleado.getSalario() *0.02;
-        setInatec(inatec);
+    
+    public void inatec(Nomina empleado){
+        double inatec = empleado.getSalarioB() *0.02;
+        empleado.setInatec(inatec);
     }
 
-    private void tarifaProgresivaIr(Empleado empleado) {
+    public void calculoVacaciones(Nomina empleado){
+   //se crea la constante factor
+   double factor= 0.083333;
+   //se crea la varible local vacaciones multiplica el salario mensual por el factor
+   double vacaciones = empleado.empleado.getSalario() * factor;
+   //se registra el calculo en el atributo calculoVacaiones de la clase empelado
+   empleado.setVacaciones(vacaciones);
     }
+    
+    public void aguinaldo(Nomina empleado){
+    //se crea la constante factor
+   double factor= 0.083333;
+   //se crea la varible local treceavoMes multiplica el salario mensual por el factor
+   double treceavoMes = empleado.empleado.getSalario()* factor;
+   //se registra el calculo en el atributo TreceavoMes de la clase empelado
+   empleado.setAguinaldo(treceavoMes); 
+}
+    
 }

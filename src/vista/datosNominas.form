@@ -479,322 +479,26 @@
                           <Font name="Segoe UI Semibold" size="14" style="0"/>
                         </Property>
                         <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                          <Table columnCount="15" rowCount="19">
-                            <Column editable="false" title="NO INSS" type="java.lang.Object">
-                              <Data value="1"/>
-                              <Data value="2"/>
-                              <Data value="3"/>
-                              <Data value="4"/>
-                              <Data value="5"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                            </Column>
-                            <Column editable="false" title="NOMBRE" type="java.lang.Object">
-                              <Data value="Fernando"/>
-                              <Data value="Juan"/>
-                              <Data value="Pedro"/>
-                              <Data value="Iasa&#xed;as"/>
-                              <Data value="Michael"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                            </Column>
-                            <Column editable="false" title="CARGO" type="java.lang.Object">
-                              <Data value="Ing"/>
-                              <Data value="Contador"/>
-                              <Data value="Gerente"/>
-                              <Data value="Caja"/>
-                              <Data value="Limpieza"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                            </Column>
-                            <Column editable="false" title="SUELDO MENSUAL" type="java.lang.Object">
-                              <Data value="12000"/>
-                              <Data value="8000"/>
-                              <Data value="50000"/>
-                              <Data value="10000"/>
-                              <Data value="2000"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                            </Column>
-                            <Column editable="false" title="HORAS EXTRAS" type="java.lang.Object">
-                              <Data value="2"/>
-                              <Data value="3"/>
-                              <Data value="4"/>
-                              <Data value="5"/>
-                              <Data value="7"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                            </Column>
-                            <Column editable="false" title="PAGO DE HORAS EXTRAS" type="java.lang.Object">
-                              <Data value="1250"/>
-                              <Data value="1234"/>
-                              <Data value="234"/>
-                              <Data value="5345"/>
-                              <Data value="3453"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                            </Column>
-                            <Column editable="false" title="A&#xd1;OS ANTIGUEDAD" type="java.lang.Object">
-                              <Data value="2"/>
-                              <Data value="3"/>
-                              <Data value="6"/>
-                              <Data value="8"/>
-                              <Data value="7"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                            </Column>
-                            <Column editable="false" title="PAGO POR ANTIGUEDAD" type="java.lang.Object">
-                              <Data value="456456"/>
-                              <Data value="456456"/>
-                              <Data value="456"/>
-                              <Data value="456"/>
-                              <Data value="456"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                            </Column>
-                            <Column editable="false" title="BONO" type="java.lang.Object">
-                              <Data value="345345"/>
-                              <Data value="34535"/>
-                              <Data value="3453534"/>
-                              <Data value="345345"/>
-                              <Data value="345345"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                            </Column>
-                            <Column editable="false" title="SALARIO BRUTO" type="java.lang.Object">
-                              <Data value="345"/>
-                              <Data value="345345"/>
-                              <Data value="34535"/>
-                              <Data value="345345"/>
-                              <Data value="345345"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                            </Column>
-                            <Column editable="false" title="INSS LABORAL" type="java.lang.Object">
-                              <Data value="345345"/>
-                              <Data value="345354"/>
-                              <Data value="345345"/>
-                              <Data value="345354"/>
-                              <Data value="34535"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                            </Column>
-                            <Column editable="false" title="IR" type="java.lang.Object">
-                              <Data value="345345"/>
-                              <Data value="34535"/>
-                              <Data value="34535"/>
-                              <Data value="34535"/>
-                              <Data value="34535"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                            </Column>
-                            <Column editable="false" title="PRESTAMOS" type="java.lang.Object">
-                              <Data value="354345"/>
-                              <Data value="34545"/>
-                              <Data value="345345"/>
-                              <Data value="35435"/>
-                              <Data value="345354"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                            </Column>
-                            <Column editable="false" title="TOTAL DEDUCIONES" type="java.lang.Object">
-                              <Data value="345345"/>
-                              <Data value="3454"/>
-                              <Data value="345345"/>
-                              <Data value="345345"/>
-                              <Data value="34535"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                            </Column>
-                            <Column editable="false" title="NETO RECIBIR" type="java.lang.Object">
-                              <Data value="34535"/>
-                              <Data value="34535"/>
-                              <Data value="345345"/>
-                              <Data value="345345"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                            </Column>
+                          <Table columnCount="19" rowCount="20">
+                            <Column editable="false" title="NO INSS" type="java.lang.Object"/>
+                            <Column editable="false" title="NOMBRE" type="java.lang.Object"/>
+                            <Column editable="false" title="CARGO" type="java.lang.Object"/>
+                            <Column editable="false" title="SUELDO MENSUAL" type="java.lang.Object"/>
+                            <Column editable="false" title="HORAS EXTRAS" type="java.lang.Object"/>
+                            <Column editable="false" title="PAGO DE HORAS EXTRAS" type="java.lang.Object"/>
+                            <Column editable="false" title="A&#xd1;OS ANTIGUEDAD" type="java.lang.Object"/>
+                            <Column editable="false" title="PAGO POR ANTIGUEDAD" type="java.lang.Object"/>
+                            <Column editable="false" title="BONO" type="java.lang.Object"/>
+                            <Column editable="false" title="SALARIO BRUTO" type="java.lang.Object"/>
+                            <Column editable="false" title="INSS LABORAL" type="java.lang.Object"/>
+                            <Column editable="false" title="IR" type="java.lang.Object"/>
+                            <Column editable="false" title="PRESTAMOS" type="java.lang.Object"/>
+                            <Column editable="false" title="TOTAL DEDUCIONES" type="java.lang.Object"/>
+                            <Column editable="false" title="NETO RECIBIR" type="java.lang.Object"/>
+                            <Column editable="true" title="INSS PATRONAL" type="java.lang.Object"/>
+                            <Column editable="true" title="INATEC" type="java.lang.Object"/>
+                            <Column editable="true" title="AGUINALDO" type="java.lang.Object"/>
+                            <Column editable="true" title="VACACIONES" type="java.lang.Object"/>
                           </Table>
                         </Property>
                         <Property name="autoResizeMode" type="int" value="0"/>
@@ -810,7 +514,7 @@
                               <Editor/>
                               <Renderer/>
                             </Column>
-                            <Column maxWidth="250" minWidth="250" prefWidth="-1" resizable="true">
+                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
                               <Title/>
                               <Editor/>
                               <Renderer/>
@@ -871,6 +575,26 @@
                               <Renderer/>
                             </Column>
                             <Column maxWidth="250" minWidth="250" prefWidth="-1" resizable="true">
+                              <Title/>
+                              <Editor/>
+                              <Renderer/>
+                            </Column>
+                            <Column maxWidth="-1" minWidth="250" prefWidth="-1" resizable="true">
+                              <Title/>
+                              <Editor/>
+                              <Renderer/>
+                            </Column>
+                            <Column maxWidth="-1" minWidth="250" prefWidth="-1" resizable="true">
+                              <Title/>
+                              <Editor/>
+                              <Renderer/>
+                            </Column>
+                            <Column maxWidth="-1" minWidth="250" prefWidth="-1" resizable="true">
+                              <Title/>
+                              <Editor/>
+                              <Renderer/>
+                            </Column>
+                            <Column maxWidth="-1" minWidth="250" prefWidth="-1" resizable="true">
                               <Title/>
                               <Editor/>
                               <Renderer/>
