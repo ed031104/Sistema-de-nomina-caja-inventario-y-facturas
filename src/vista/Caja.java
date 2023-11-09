@@ -42,14 +42,20 @@ public class Caja extends javax.swing.JPanel {
         listaProductos = new javax.swing.JList<>();
         lblSubTotal = new javax.swing.JLabel();
         lblTotal = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        lblCantidadProducto = new javax.swing.JLabel();
+        lblCostoTotalProductos = new javax.swing.JLabel();
         jcbClientes = new javax.swing.JComboBox<>();
         jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        txtEfectivo = new javax.swing.JTextField();
         jScrollPane3 = new javax.swing.JScrollPane();
         tablaProductos = new javax.swing.JTable();
         btnAgregarProducto = new javax.swing.JButton();
         btnCompra = new javax.swing.JButton();
+        btnEliminarProducto = new javax.swing.JButton();
+        cantidadProducto = new javax.swing.JSpinner();
+        jLabel9 = new javax.swing.JLabel();
+        btnVaciarProductos = new javax.swing.JButton();
 
         jpanelEsquinasRedondas1.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -78,24 +84,50 @@ public class Caja extends javax.swing.JPanel {
         );
 
         jpanelEsquinasRedondas3.setBackground(new java.awt.Color(242, 242, 242));
+        jpanelEsquinasRedondas3.setForeground(new java.awt.Color(0, 0, 0));
 
+        jLabel2.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("TOTAL:");
 
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("SUB TOTAL:");
 
+        jLabel4.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(32, 136, 203));
         jLabel4.setText("PRODUCTOS:");
 
         jScrollPane1.setBackground(new java.awt.Color(242, 242, 242));
         jScrollPane1.setBorder(null);
 
         listaProductos.setBackground(new java.awt.Color(242, 242, 242));
+        listaProductos.setForeground(new java.awt.Color(32, 136, 203));
         listaProductos.setFocusable(false);
         listaProductos.setRequestFocusEnabled(false);
         jScrollPane1.setViewportView(listaProductos);
 
+        lblSubTotal.setForeground(new java.awt.Color(0, 0, 0));
         lblSubTotal.setText("0.00 C$");
 
+        lblTotal.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
+        lblTotal.setForeground(new java.awt.Color(0, 0, 0));
         lblTotal.setText("0.00C$");
+
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel5.setText("CANT. PRODUCTO:");
+
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel6.setText("PRECIO TOTAL :");
+
+        lblCantidadProducto.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        lblCantidadProducto.setForeground(new java.awt.Color(102, 102, 102));
+        lblCantidadProducto.setText("0.0C$");
+
+        lblCostoTotalProductos.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        lblCostoTotalProductos.setForeground(new java.awt.Color(102, 102, 102));
+        lblCostoTotalProductos.setText("0.0C$");
 
         javax.swing.GroupLayout jpanelEsquinasRedondas3Layout = new javax.swing.GroupLayout(jpanelEsquinasRedondas3);
         jpanelEsquinasRedondas3.setLayout(jpanelEsquinasRedondas3Layout);
@@ -103,31 +135,51 @@ public class Caja extends javax.swing.JPanel {
             jpanelEsquinasRedondas3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpanelEsquinasRedondas3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jpanelEsquinasRedondas3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel4)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpanelEsquinasRedondas3Layout.createSequentialGroup()
-                        .addGroup(jpanelEsquinasRedondas3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
+                .addGroup(jpanelEsquinasRedondas3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jpanelEsquinasRedondas3Layout.createSequentialGroup()
+                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblCantidadProducto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jpanelEsquinasRedondas3Layout.createSequentialGroup()
+                        .addComponent(jLabel6)
+                        .addGap(23, 23, 23)
+                        .addComponent(lblCostoTotalProductos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jpanelEsquinasRedondas3Layout.createSequentialGroup()
                         .addGroup(jpanelEsquinasRedondas3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblSubTotal, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lblTotal, javax.swing.GroupLayout.Alignment.TRAILING)))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                .addContainerGap(18, Short.MAX_VALUE))
+                            .addGroup(jpanelEsquinasRedondas3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel4)
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpanelEsquinasRedondas3Layout.createSequentialGroup()
+                                    .addGroup(jpanelEsquinasRedondas3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(jLabel3)
+                                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGap(25, 25, 25)
+                                    .addGroup(jpanelEsquinasRedondas3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(lblSubTotal, javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(lblTotal, javax.swing.GroupLayout.Alignment.TRAILING))))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         jpanelEsquinasRedondas3Layout.setVerticalGroup(
             jpanelEsquinasRedondas3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpanelEsquinasRedondas3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 289, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 224, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jpanelEsquinasRedondas3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(lblCantidadProducto))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jpanelEsquinasRedondas3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(lblCostoTotalProductos))
+                .addGap(26, 26, 26)
                 .addGroup(jpanelEsquinasRedondas3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(lblSubTotal))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jpanelEsquinasRedondas3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(lblTotal))
@@ -135,10 +187,6 @@ public class Caja extends javax.swing.JPanel {
         );
 
         jLabel8.setText("Cliente:");
-
-        jLabel9.setText("Efectivo");
-
-        txtEfectivo.setText("C$");
 
         jScrollPane3.setBorder(null);
         jScrollPane3.setFocusable(false);
@@ -148,25 +196,7 @@ public class Caja extends javax.swing.JPanel {
         tablaProductos.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         tablaProductos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"1", "Fernando", "Ing", "12000", "2", null},
-                {"2", "Juan", "Contador", "8000", "3", null},
-                {"3", "Pedro", "Gerente", "50000", "4", null},
-                {"4", "Iasaías", "Caja", "10000", "5", null},
-                {"5", "Michael", "Limpieza", "2000", "7", null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+
             },
             new String [] {
                 "NOMBRE", "CATEGORIA", "PRECIO", "SUELDO MENSUAL", "ID", "ESTADO"
@@ -187,7 +217,6 @@ public class Caja extends javax.swing.JPanel {
         tablaProductos.setRequestFocusEnabled(false);
         tablaProductos.setRowHeight(30);
         tablaProductos.setSelectionBackground(new java.awt.Color(204, 255, 204));
-        tablaProductos.setShowVerticalLines(false);
         tablaProductos.getTableHeader().setReorderingAllowed(false);
         jScrollPane3.setViewportView(tablaProductos);
         if (tablaProductos.getColumnModel().getColumnCount() > 0) {
@@ -201,16 +230,34 @@ public class Caja extends javax.swing.JPanel {
 
         btnAgregarProducto.setBackground(new java.awt.Color(255, 255, 255));
         btnAgregarProducto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons8-compra-30.png"))); // NOI18N
+        btnAgregarProducto.setToolTipText("Agregar producto");
         btnAgregarProducto.setContentAreaFilled(false);
         btnAgregarProducto.setFocusPainted(false);
         btnAgregarProducto.setFocusable(false);
 
         btnCompra.setBackground(new java.awt.Color(255, 255, 255));
         btnCompra.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons8-comprar-por-monedas-30.png"))); // NOI18N
+        btnCompra.setToolTipText("Realizar venta");
         btnCompra.setDefaultCapable(false);
         btnCompra.setFocusPainted(false);
         btnCompra.setFocusable(false);
         btnCompra.setRequestFocusEnabled(false);
+
+        btnEliminarProducto.setBackground(new java.awt.Color(255, 255, 255));
+        btnEliminarProducto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons8-vaciar-carro-30.png"))); // NOI18N
+        btnEliminarProducto.setToolTipText("Borrar producto");
+        btnEliminarProducto.setContentAreaFilled(false);
+        btnEliminarProducto.setFocusPainted(false);
+        btnEliminarProducto.setFocusable(false);
+
+        jLabel9.setText("Cantidad Producto:");
+
+        btnVaciarProductos.setBackground(new java.awt.Color(255, 255, 255));
+        btnVaciarProductos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons8-eliminar-30.png"))); // NOI18N
+        btnVaciarProductos.setToolTipText("Vaciar lista de productos");
+        btnVaciarProductos.setContentAreaFilled(false);
+        btnVaciarProductos.setFocusPainted(false);
+        btnVaciarProductos.setFocusable(false);
 
         javax.swing.GroupLayout jpanelEsquinasRedondas1Layout = new javax.swing.GroupLayout(jpanelEsquinasRedondas1);
         jpanelEsquinasRedondas1.setLayout(jpanelEsquinasRedondas1Layout);
@@ -222,21 +269,22 @@ public class Caja extends javax.swing.JPanel {
                 .addGroup(jpanelEsquinasRedondas1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jpanelEsquinasRedondas1Layout.createSequentialGroup()
                         .addGroup(jpanelEsquinasRedondas1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel8)
-                            .addComponent(jcbClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jpanelEsquinasRedondas1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jpanelEsquinasRedondas1Layout.createSequentialGroup()
-                                .addGap(44, 44, 44)
-                                .addComponent(jLabel9))
-                            .addGroup(jpanelEsquinasRedondas1Layout.createSequentialGroup()
-                                .addGap(35, 35, 35)
-                                .addComponent(txtEfectivo, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jcbClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel8))
+                        .addGap(38, 38, 38)
+                        .addGroup(jpanelEsquinasRedondas1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(cantidadProducto))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnVaciarProductos)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnEliminarProducto)
+                        .addGap(18, 18, 18)
                         .addComponent(btnAgregarProducto)
                         .addGap(18, 18, 18)
                         .addComponent(btnCompra))
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 711, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 740, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jpanelEsquinasRedondas3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -257,7 +305,9 @@ public class Caja extends javax.swing.JPanel {
                                 .addGap(18, 18, 18)
                                 .addGroup(jpanelEsquinasRedondas1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jcbClientes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtEfectivo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addComponent(cantidadProducto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(btnEliminarProducto)
+                            .addComponent(btnVaciarProductos))
                         .addGap(22, 22, 22)
                         .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                     .addGroup(jpanelEsquinasRedondas1Layout.createSequentialGroup()
@@ -282,10 +332,15 @@ public class Caja extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnAgregarProducto;
     public javax.swing.JButton btnCompra;
+    public javax.swing.JButton btnEliminarProducto;
+    public javax.swing.JButton btnVaciarProductos;
+    public javax.swing.JSpinner cantidadProducto;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollBar jScrollBar1;
@@ -295,10 +350,11 @@ public class Caja extends javax.swing.JPanel {
     private Estilos_panel.jpanelEsquinasRedondas jpanelEsquinasRedondas1;
     private Estilos_panel.jpanelEsquinasRedondas jpanelEsquinasRedondas2;
     private Estilos_panel.jpanelEsquinasRedondas jpanelEsquinasRedondas3;
+    private javax.swing.JLabel lblCantidadProducto;
+    private javax.swing.JLabel lblCostoTotalProductos;
     public javax.swing.JLabel lblSubTotal;
     public javax.swing.JLabel lblTotal;
     public javax.swing.JList<Producto> listaProductos;
     public javax.swing.JTable tablaProductos;
-    public javax.swing.JTextField txtEfectivo;
     // End of variables declaration//GEN-END:variables
 }

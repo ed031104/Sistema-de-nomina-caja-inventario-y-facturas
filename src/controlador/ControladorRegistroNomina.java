@@ -25,6 +25,7 @@ public class ControladorRegistroNomina implements ActionListener{
     this.vista.agregar.addActionListener(this);
     this.fichero = fichero;
     this.controladorNomina = controladorNomina;
+    vista.btnEliminar.addActionListener(this);
      vista.jcbEmpleados.setModel(ficheroEmpleado.llenarComboBox());
      vista.ListaRegistroNomina.setModel(fichero.llenarJlist());
     }
@@ -44,10 +45,26 @@ public class ControladorRegistroNomina implements ActionListener{
             
             fichero.Ingresarficheroregistros(nomina);
                 
-                vista.ListaRegistroNomina.setModel(fichero.llenarJlist());
-                fichero.llenarTabla(controladorNomina.vista.tablaNomina);
+            vista.ListaRegistroNomina.setModel(fichero.llenarJlist());
+            
+            fichero.llenarTabla(controladorNomina.vista.tablaNomina);
+            
             } catch (IOException | ParseException ex) {
                 Logger.getLogger(ControladorRegistroNomina.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        if(e.getSource() == vista.btnEliminar){
+            try{
+            Nomina nomina = vista.ListaRegistroNomina.getSelectedValue();
+               
+                fichero.EliminarCliente(nomina.getEmpleado().getNºINNS());   
+                
+                vista.ListaRegistroNomina.setModel(fichero.llenarJlist());
+            
+                fichero.llenarTabla(controladorNomina.vista.tablaNomina);
+                
+            } catch (IOException | ParseException ex) {
+                Logger.getLogger(ControladorRegistroCliente.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
     }

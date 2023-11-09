@@ -56,6 +56,8 @@ public class Inventario extends javax.swing.JPanel {
         txtNombre = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         btnGuardar = new javax.swing.JButton();
+        btnEliminar = new javax.swing.JButton();
+        btnEditar = new javax.swing.JButton();
 
         jpanelEsquinasRedondas1.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -128,7 +130,6 @@ public class Inventario extends javax.swing.JPanel {
         tabalProductos.setRequestFocusEnabled(false);
         tabalProductos.setRowHeight(30);
         tabalProductos.setSelectionBackground(new java.awt.Color(204, 255, 204));
-        tabalProductos.setShowVerticalLines(false);
         tabalProductos.getTableHeader().setReorderingAllowed(false);
         jScrollPane3.setViewportView(tabalProductos);
         if (tabalProductos.getColumnModel().getColumnCount() > 0) {
@@ -248,6 +249,22 @@ public class Inventario extends javax.swing.JPanel {
         btnGuardar.setFocusPainted(false);
         btnGuardar.setFocusable(false);
 
+        btnEliminar.setBackground(new java.awt.Color(32, 136, 203));
+        btnEliminar.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
+        btnEliminar.setForeground(new java.awt.Color(255, 255, 255));
+        btnEliminar.setText("ELIMINAR");
+        btnEliminar.setBorderPainted(false);
+        btnEliminar.setFocusPainted(false);
+        btnEliminar.setFocusable(false);
+
+        btnEditar.setBackground(new java.awt.Color(32, 136, 203));
+        btnEditar.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
+        btnEditar.setForeground(new java.awt.Color(255, 255, 255));
+        btnEditar.setText("EDITAR");
+        btnEditar.setBorderPainted(false);
+        btnEditar.setFocusPainted(false);
+        btnEditar.setFocusable(false);
+
         javax.swing.GroupLayout jpanelEsquinasRedondas1Layout = new javax.swing.GroupLayout(jpanelEsquinasRedondas1);
         jpanelEsquinasRedondas1.setLayout(jpanelEsquinasRedondas1Layout);
         jpanelEsquinasRedondas1Layout.setHorizontalGroup(
@@ -259,7 +276,9 @@ public class Inventario extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jpanelEsquinasRedondas1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jpanelEsquinasRedondas3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnGuardar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnGuardar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnEliminar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnEditar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(12, 12, 12))
         );
         jpanelEsquinasRedondas1Layout.setVerticalGroup(
@@ -275,6 +294,10 @@ public class Inventario extends javax.swing.JPanel {
                         .addComponent(jpanelEsquinasRedondas3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(btnGuardar)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnEliminar)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnEditar)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
@@ -296,6 +319,8 @@ public class Inventario extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton btnEditar;
+    public javax.swing.JButton btnEliminar;
     public javax.swing.JButton btnGuardar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

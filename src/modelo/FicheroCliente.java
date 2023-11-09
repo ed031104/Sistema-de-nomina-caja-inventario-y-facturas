@@ -2,6 +2,7 @@ package modelo;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -23,6 +24,7 @@ public class FicheroCliente {
             BufferedWriter bw = new BufferedWriter(fw);
             PrintWriter Rg = new PrintWriter (bw);
             //Datos personales
+            Rg.print(cliente.getId()+",");
             Rg.print(cliente.getNombres()+",");
             Rg.print(cliente.getApellidos()+",");
             Rg.print(cliente.getDireccion()+",");
@@ -49,23 +51,24 @@ public class FicheroCliente {
     while ((linea = br.readLine()) != null) {
         String[] datos = linea.split(","); // Suponiendo que los datos están separados por comas
 
-        if (datos.length >= 7) {
+        if (datos.length >= 8) {
             
-            String nombre = datos[0];
-            String apellido = datos[1];
-            String direccion = datos[2];
-            String cedula = datos[3];
-            String sexo = datos[4];
-            String correo = datos[5];
-            int telefono= Integer.parseInt(datos[6]);
+            int Id= Integer.parseInt(datos[0]);
+            String nombre = datos[1];
+            String apellido = datos[2];
+            String direccion = datos[3];
+            String cedula = datos[4];
+            String sexo = datos[5];
+            String correo = datos[6];
+            int telefono= Integer.parseInt(datos[7]);
         
           
             
-            Clientes cliente = new Clientes(nombre, apellido, direccion, cedula, sexo, correo, telefono);
+            Clientes cliente = new Clientes(Id,nombre, apellido, direccion, cedula, sexo, correo, telefono);
             listaClienteses.add(cliente);
         }
     }
-
+    br.close();
     // Devuelve la lista de clientes
     return listaClienteses;
     }
@@ -101,5 +104,45 @@ public class FicheroCliente {
         }
         return flm;
     }
-    
+   
+     public void EliminarCliente(int clienteId) throws IOException, ParseException {
+    File inputFile = new File("clientes.txt");
+    File tempFile = new File("temp.txt");
+
+    try (BufferedReader reader = new BufferedReader(new FileReader(inputFile));
+         BufferedWriter writer = new BufferedWriter(new FileWriter(tempFile))) {
+
+        String lineToRemove = Integer.toString(clienteId);
+        String currentLine;
+
+        while ((currentLine = reader.readLine()) != null) {
+            // Si la línea no contiene el ID del cliente a eliminar, la escribimos en el archivo temporal
+            if (!currentLine.startsWith(lineToRemove + ",")) {
+                writer.write(currentLine + System.getProperty("line.separator"));
+            }
+        }
+    }
+
+    // Eliminar el archivo original
+    if (!inputFile.delete()) {
+        System.err.println("No se pudo eliminar el archivo original.");
+    }
+
+    // Renombrar el nuevo archivo temporal al original
+    int retries = 0;
+    while (!tempFile.renameTo(inputFile) && retries < 5) {
+        // Si el renameTo falla, intentarlo nuevamente
+        retries++;
+        try {
+            Thread.sleep(100); // Esperar 100 ms antes de reintentarlo
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    if (retries == 5) {
+        System.err.println("No se pudo renombrar el archivo temporal al original después de 5 intentos.");
+    }
 }
+    
+   }

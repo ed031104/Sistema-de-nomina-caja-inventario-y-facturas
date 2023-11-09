@@ -2,6 +2,7 @@ package modelo;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -76,7 +77,7 @@ public class FicheroEmpleado {
             listaEmpleado.add(factura);
         }
     }
-
+    br.close();
     // Devuelve la lista de clientes
     return listaEmpleado;
     }
@@ -112,5 +113,45 @@ public class FicheroEmpleado {
         }
         return flm;
     }
-    
+ 
+    public void EliminarCliente(int NumeroInss) throws IOException, ParseException {
+    File inputFile = new File("Empleados.txt");
+    File tempFile = new File("temp.txt");
+
+    try (BufferedReader reader = new BufferedReader(new FileReader(inputFile));
+         BufferedWriter writer = new BufferedWriter(new FileWriter(tempFile))) {
+
+        String lineToRemove = Integer.toString(NumeroInss);
+        String currentLine;
+
+        while ((currentLine = reader.readLine()) != null) {
+            // Si la línea no contiene el ID del cliente a eliminar, la escribimos en el archivo temporal
+            if (!currentLine.startsWith(lineToRemove + ",")) {
+                writer.write(currentLine + System.getProperty("line.separator"));
+            }
+        }
+    }
+
+    // Eliminar el archivo original
+    if (!inputFile.delete()) {
+        System.err.println("No se pudo eliminar el archivo original.");
+    }
+
+    // Renombrar el nuevo archivo temporal al original
+    int retries = 0;
+    while (!tempFile.renameTo(inputFile) && retries < 5) {
+        // Si el renameTo falla, intentarlo nuevamente
+        retries++;
+        try {
+            Thread.sleep(100); // Esperar 100 ms antes de reintentarlo
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    if (retries == 5) {
+        System.err.println("No se pudo renombrar el archivo temporal al original después de 5 intentos.");
+    }
+}
+ 
 }

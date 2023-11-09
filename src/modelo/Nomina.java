@@ -400,7 +400,7 @@ public class Nomina {
    //se crea la varible local vacaciones multiplica el salario mensual por el factor
    double vacaciones = empleado.empleado.getSalario() * factor;
    //se registra el calculo en el atributo calculoVacaiones de la clase empelado
-   empleado.setVacaciones(vacaciones);
+   empleado.setVacaciones(Math.round(vacaciones));
     }
     
     public void aguinaldo(Nomina empleado){
@@ -409,7 +409,7 @@ public class Nomina {
    //se crea la varible local treceavoMes multiplica el salario mensual por el factor
    double treceavoMes = empleado.empleado.getSalario()* factor;
    //se registra el calculo en el atributo TreceavoMes de la clase empelado
-   empleado.setAguinaldo(treceavoMes); 
+   empleado.setAguinaldo(Math.round(treceavoMes)); 
 }
     
 }

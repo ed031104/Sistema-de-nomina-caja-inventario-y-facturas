@@ -22,6 +22,7 @@ public class ControladorRegitroEmpleado implements ActionListener{
         this.fichero = fichero;
         this.ctnNomina = ctnNomina;
         vista.agregar.addActionListener(this);
+        vista.btnEliminar.addActionListener(this);
         vista.ListaEmpleados.setModel(fichero.llenarJlist());
     }
     
@@ -51,12 +52,23 @@ public class ControladorRegitroEmpleado implements ActionListener{
                 
                 ctnNomina.vista.jcbEmpleados.setModel(fichero.llenarComboBox());
             
-            } catch (IOException ex) {
-                Logger.getLogger(ControladorRegitroEmpleado.class.getName()).log(Level.SEVERE, null, ex);
-            } catch (ParseException ex) {
+            } catch (IOException | ParseException ex) {
                 Logger.getLogger(ControladorRegitroEmpleado.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
+        if(e.getSource() == vista.btnEliminar){
+            
+            try{
+            Empleado empleado = vista.ListaEmpleados.getSelectedValue();
+               
+                fichero.EliminarCliente(empleado.getNºINNS());   
+                vista.ListaEmpleados.setModel(fichero.llenarJlist());
+                ctnNomina.vista.jcbEmpleados.setModel(fichero.llenarComboBox());
+            } catch (IOException | ParseException ex) {
+                Logger.getLogger(ControladorRegistroCliente.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        
     }
     
 }

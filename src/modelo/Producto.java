@@ -8,7 +8,7 @@ public class Producto {
     private int cantidad, id;
     
 
-    public Producto(String nombre, String categoria, double precio, int cantidad, int id, String estado) {
+    public Producto(int id, String nombre, String categoria, double precio, int cantidad,  String estado) {
         this.nombre = nombre;
         this.categoria = categoria;
         this.precio = precio;
@@ -65,12 +65,17 @@ public class Producto {
         this.estado = estado;
     }
 
-    
-    
+   
     @Override
     public String toString() {
-        return getNombre();
+    return nombre;
     }
+    
+    public String String() {
+    return id + "," + nombre + "," + categoria + "," + precio + "," + cantidad + "," + estado;
+    }
+    
+    
     
     public void estadoProducto(Producto producto){
         String estado;

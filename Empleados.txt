@@ -1,0 +1,2 @@
+14,Analista de inventarios,16000.0,Fredd,Davila,Villa sol,001-1010W,Hombre,edwin@4gmail.com,89569717
+150439,Analista de inventarios,15000.0,Edwin,Davila,Villa sol,001-031104-1010W,Hombre,edwin@gmail.com,89569717

@@ -23,16 +23,15 @@ public class ControladorNomina implements ActionListener{
         
          this.vista.tablaNomina.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
         @Override
-        public void valueChanged(ListSelectionEvent e) {
-            tablaNominaValueChanged(e);
-        }
-    });
+        public void valueChanged(ListSelectionEvent e) {tablaNominaValueChanged(e);} } );
+         
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
     }
 
+    
     public void tablaNominaValueChanged(ListSelectionEvent e){
         if(!e.getValueIsAdjusting()){
             int rowSeleccionado = vista.tablaNomina.getSelectedRow();

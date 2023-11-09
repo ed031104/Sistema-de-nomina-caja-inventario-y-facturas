@@ -54,10 +54,12 @@ public class Menu extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
-        setMinimumSize(new java.awt.Dimension(1400, 693));
-        setSize(new java.awt.Dimension(1200, 550));
+        setMinimumSize(new java.awt.Dimension(1250, 740));
+        setPreferredSize(new java.awt.Dimension(0, 0));
+        setSize(new java.awt.Dimension(0, 0));
 
         background.setBackground(new java.awt.Color(242, 242, 242));
+        background.setPreferredSize(new java.awt.Dimension(0, 0));
 
         menu.setBackground(new java.awt.Color(51, 51, 51));
 
@@ -70,7 +72,7 @@ public class Menu extends javax.swing.JFrame {
         btnNomina.setBorder(null);
         btnNomina.setBorderPainted(false);
         btnNomina.setContentAreaFilled(false);
-        btnNomina.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnNomina.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnNomina.setDefaultCapable(false);
         btnNomina.setFocusPainted(false);
         btnNomina.setFocusable(false);
@@ -109,7 +111,7 @@ public class Menu extends javax.swing.JFrame {
         btnInventario.setBorder(null);
         btnInventario.setBorderPainted(false);
         btnInventario.setContentAreaFilled(false);
-        btnInventario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnInventario.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnInventario.setDefaultCapable(false);
         btnInventario.setFocusPainted(false);
         btnInventario.setFocusable(false);
@@ -148,7 +150,7 @@ public class Menu extends javax.swing.JFrame {
         btnClientes.setBorder(null);
         btnClientes.setBorderPainted(false);
         btnClientes.setContentAreaFilled(false);
-        btnClientes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnClientes.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnClientes.setDefaultCapable(false);
         btnClientes.setFocusPainted(false);
         btnClientes.setFocusable(false);
@@ -187,7 +189,7 @@ public class Menu extends javax.swing.JFrame {
         btnCaja.setBorder(null);
         btnCaja.setBorderPainted(false);
         btnCaja.setContentAreaFilled(false);
-        btnCaja.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnCaja.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnCaja.setDefaultCapable(false);
         btnCaja.setFocusPainted(false);
         btnCaja.setFocusable(false);
@@ -227,7 +229,7 @@ public class Menu extends javax.swing.JFrame {
         btnRegistroNomina.setBorder(null);
         btnRegistroNomina.setBorderPainted(false);
         btnRegistroNomina.setContentAreaFilled(false);
-        btnRegistroNomina.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnRegistroNomina.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnRegistroNomina.setDefaultCapable(false);
         btnRegistroNomina.setFocusPainted(false);
         btnRegistroNomina.setFocusable(false);
@@ -266,7 +268,7 @@ public class Menu extends javax.swing.JFrame {
         btnEmpleados.setBorder(null);
         btnEmpleados.setBorderPainted(false);
         btnEmpleados.setContentAreaFilled(false);
-        btnEmpleados.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnEmpleados.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnEmpleados.setDefaultCapable(false);
         btnEmpleados.setFocusPainted(false);
         btnEmpleados.setFocusable(false);
@@ -306,7 +308,7 @@ public class Menu extends javax.swing.JFrame {
         btnFactura.setBorder(null);
         btnFactura.setBorderPainted(false);
         btnFactura.setContentAreaFilled(false);
-        btnFactura.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnFactura.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnFactura.setDefaultCapable(false);
         btnFactura.setFocusPainted(false);
         btnFactura.setFocusable(false);
@@ -461,7 +463,7 @@ public class Menu extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(backgroundLayout.createSequentialGroup()
-                        .addGap(0, 542, Short.MAX_VALUE)
+                        .addGap(0, 594, Short.MAX_VALUE)
                         .addComponent(header, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(content, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
@@ -484,12 +486,12 @@ public class Menu extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(background, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(background, javax.swing.GroupLayout.DEFAULT_SIZE, 879, Short.MAX_VALUE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(background, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(background, javax.swing.GroupLayout.DEFAULT_SIZE, 456, Short.MAX_VALUE)
         );
 
         pack();
