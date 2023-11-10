@@ -22,7 +22,7 @@ import vista.registroClientes;
 
 public class menuController implements ActionListener{
 
-    private Menu vista; 
+    Menu vista; 
     
     datosNominas panelNomina = new datosNominas();
     FicheroNomina ficheroNomina  = new FicheroNomina();
@@ -54,7 +54,7 @@ public class menuController implements ActionListener{
     this.vista.btnRegistroNomina.addActionListener(this);
     this.vista.btnEmpleados.addActionListener(this);
     this.vista.btnFactura.addActionListener(this);
-      
+
     
     }
     

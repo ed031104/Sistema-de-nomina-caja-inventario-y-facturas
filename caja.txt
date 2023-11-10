@@ -1,2 +1,0 @@
-493455,10/11/2023,12345,Fredd Antonio,Davila Osorio,Villa sol,001-031104-2020E,Hombre,Fredd@gmail.com,89569717,1290.0,1290.0,1290.0,1,COCA COLA 3LTS,Hogar,80.0,3,Disponible,2,PAN TOSTADO,Hogar,50.0,5,Disponible,3,TORTILLAS,Hogar,40.0,20,Disponible,
-601975,09/11/2023,306,Edwin Antonio,Davila Osorio,Villa sol,001-031104-1010W,Hombre,Edwin@gmail.com,89569717,24000.0,24000.0,24000.0,1,COCA COLA 3LTS,Hogar,80.0,300,Disponible,

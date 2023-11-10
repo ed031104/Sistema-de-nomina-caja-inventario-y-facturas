@@ -9,6 +9,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import modelo.Empleado;
 import modelo.FicheroEmpleado;
+import raven.toast.Notifications;
 import vista.RegistroEmpleados;
 
 public class ControladorRegitroEmpleado implements ActionListener{
@@ -16,7 +17,6 @@ public class ControladorRegitroEmpleado implements ActionListener{
     RegistroEmpleados vista; 
     FicheroEmpleado fichero;
     ControladorRegistroNomina ctnNomina;
-    
     public ControladorRegitroEmpleado(RegistroEmpleados vista, FicheroEmpleado fichero, ControladorRegistroNomina ctnNomina) throws IOException, ParseException{
         this.vista = vista;
         this.fichero = fichero;
@@ -24,6 +24,7 @@ public class ControladorRegitroEmpleado implements ActionListener{
         vista.agregar.addActionListener(this);
         vista.btnEliminar.addActionListener(this);
         vista.ListaEmpleados.setModel(fichero.llenarJlist());
+        
     }
     
     @Override
@@ -51,7 +52,6 @@ public class ControladorRegitroEmpleado implements ActionListener{
                 vista.ListaEmpleados.setModel(fichero.llenarJlist());
                 
                 ctnNomina.vista.jcbEmpleados.setModel(fichero.llenarComboBox());
-            
             } catch (IOException | ParseException ex) {
                 Logger.getLogger(ControladorRegitroEmpleado.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -64,6 +64,9 @@ public class ControladorRegitroEmpleado implements ActionListener{
                 fichero.EliminarCliente(empleado.getNºINNS());   
                 vista.ListaEmpleados.setModel(fichero.llenarJlist());
                 ctnNomina.vista.jcbEmpleados.setModel(fichero.llenarComboBox());
+                
+                Notifications.getInstance().show(Notifications.Type.SUCCESS, "Se ha eliminado con exito");
+                
             } catch (IOException | ParseException ex) {
                 Logger.getLogger(ControladorRegistroCliente.class.getName()).log(Level.SEVERE, null, ex);
             }

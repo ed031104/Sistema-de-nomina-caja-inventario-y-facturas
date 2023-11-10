@@ -9,6 +9,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import modelo.Clientes;
 import modelo.FicheroCliente;
+import raven.toast.Notifications;
 import vista.registroClientes;
 
 public class ControladorRegistroCliente implements ActionListener{
@@ -56,7 +57,9 @@ public class ControladorRegistroCliente implements ActionListener{
            panelClientes.ListaClientes.setModel(ficheroCliente.llenarJlist());
             
            ControladorCaja.vista.jcbClientes.setModel(ficheroCliente.llenarComboBox());
-            
+           
+           Notifications.getInstance().show(Notifications.Type.SUCCESS, "Registro exitoso");
+           
            } catch (IOException | ParseException ex) {
                Logger.getLogger(ControladorRegistroCliente.class.getName()).log(Level.SEVERE, null, ex);
            }
@@ -70,7 +73,10 @@ public class ControladorRegistroCliente implements ActionListener{
                 ficheroCliente.EliminarCliente(cliente.getId());
                 
                 panelClientes.ListaClientes.setModel(ficheroCliente.llenarJlist());
-            
+                
+                Notifications.getInstance().show(Notifications.Type.SUCCESS, "Has eliminado con exito al cliente");
+
+                
             } catch (IOException | ParseException ex) {
                 Logger.getLogger(ControladorRegistroCliente.class.getName()).log(Level.SEVERE, null, ex);
             }

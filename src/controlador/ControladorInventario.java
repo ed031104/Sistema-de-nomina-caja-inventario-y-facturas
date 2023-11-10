@@ -9,6 +9,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import modelo.FicheroProducto;
 import modelo.Producto;
+import raven.toast.Notifications;
 import vista.Inventario;
 
 public class ControladorInventario implements ActionListener{
@@ -47,6 +48,9 @@ public class ControladorInventario implements ActionListener{
             
             ficheroProducto.llenarTabla(ControladorCaja.vista.tablaProductos);
             
+            Notifications.getInstance().show(Notifications.Type.SUCCESS, "Registro exitoso");
+
+            
             } catch (IOException ex) {
                 Logger.getLogger(ControladorInventario.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -69,6 +73,9 @@ public class ControladorInventario implements ActionListener{
                      ficheroProducto.EliminarProducto(id);
                      ficheroProducto.llenarTabla(vista.tabalProductos);
                      ficheroProducto.llenarTabla(ControladorCaja.vista.tablaProductos);
+                     
+                     Notifications.getInstance().show(Notifications.Type.SUCCESS, "Se ha eliminado con exito el producto");
+                     
                  } catch (IOException | ParseException ex) {
                      Logger.getLogger(ControladorInventario.class.getName()).log(Level.SEVERE, null, ex);
                  }
@@ -91,6 +98,9 @@ public class ControladorInventario implements ActionListener{
             try {
                 ficheroProducto.llenarTabla(vista.tabalProductos);
                 ficheroProducto.llenarTabla(ControladorCaja.vista.tablaProductos);
+                
+                Notifications.getInstance().show(Notifications.Type.SUCCESS, "Se ha editado con exito el producto");
+                
             } catch (IOException ex) {
                 Logger.getLogger(ControladorInventario.class.getName()).log(Level.SEVERE, null, ex);
             }

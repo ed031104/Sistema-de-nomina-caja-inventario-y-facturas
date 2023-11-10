@@ -19,6 +19,7 @@ import modelo.FicheroCaja;
 import modelo.FicheroCliente;
 import modelo.FicheroProducto;
 import modelo.Producto;
+import raven.toast.Notifications;
 import vista.Caja;
 
 public class ControladorCaja implements ActionListener{
@@ -52,10 +53,10 @@ public class ControladorCaja implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         //evento de btnCompra
     if(e.getSource() == vista.btnCompra){
-       
-        if(!vista.fecha.equals("")){
+        
+        Date selectedDate = vista.fecha.getDate();
+        if(selectedDate != null){
            double montoPagar = Double.parseDouble(JOptionPane.showInputDialog(null, "Ingrese el monto a pagar"));
-            
             //se condiciona que si lo que se va a pagar es mayor al precio total se cumpla.
            if(montoPagar >= calculoTotal()){
                
@@ -98,16 +99,16 @@ public class ControladorCaja implements ActionListener{
             vista.lblTotal.setText("0.00 C$");
             vista.lblSubTotal.setText("0.00 C$");
             } catch (IOException ex) {
-                JOptionPane.showMessageDialog(null, "Error al editar productos. Consulte el registro para más detalles.");
+                Notifications.getInstance().show(Notifications.Type.ERROR, "Error al editar productos. Consulte el registro para más detalles.");
             }  catch (ParseException ex) {
                    Logger.getLogger(ControladorCaja.class.getName()).log(Level.SEVERE, null, ex);
                }
             
             }else{
-            JOptionPane.showMessageDialog(null, "Su monto es insuficiente.");
+               Notifications.getInstance().show(Notifications.Type.ERROR, "¡Su monto es insuficiente!");
           }
         }else{
-            JOptionPane.showMessageDialog(null, "Falta la fecha.");
+            Notifications.getInstance().show(Notifications.Type.WARNING, "Ingrese la fecha porfavor");
         }
     }
     //evento de btnEliminarProducto
@@ -157,13 +158,13 @@ public class ControladorCaja implements ActionListener{
                      vista.lblTotal.setText(String.valueOf(calculoTotal()));
                         
                     }else{
-                        JOptionPane.showMessageDialog(null, "No hay muchas unidades disponible");
+                        Notifications.getInstance().show(Notifications.Type.INFO, "No hay muchas unidades disponible");
                     }
                 }else{
-                    JOptionPane.showMessageDialog(null, "¡El producto está agotado!");  
+                    Notifications.getInstance().show(Notifications.Type.WARNING, "¡El producto está agotado!");
                     }
             }else{
-                JOptionPane.showMessageDialog(null, "¡Ingresa la cantidad de productos!");
+                Notifications.getInstance().show(Notifications.Type.ERROR, "¡Ingresa la cantidad de productos!");
             }  
         }
     }

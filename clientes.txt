@@ -1,2 +1,0 @@
-12345,Fredd Antonio,Davila Osorio,Villa sol,001-031104-2020E,Hombre,Fredd@gmail.com,89569717
-306,Edwin Antonio,Davila Osorio,Villa sol,001-031104-1010W,Hombre,Edwin@gmail.com,89569717

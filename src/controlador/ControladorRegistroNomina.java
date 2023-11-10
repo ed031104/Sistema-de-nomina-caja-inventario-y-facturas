@@ -11,6 +11,7 @@ import modelo.Empleado;
 import modelo.FicheroEmpleado;
 import modelo.FicheroNomina;
 import modelo.Nomina;
+import raven.toast.Notifications;
 import vista.RegistroNomina;
 
 public class ControladorRegistroNomina implements ActionListener{
@@ -49,6 +50,8 @@ public class ControladorRegistroNomina implements ActionListener{
             
             fichero.llenarTabla(controladorNomina.vista.tablaNomina);
             
+                Notifications.getInstance().show(Notifications.Type.SUCCESS, "Registro exitoso");
+            
             } catch (IOException | ParseException ex) {
                 Logger.getLogger(ControladorRegistroNomina.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -62,6 +65,8 @@ public class ControladorRegistroNomina implements ActionListener{
                 vista.ListaRegistroNomina.setModel(fichero.llenarJlist());
             
                 fichero.llenarTabla(controladorNomina.vista.tablaNomina);
+                
+                Notifications.getInstance().show(Notifications.Type.SUCCESS, "Se ha eliminado con exito");
                 
             } catch (IOException | ParseException ex) {
                 Logger.getLogger(ControladorRegistroCliente.class.getName()).log(Level.SEVERE, null, ex);

@@ -7,6 +7,10 @@ import java.awt.Image;
 import java.awt.Toolkit;
 import java.io.IOException;
 import java.text.ParseException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.SwingUtilities;
+import raven.toast.Notifications;
 
 public class Menu extends javax.swing.JFrame {
 
@@ -14,6 +18,7 @@ public class Menu extends javax.swing.JFrame {
     
     public Menu() {
         initComponents();
+        Notifications.getInstance().setJFrame(this);
     }
 
     @SuppressWarnings("unchecked")
@@ -558,12 +563,19 @@ public class Menu extends javax.swing.JFrame {
 
     
     public static void main(String[] args) throws IOException, ParseException {
-        Menu vista = new Menu();
-        
+        SwingUtilities.invokeLater(() -> {
+            try {
+            Menu vista = new Menu();
         //Abre el frame principal "Menu" y se inicializa sun controlador 
         menuController contorladorMenu = new menuController(vista);
         contorladorMenu.iniciar();
+        
         vista.setVisible(true);
+            } catch (IOException | ParseException ex) {
+                Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        });
+        
         
     }
     
