@@ -75,8 +75,6 @@ public class Producto {
     return id + "," + nombre + "," + categoria + "," + precio + "," + cantidad + "," + estado;
     }
     
-    
-    
     public void estadoProducto(Producto producto){
         String estado;
         if(producto.getCantidad() > 0){

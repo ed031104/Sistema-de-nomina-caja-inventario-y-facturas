@@ -2,20 +2,24 @@
 package modelo;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 public class Caja {
 
-Clientes cliente;
+    Clientes cliente;
     ArrayList<Producto> producto;
-
-double total, subTotal, vuelto;
-
-    public Caja(Clientes cliente, double subTotal, double Total, double vuelto, ArrayList<Producto> productos) {
+    double total, subTotal, vuelto;
+    int numeroFactura;
+    String date;
+    
+    public Caja(int numeroFactura, String fecha, Clientes cliente, double subTotal, double Total, double vuelto, ArrayList<Producto> productos) {
         this.cliente = cliente;
         this.subTotal = subTotal;
         this.total = Total;
         this.vuelto = Total;
         this.producto = productos;
+        this.numeroFactura = numeroFactura;
+        this.date = fecha;
     }
 
     public Clientes getCliente() {
@@ -56,6 +60,22 @@ double total, subTotal, vuelto;
 
     public void setVuelto(double vuelto) {
         this.vuelto = vuelto;
+    }
+
+    public int getNumeroFactura() {
+        return numeroFactura;
+    }
+
+    public void setNumeroFactura(int numeroFactura) {
+        this.numeroFactura = numeroFactura;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
 
    

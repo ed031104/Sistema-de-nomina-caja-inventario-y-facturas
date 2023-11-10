@@ -391,7 +391,7 @@ public class Nomina {
     
     public void inatec(Nomina empleado){
         double inatec = empleado.getSalarioB() *0.02;
-        empleado.setInatec(inatec);
+        empleado.setInatec(Math.round(inatec));
     }
 
     public void calculoVacaciones(Nomina empleado){

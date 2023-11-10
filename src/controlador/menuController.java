@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.text.ParseException;
 import javax.swing.JPanel;
+import modelo.FicheroCaja;
 import modelo.FicheroCliente;
 import modelo.FicheroEmpleado;
 import modelo.FicheroNomina;
@@ -30,8 +31,9 @@ public class menuController implements ActionListener{
     FicheroEmpleado ficheroEmpelado = new FicheroEmpleado();
     
     FicheroProducto ficheroProducto = new FicheroProducto();
-    Caja panelCaja = new Caja();
     
+    Caja panelCaja = new Caja();
+    FicheroCaja ficheroCaja = new FicheroCaja();
     
     Factura panelFactura = new Factura();
     
@@ -65,7 +67,7 @@ public class menuController implements ActionListener{
          ControladorRegitroEmpleado ControladorRegitroEmpleado = new ControladorRegitroEmpleado(panelempleados, ficheroEmpelado, controladorRegistroNomina );
            
          ControladorRecibo ControladorRecibo = new ControladorRecibo(panelFactura);
-         ControladorCaja ControladorCaja = new ControladorCaja(panelCaja, ControladorRecibo, ficheroProducto, ficheroCliente);
+         ControladorCaja ControladorCaja = new ControladorCaja(panelCaja, ControladorRecibo, ficheroProducto, ficheroCliente, ficheroCaja);
          ControladorRegistroCliente ControladorRegistroCliente = new ControladorRegistroCliente(panelClientes, ficheroCliente, ControladorCaja);
          ControladorInventario ControladorInventario = new ControladorInventario(panelInventario, ficheroProducto, ControladorCaja);
     }

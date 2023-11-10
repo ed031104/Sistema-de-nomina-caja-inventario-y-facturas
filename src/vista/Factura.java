@@ -45,6 +45,8 @@ public class Factura extends javax.swing.JPanel {
 
         jpanelEsquinasRedondas1 = new Estilos_panel.jpanelEsquinasRedondas();
         jpanelEsquinasRedondas2 = new Estilos_panel.jpanelEsquinasRedondas();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        listaFactura = new javax.swing.JList<>();
         jScrollPane1 = new javax.swing.JScrollPane();
         jpanelEsquinasRedondas3 = new Estilos_panel.jpanelEsquinasRedondas();
         jLabel7 = new javax.swing.JLabel();
@@ -69,15 +71,33 @@ public class Factura extends javax.swing.JPanel {
 
         jpanelEsquinasRedondas2.setBackground(new java.awt.Color(32, 136, 203));
 
+        jScrollPane2.setBorder(null);
+        jScrollPane2.setFocusable(false);
+        jScrollPane2.setOpaque(false);
+        jScrollPane2.setRequestFocusEnabled(false);
+        jScrollPane2.setVerifyInputWhenFocusTarget(false);
+
+        listaFactura.setBackground(new java.awt.Color(32, 136, 203));
+        listaFactura.setForeground(new java.awt.Color(255, 255, 255));
+        listaFactura.setFocusable(false);
+        listaFactura.setRequestFocusEnabled(false);
+        jScrollPane2.setViewportView(listaFactura);
+
         javax.swing.GroupLayout jpanelEsquinasRedondas2Layout = new javax.swing.GroupLayout(jpanelEsquinasRedondas2);
         jpanelEsquinasRedondas2.setLayout(jpanelEsquinasRedondas2Layout);
         jpanelEsquinasRedondas2Layout.setHorizontalGroup(
             jpanelEsquinasRedondas2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 94, Short.MAX_VALUE)
+            .addGroup(jpanelEsquinasRedondas2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 102, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jpanelEsquinasRedondas2Layout.setVerticalGroup(
             jpanelEsquinasRedondas2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 634, Short.MAX_VALUE)
+            .addGroup(jpanelEsquinasRedondas2Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 527, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(87, Short.MAX_VALUE))
         );
 
         jScrollPane1.setBorder(null);
@@ -153,7 +173,6 @@ public class Factura extends javax.swing.JPanel {
         tablaProductos.setRequestFocusEnabled(false);
         tablaProductos.setRowHeight(30);
         tablaProductos.setSelectionBackground(new java.awt.Color(204, 255, 204));
-        tablaProductos.setShowVerticalLines(false);
         tablaProductos.getTableHeader().setReorderingAllowed(false);
         jScrollPane3.setViewportView(tablaProductos);
         if (tablaProductos.getColumnModel().getColumnCount() > 0) {
@@ -306,7 +325,7 @@ public class Factura extends javax.swing.JPanel {
             .addGroup(jpanelEsquinasRedondas1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jpanelEsquinasRedondas2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(38, 38, 38)
+                .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 891, Short.MAX_VALUE)
                 .addGap(40, 40, 40))
         );
@@ -351,12 +370,14 @@ public class Factura extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private Estilos_panel.jpanelEsquinasRedondas jpanelEsquinasRedondas1;
     private Estilos_panel.jpanelEsquinasRedondas jpanelEsquinasRedondas2;
     private Estilos_panel.jpanelEsquinasRedondas jpanelEsquinasRedondas3;
     public javax.swing.JLabel lblSubtotal;
     public javax.swing.JLabel lblTotal;
+    public javax.swing.JList<modelo.Caja> listaFactura;
     public javax.swing.JTable tablaProductos;
     public javax.swing.JTextField txtCliente;
     public javax.swing.JTextField txtFecha;

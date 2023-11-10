@@ -105,6 +105,7 @@ public class FicheroProducto {
         }
         
         tablaInventario.setModel(dtm);
+        
         for (int i = 0; i < tablaInventario.getColumnCount(); i++) {
             tablaInventario.getColumnModel().getColumn(i).setPreferredWidth(250);
         }

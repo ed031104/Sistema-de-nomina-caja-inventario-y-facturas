@@ -1,15 +1,21 @@
 
 package controlador;
 
+import com.toedter.calendar.JDateChooser;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 import modelo.Clientes;
+import modelo.FicheroCaja;
 import modelo.FicheroCliente;
 import modelo.FicheroProducto;
 import modelo.Producto;
@@ -21,15 +27,17 @@ public class ControladorCaja implements ActionListener{
     ControladorRecibo ControladorRecibo;
     FicheroProducto ficheroProducto ;
     FicheroCliente ficheroCliente ;
+    FicheroCaja ficehroCaja;
     
     DefaultListModel<Producto> productosModelo = new DefaultListModel<>();
         
     
-    ControladorCaja(Caja vista, ControladorRecibo ControladorRecibo, FicheroProducto ficheroProducto, FicheroCliente ficheroCliente) throws IOException {
+    ControladorCaja(Caja vista, ControladorRecibo ControladorRecibo, FicheroProducto ficheroProducto, FicheroCliente ficheroCliente, FicheroCaja ficehroCaja) throws IOException {
         this.ControladorRecibo = ControladorRecibo;
         this.vista = vista;
         this.ficheroCliente = ficheroCliente;
         this.ficheroProducto = ficheroProducto;
+        this.ficehroCaja = ficehroCaja;
         vista.btnAgregarProducto.addActionListener(this);
         vista.btnCompra.addActionListener(this);
         vista.btnEliminarProducto.addActionListener(this);
@@ -44,33 +52,63 @@ public class ControladorCaja implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         //evento de btnCompra
     if(e.getSource() == vista.btnCompra){
-        double montoPagar = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese el monto a pagar"));
-      
+       
+        if(!vista.fecha.equals("")){
+           double montoPagar = Double.parseDouble(JOptionPane.showInputDialog(null, "Ingrese el monto a pagar"));
+            
+            //se condiciona que si lo que se va a pagar es mayor al precio total se cumpla.
            if(montoPagar >= calculoTotal()){
+               
+            //se hace la operacion para ver cuanto dinero se tiene que regresar
             double vuelto = montoPagar - calculoTotal();
             
-            JOptionPane.showMessageDialog(null, "Gracias por su compra \n Su vuelto es:" +vuelto +" C$");
-            vista.lblTotal.setText("0.00 C$");
-            vista.lblSubTotal.setText("0.00 C$");
             
-            modelo.Caja caja = new modelo.Caja( (Clientes) vista.jcbClientes.getSelectedItem(), Double.parseDouble(vista.lblSubTotal.getText()), Double.parseDouble(vista.lblTotal.getText()),  vuelto, llenarListaConProductos());
-          
             try {
+                //se recorre toda la lista de productos que se agregaron al Jlist
                 for(int i=0 ; i < RestanteProductos().size(); i++){
+                    //cargamos lo productos en un nuevo objeto de producto
                     Producto producto = RestanteProductos().get(i);
                     producto.estadoProducto(producto);
                     
+                    //se editan los productos con los productos registrados para que disminuya la cantidad.
                     ficheroProducto.EditarProducto(producto);
+                    //se muestran los productos actualizados en la tablaProductos
                     ficheroProducto.llenarTabla(vista.tablaProductos);
                 }
+            
+            
+            //se imprime el mensaje
+            JOptionPane.showMessageDialog(null, "Gracias por su compra \n Su vuelto es:" +vuelto +" C$");
+            
+            Random random = new Random();
+            int num = random.nextInt((1000000 - 1000) + 1) + 1000;
+            String fecha = extraerFecha(vista.fecha);
+            //se instancia una nueva clase caja y se carga con los datos recientemente obtenidos.
+            modelo.Caja caja = new modelo.Caja(num, fecha, (Clientes) vista.jcbClientes.getSelectedItem(), Double.parseDouble(vista.lblSubTotal.getText()),
+            Double.parseDouble(vista.lblTotal.getText()),  vuelto, llenarListaConProductos());
+            
+            ficehroCaja.Ingresarficheroregistros(caja);
+            ControladorRecibo.panelFactura.listaFactura.setModel(ficehroCaja.llenarJlist());
+            
+            //se vacia la el Jlist de productos.
+            productosModelo.clear();
+            vista.listaProductos.setModel(productosModelo);
+ 
+            //se devuelven a su valor original el total y el subTotal
+            vista.lblTotal.setText("0.00 C$");
+            vista.lblSubTotal.setText("0.00 C$");
             } catch (IOException ex) {
-                Logger.getLogger(ControladorCaja.class.getName()).log(Level.SEVERE, null, ex);
-            }
+                JOptionPane.showMessageDialog(null, "Error al editar productos. Consulte el registro para más detalles.");
+            }  catch (ParseException ex) {
+                   Logger.getLogger(ControladorCaja.class.getName()).log(Level.SEVERE, null, ex);
+               }
             
             }else{
             JOptionPane.showMessageDialog(null, "Su monto es insuficiente.");
           }
-       
+        }else{
+            JOptionPane.showMessageDialog(null, "Falta la fecha.");
+        }
     }
     //evento de btnEliminarProducto
     if(e.getSource() == vista.btnEliminarProducto){
@@ -93,45 +131,42 @@ public class ControladorCaja implements ActionListener{
         
         int rowSeleccionado = vista.tablaProductos.getSelectedRow();
         
-        if(rowSeleccionado != -1){
+        if(rowSeleccionado != -1 && rowSeleccionado < vista.tablaProductos.getRowCount()){
                 
             int id = (int) vista.tablaProductos.getValueAt(rowSeleccionado, 0);
-                String nombre =  (String) vista.tablaProductos.getValueAt(rowSeleccionado, 1);
-                String categoria =  (String) vista.tablaProductos.getValueAt(rowSeleccionado, 2);
-                double precio = (double) vista.tablaProductos.getValueAt(rowSeleccionado, 3);
-                int cantidadVender = (int) vista.cantidadProducto.getValue();
-                int cantidad = (int) vista.tablaProductos.getValueAt(rowSeleccionado, 4);
+            String nombre =  (String) vista.tablaProductos.getValueAt(rowSeleccionado, 1);
+            String categoria =  (String) vista.tablaProductos.getValueAt(rowSeleccionado, 2);
+            double precio = (double) vista.tablaProductos.getValueAt(rowSeleccionado, 3);
+            int cantidadVender = (int) vista.cantidadProducto.getValue();
+            int cantidad = (int) vista.tablaProductos.getValueAt(rowSeleccionado, 4);
+            String estado =  (String) vista.tablaProductos.getValueAt(rowSeleccionado, 5);
                 
-                String estado =  (String) vista.tablaProductos.getValueAt(rowSeleccionado, 5);
-                
-                if(cantidadVender > 0){
+            if(cantidadVender > 0){
                     
-                    if(estado.equals("Disponible")){
+                if(estado.equals("Disponible")){
                     
-                        if(cantidadVender <= cantidad){
+                    if(cantidadVender <= cantidad){
                             
-                Producto producto = new Producto(id, nombre, categoria, precio, cantidadVender, estado);
+                     Producto producto = new Producto(id, nombre, categoria, precio, cantidadVender, estado);
                 
-                productosModelo.addElement(producto);
+                     productosModelo.addElement(producto);
                 
-                vista.listaProductos.setModel(productosModelo);
+                     vista.listaProductos.setModel(productosModelo);
                 
-                    vista.lblSubTotal.setText(String.valueOf(calculoTotal()));
-                    vista.lblTotal.setText(String.valueOf(calculoTotal()));
+                     vista.lblSubTotal.setText(String.valueOf(calculoTotal()));
+                     vista.lblTotal.setText(String.valueOf(calculoTotal()));
                         
-                        }else{
-                            JOptionPane.showMessageDialog(null, "No hay muchas unidades disponible");
-                          
-                        }
                     }else{
-                        JOptionPane.showMessageDialog(null, "¡El producto está agotado!");
-                  
+                        JOptionPane.showMessageDialog(null, "No hay muchas unidades disponible");
                     }
                 }else{
-                 JOptionPane.showMessageDialog(null, "¡Ingresa la cantidad de productos!");
-                }  
-           }
+                    JOptionPane.showMessageDialog(null, "¡El producto está agotado!");  
+                    }
+            }else{
+                JOptionPane.showMessageDialog(null, "¡Ingresa la cantidad de productos!");
+            }  
         }
+    }
     //evento de btnVaciasProductos
     if(e.getSource() == vista.btnVaciarProductos){
         productosModelo.clear();
@@ -145,12 +180,16 @@ public class ControladorCaja implements ActionListener{
     public double calculoTotal(){
       double total = 0;
 
+      //se recorre todo el modelo del JListProductos, para extraer sus objetos
         for (int i = 0; i < productosModelo.getSize(); i++) {
+            //se isntancia un nuevo producto y se carga con los datos del modelo
         Producto producto = productosModelo.getElementAt(i);
 
+        //se obtiene el precio y la cantidad de los productos
         double precio = producto.getPrecio();
         int cantidad = producto.getCantidad();
 
+        //se hace el calculo multiplicando el precio y la cantidad, y que se sumen entre todas las varuables total.
         total += precio * cantidad;
         }
         return total;
@@ -158,30 +197,54 @@ public class ControladorCaja implements ActionListener{
 
     public ArrayList<Producto> llenarListaConProductos(){
      ArrayList<Producto> listaproductos = new ArrayList<>();
+     //se recorre el modelo de JlistProductos
             for (int i = 0; i < productosModelo.getSize(); i++) {
+                //se carga todos los productos que estaban en el JlistProductos a una nueva instancia de productos
                 Producto producto = productosModelo.getElementAt(i); 
+                //se agrega al arrayList cada producto del JlistProductos
                 listaproductos.add(producto);
             }
             return listaproductos;
     }
     
-    public ArrayList<Producto> RestanteProductos() throws IOException{
+    public ArrayList<Producto> RestanteProductos() throws IOException {
         
-     ArrayList<Producto> listaProductos = ficheroProducto.extraerProductosFicheros();
-     ArrayList<Producto> listaproductosJlist = llenarListaConProductos();
-            
-      // Iterar sobre los elementos de ambas listas
-    for (int i = 0; i < listaProductos.size(); i++) {
-        Producto productoListaProductos = listaProductos.get(i);
-        Producto productoListaJlist = listaproductosJlist.get(i);
+    // Se llena el ArrayList listaProductos con todos los productos que se encuentran en el fichero
+    ArrayList<Producto> listaProductos = ficheroProducto.extraerProductosFicheros();
+        
+    // Se llena el ArrayList listaProductosJList con todos los productos que estén en el JListProductos
+    ArrayList<Producto> listaProductosJList = llenarListaConProductos();
+    
+    // Crear una lista para almacenar los resultados
+    ArrayList<Producto> resultados = new ArrayList<>();
 
-        // Restar las cantidades y actualizar la cantidad en listaproductosJlist
-        int nuevaCantidad = productoListaProductos.getCantidad() - productoListaJlist.getCantidad() ;
-        productoListaProductos.setCantidad(nuevaCantidad);
-       
-        System.out.println(productoListaJlist.getCantidad());
-        System.out.println(productoListaProductos.getCantidad());
+    // Iterar sobre ambas listas
+    int maxSize = Math.max(listaProductos.size(), listaProductosJList.size());
+    for (int i = 0; i < maxSize; i++) {
+        
+        // Obtener el producto de cada lista, o null si no hay elemento en esa posición
+        Producto productoListaProductos = (i < listaProductos.size()) ? listaProductos.get(i) : null;
+        Producto productoListaJList = (i < listaProductosJList.size()) ? listaProductosJList.get(i) : null;
+
+        // Verificar si ambos productos no son nulos
+        if (productoListaProductos != null && productoListaJList != null) {
+            // Restar las cantidades y actualizar la cantidad en productoListaProductos
+            int nuevaCantidad = productoListaProductos.getCantidad() - productoListaJList.getCantidad();
+            productoListaProductos.setCantidad(nuevaCantidad);
+            resultados.add(productoListaProductos);
+        }
     }
-     return listaProductos;
+    
+    return resultados;
+}
+
+      public String extraerFecha(JDateChooser dateChooser) {
+        Date selectedDate = dateChooser.getDate();
+        
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        
+        String formattedDate = dateFormat.format(selectedDate);
+        
+        return formattedDate;
     }
 }
