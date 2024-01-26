@@ -63,8 +63,3 @@
 |  flatlaf        | https://www.formdev.com/flatlaf/  |
 | swing-toast-notifications | https://github.com/DJ-Raven/swing-toast-notifications |
 |jcalendar | https://github.com/toedter/jcalendar |
-<<<<<<< HEAD
-=======
-
-
->>>>>>> df2dee7ff628cf995197a09d1eb768d44fdc9e49
