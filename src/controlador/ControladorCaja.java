@@ -22,6 +22,7 @@ import modelo.Producto;
 import raven.toast.Notifications;
 import vista.Caja;
 
+
 public class ControladorCaja implements ActionListener{
 
     Caja vista;
@@ -34,15 +35,19 @@ public class ControladorCaja implements ActionListener{
         
     
     ControladorCaja(Caja vista, ControladorRecibo ControladorRecibo, FicheroProducto ficheroProducto, FicheroCliente ficheroCliente, FicheroCaja ficehroCaja) throws IOException {
+        //parametros recibidos
         this.ControladorRecibo = ControladorRecibo;
         this.vista = vista;
         this.ficheroCliente = ficheroCliente;
         this.ficheroProducto = ficheroProducto;
         this.ficehroCaja = ficehroCaja;
+        
+        //
         vista.btnAgregarProducto.addActionListener(this);
         vista.btnCompra.addActionListener(this);
         vista.btnEliminarProducto.addActionListener(this);
         vista.btnVaciarProductos.addActionListener(this);
+        
         
         ficheroProducto.llenarTabla(vista.tablaProductos);
         vista.jcbClientes.setModel(ficheroCliente.llenarComboBox());
@@ -74,6 +79,7 @@ public class ControladorCaja implements ActionListener{
                     //se editan los productos con los productos registrados para que disminuya la cantidad.
                     ficheroProducto.EditarProducto(producto);
                     //se muestran los productos actualizados en la tablaProductos
+                    
                     ficheroProducto.llenarTabla(vista.tablaProductos);
                 }
             
@@ -84,6 +90,7 @@ public class ControladorCaja implements ActionListener{
             Random random = new Random();
             int num = random.nextInt((1000000 - 1000) + 1) + 1000;
             String fecha = extraerFecha(vista.fecha);
+            
             //se instancia una nueva clase caja y se carga con los datos recientemente obtenidos.
             modelo.Caja caja = new modelo.Caja(num, fecha, (Clientes) vista.jcbClientes.getSelectedItem(), Double.parseDouble(vista.lblSubTotal.getText()),
             Double.parseDouble(vista.lblTotal.getText()),  vuelto, llenarListaConProductos());

@@ -1,1 +1,1 @@
-1,Pan,Hogar,40.0,200,Disponible
+1,Coca cola,Hogar,75.0,2000,Disponible

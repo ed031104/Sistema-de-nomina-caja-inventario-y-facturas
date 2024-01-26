@@ -1,0 +1,5 @@
+465894,10/11/2023,1,Edwin ,Davila,Villa sol,0311-031104-1010W,Hombre,edwin@gmial.com,89569717,25000.0,25000.0,25000.0,1,Pan,Hogar,50.0,500,Disponible,
+218669,10/11/2023,1,Edwin ,Davila,Villa sol,0311-031104-1010W,Hombre,edwin@gmial.com,89569717,250000.0,250000.0,250000.0,1,Pan,Hogar,500.0,500,Disponible,
+71020,10/11/2023,1,Edwin ,Davila,Villa sol,0311-031104-1010W,Hombre,edwin@gmial.com,89569717,40000.0,40000.0,40000.0,1,Pan,Hogar,50.0,800,Disponible,
+786639,11/11/2023,1,Bryan,Alberto,Villa sol,001-031104-1010W,Hombre,bryan@gmail.com,89569717,11000.0,11000.0,11000.0,1,Pan,Hogar,55.0,200,Disponible,
+546003,11/11/2023,2,Bryan,Alberto,Villa sol,001-031104-1010W,Hombre,bryan@gmail.com,89569717,1600.0,1600.0,1600.0,2,COCA COLA 3LTS,Hogar,80.0,20,Disponible,

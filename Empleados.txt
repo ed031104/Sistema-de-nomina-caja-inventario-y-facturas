@@ -1,0 +1,4 @@
+2,Ingeniero de Sistemas,30000.0,bryan,Davila,Villa sol,001-031104-1010W,Hombre,edwin@gmail.com,89569717
+1,Ingeniero de Sistemas,30000.0,Edwin,Davila,Villa sol,001-031104-1010W,Hombre,edwin@gmail.com,89569717
+34234,Analista de inventarios,12000.0,3423423,sdfsdf,sdfsfd,3423423,Hombre,sdfdsf,234234
+324234,Analista de inventarios,9000.0,edwin,asd,asd,345345345,Hombre,asd,89569717

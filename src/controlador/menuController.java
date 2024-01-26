@@ -59,10 +59,12 @@ public class menuController implements ActionListener{
     }
     
     public void iniciar() throws IOException, ParseException{
+        
         vista.setLocationRelativeTo(null);
         vista.setTitle("Sistema Ferretería Mirna Perez");
         vista.setIconImage(vista.getIconImage());
-         ControladorNomina ControladorNomina = new ControladorNomina(panelNomina, ficheroNomina);
+     
+        ControladorNomina ControladorNomina = new ControladorNomina(panelNomina, ficheroNomina);
          ControladorRegistroNomina controladorRegistroNomina = new ControladorRegistroNomina(panelRegistroNomina, ficheroNomina, ControladorNomina);
          ControladorRegitroEmpleado ControladorRegitroEmpleado = new ControladorRegitroEmpleado(panelempleados, ficheroEmpelado, controladorRegistroNomina );
            

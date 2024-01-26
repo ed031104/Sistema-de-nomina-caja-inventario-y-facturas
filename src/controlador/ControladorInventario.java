@@ -17,6 +17,9 @@ public class ControladorInventario implements ActionListener{
     Inventario vista;
     FicheroProducto ficheroProducto;
     ControladorCaja ControladorCaja;
+
+    public ControladorInventario() {
+    }
     
     ControladorInventario(Inventario vista, FicheroProducto ficheroProducto, ControladorCaja ControladorCaja) throws IOException {
         this.ControladorCaja = ControladorCaja;
